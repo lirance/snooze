@@ -33,12 +33,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- spring监听器 -->
+    <!-- spring listener -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <!-- 防止spring内存溢出监听器，比如quartz -->
+    <!-- prevent spring memory overflow, listener-->
     <listener>
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
@@ -57,7 +57,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>SpringMVC</servlet-name>
-        <!-- 此处也可以配置成 *.do 形式 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
@@ -65,7 +64,7 @@
         <welcome-file>/index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- session配置 -->
+    <!-- session configuration  -->
     <session-config>
         <session-timeout>15</session-timeout>
     </session-config>
