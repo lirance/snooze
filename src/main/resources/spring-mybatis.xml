@@ -9,16 +9,16 @@
                         http://www.springframework.org/schema/tx
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- 自动扫描 -->
+    <!-- automatic scan -->
     <context:component-scan base-package="com.heitian.ssm"/>
 
-    <!-- 第一种方式：加载一个properties文件 -->
+    <!-- load a properties file -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 
 
-    <!-- 第二种方式：加载多个properties文件
+    <!-- load more than one properties file
     <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
@@ -33,35 +33,34 @@
     </bean>
     -->
 
-    <!-- 配置数据源 -->
+    <!-- setting data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${driverClasss}"/>
         <property name="url" value="${jdbcUrl}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
-        <!-- 初始化连接大小 -->
+        <!-- initial connection numbers -->
         <property name="initialSize" value="${initialSize}"></property>
-        <!-- 连接池最大数量 -->
+        <!-- the max of connection pool -->
         <property name="maxActive" value="${maxActive}"></property>
-        <!-- 连接池最大空闲 -->
+        <!-- the max free number of connection pool -->
         <property name="maxIdle" value="${maxIdle}"></property>
-        <!-- 连接池最小空闲 -->
+        <!-- the minim free number of connection pool  -->
         <property name="minIdle" value="${minIdle}"></property>
-        <!-- 获取连接最大等待时间 -->
+        <!-- the max wait time of get the connections -->
         <property name="maxWait" value="${maxWait}"></property>
     </bean>
 
-    <!-- mybatis和spring完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!-- 自动扫描mapping.xml文件 -->
+        <!-- automatic scan mapping.xml file -->
         <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
     </bean>
 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <!-- DAO interface ，Spring will automatic scan the class -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.heitian.ssm.dao"/>
+        <property name="basePackage" value="com.oregonstate.snooze.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 
