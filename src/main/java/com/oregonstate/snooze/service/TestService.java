@@ -1,5 +1,7 @@
 package com.oregonstate.snooze.service;
 
+import com.oregonstate.snooze.model.User;
+
 import java.util.List;
 
 /**
@@ -10,5 +12,5 @@ import java.util.List;
 
 public interface TestService {
 
-    List selectall();
+    User getAll();
 }

@@ -19,7 +19,7 @@
         <param-value>classpath:log4j.properties</param-value>
     </context-param>
 
-    <!-- 编码过滤器 -->
+    <!-- encoding filter -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

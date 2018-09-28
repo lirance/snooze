@@ -1,5 +1,7 @@
 package com.oregonstate.snooze.service.impl;
 
+import com.oregonstate.snooze.dao.TestDao;
+import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +18,11 @@ import java.util.List;
 public class TestServiceimpl implements TestService {
 
     @Autowired
-    private TestService testService;
+    private TestDao testDao;
 
     @Override
-    public List selectall() {
-        List lsit = testService.selectall();
-        return lsit;
+    public User getAll() {
+        User testUser = testDao.getAll();
+        return testUser;
     }
 }

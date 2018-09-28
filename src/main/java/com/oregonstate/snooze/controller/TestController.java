@@ -1,5 +1,6 @@
 package com.oregonstate.snooze.controller;
 
+import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,16 +23,16 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @RequestMapping(value = "/csdn.json", method = RequestMethod.GET)
+    @RequestMapping(value = "/testUser.json", method = RequestMethod.GET)
     @ResponseBody
-    public String csdn() {
-        List lsit = testService.selectall();
-        return lsit.toString();
+    public String testUser() {
+        User testUser = testService.getAll();
+        return testUser.getName();
     }
 
-    @RequestMapping(value = "/csdn.html")
+    @RequestMapping(value = "/testUser.html")
     public String html() {
-        return "csdn";
+        return "testUser";
     }
 
 }

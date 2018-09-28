@@ -10,8 +10,7 @@
     <packaging>war</packaging>
 
     <name>snooze-scheduling-system Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.snooze.com</url>
+    <url>http://localhost:8080/snooze</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -194,7 +193,19 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
-
+        <!-- java servlet dependency-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
     </dependencies>
 
