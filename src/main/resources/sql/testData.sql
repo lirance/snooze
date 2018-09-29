@@ -10,4 +10,4 @@ CREATE TABLE `user_t` (
 
 /*Data for the table `user_t` */
 
-insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,'测试','sfasgfaf',24);
+insert  into `user_t`(`id`,`user_name`,`password`,`age`) values (1,'test','sfasgfaf',24);
