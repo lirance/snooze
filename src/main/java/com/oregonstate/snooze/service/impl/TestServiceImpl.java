@@ -22,9 +22,9 @@ public class TestServiceImpl implements TestService {
     private TestUserMapper testUserMapper;
 
     @Override
-    public List<TestUser> findUser() throws Exception {
-        List<TestUser> users= new ArrayList<>();
-        for (int i=0;i<100;i++){
+    public List<TestUser> findUser() {
+        List<TestUser> users = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
             users.add(testUserMapper.selectByPrimaryKey(i));
         }
         return users;
