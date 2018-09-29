@@ -1,11 +1,12 @@
 package com.oregonstate.snooze.service.impl;
 
-import com.oregonstate.snooze.dao.TestDao;
-import com.oregonstate.snooze.model.User;
+import com.oregonstate.snooze.dao.TestUserMapper;
+import com.oregonstate.snooze.model.TestUser;
 import com.oregonstate.snooze.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,11 +19,15 @@ import java.util.List;
 public class TestServiceimpl implements TestService {
 
     @Autowired
-    private TestDao testDao;
+    private TestUserMapper testUserMapper;
+
 
     @Override
-    public User getAll() {
-        User testUser = testDao.getAll();
-        return testUser;
+    public List<TestUser> findUser() {
+        List<TestUser> users = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            users.add(testUserMapper.selectByPrimaryKey(i));
+        }
+        return users;
     }
 }
