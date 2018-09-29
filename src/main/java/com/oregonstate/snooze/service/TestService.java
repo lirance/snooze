@@ -1,6 +1,6 @@
 package com.oregonstate.snooze.service;
 
-import com.oregonstate.snooze.model.User;
+import com.oregonstate.snooze.model.TestUser;
 
 import java.util.List;
 
@@ -12,5 +12,6 @@ import java.util.List;
 
 public interface TestService {
 
-    User getAll();
+    List<TestUser> findUser() throws Exception;
+
 }
