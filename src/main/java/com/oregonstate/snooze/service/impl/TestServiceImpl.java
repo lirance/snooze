@@ -24,7 +24,7 @@ public class TestServiceImpl implements TestService {
     @Override
     public List<TestUser> findUser() {
         List<TestUser> users = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             users.add(testUserMapper.selectByPrimaryKey(i));
         }
         return users;

@@ -4,44 +4,43 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
+    <!-- mysql driver path, need change in different computers. -->
     <classPathEntry location="/Users/lirance/IdeaProjects/snooze-scheduling-system/mysql-connector-java-8.0.12.jar" />
 
     <context id="wangyongzhi_mysql_tables" targetRuntime="MyBatis3">
-        <!-- 防止生成的代码中有很多注释，加入下面的配置控制 -->
         <commentGenerator>
             <property name="suppressAllComments" value="true" />
             <property name="suppressDate" value="true" />
         </commentGenerator>
 
-        <!-- 数据库连接 -->
+        <!-- connect the databse -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/testData?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
-                        userId="root"
-                        password="root">
+                        connectionURL="${jdbcUrl}"
+                        userId="${username}"
+                        password="${password}">
         </jdbcConnection>
 
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <!-- 数据表对应的model层  -->
+        <!-- model  -->
         <javaModelGenerator targetPackage="com.oregonstate.snooze.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <!-- sql mapper 映射配置文件 -->
+        <!-- sql mapper  -->
         <sqlMapGenerator targetPackage="mapping"  targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <!-- mybatis3中的mapper接口 -->
+        <!-- mybatis3 mapper interface -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.oregonstate.snooze.dao"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <!-- 数据表进行生成操作 schema:相当于库名; tableName:表名; domainObjectName:对应的DO -->
+        <!-- database automatically generator schema:the database name; tableName:; domainObjectName:the domain key of the table -->
         <table schema="testData" tableName="user_t" domainObjectName="TestUser"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
