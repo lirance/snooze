@@ -17,8 +17,8 @@
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/testData?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"
-                        userId="root"
-                        password="root">
+                        userId="${username}"
+                        password="${password}">
         </jdbcConnection>
 
         <javaTypeResolver >
