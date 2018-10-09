@@ -14,4 +14,6 @@ public interface TestService {
 
     List<TestUser> findUser() throws Exception;
 
+    int insert(TestUser record);
+
 }

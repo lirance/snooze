@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- in this file, the sql might get wrong because of the table name, group.-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oregonstate.snooze.dao.GroupMapper">
+  <resultMap id="BaseResultMap" type="com.oregonstate.snooze.model.Group">
+    <id column="groupId" jdbcType="INTEGER" property="groupId" />
+    <result column="groupName" jdbcType="VARCHAR" property="groupName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    groupId, groupName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from `group`
+    where groupId = #{groupId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from `group`
+    where groupId = #{groupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.oregonstate.snooze.model.Group">
+    insert into `group` (groupId, groupName)
+    values (#{groupId,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.Group">
+    insert into `group`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        groupId,
+      </if>
+      <if test="groupName != null">
+        groupName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="groupId != null">
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oregonstate.snooze.model.Group">
+    update `group`
+    <set>
+      <if test="groupName != null">
+        groupName = #{groupName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where groupId = #{groupId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oregonstate.snooze.model.Group">
+    update `group`
+    set groupName = #{groupName,jdbcType=VARCHAR}
+    where groupId = #{groupId,jdbcType=INTEGER}
+  </update>
+</mapper>

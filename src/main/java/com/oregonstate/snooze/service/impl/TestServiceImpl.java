@@ -29,4 +29,9 @@ public class TestServiceImpl implements TestService {
         }
         return users;
     }
+
+    @Override
+    public int insert(TestUser record) {
+        return testUserMapper.insert(record);
+    }
 }

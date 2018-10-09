@@ -1,0 +1,26 @@
+package com.oregonstate.snooze.service.impl;
+
+import com.oregonstate.snooze.dao.UserMapper;
+import com.oregonstate.snooze.model.User;
+import com.oregonstate.snooze.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author: chendi Zhang
+ * @date: 10/6/18
+ * @description:
+ **/
+
+@Service
+public class UserServiceImp implements UserService {
+
+    @Autowired
+    private UserMapper userMapper;
+
+
+    @Override
+    public int insert(User record) {
+        return userMapper.insert(record);
+    }
+}

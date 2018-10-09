@@ -16,6 +16,8 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
+    <!-- self defined handler-->
+    <bean id="scheduleTypeHandler" class="com.oregonstate.snooze.handler.ScheduleTypeHandler" />
 
 
     <!-- load more than one properties file
@@ -54,11 +56,12 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <!-- type Handlers-->
+        <property name="typeHandlers" ref="scheduleTypeHandler"/>
         <!-- automatic scan mapping.xml file -->
         <property name="mapperLocations" value="classpath:mapping/*.xml"/>
         <property name="typeAliasesPackage" value="com.oregonstate.snooze.model"/>
         <property name="typeAliases" value="org.springframework.util.LinkedCaseInsensitiveMap"/>
-
     </bean>
 
     <!-- DAO interface ，Spring will automatic scan the class -->
@@ -68,11 +71,4 @@
     </bean>
 
 
-    <!--&lt;!&ndash; transaction manager, use JtaTransactionManager for global tx &ndash;&gt;-->
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-    <!--</bean>-->
-
-    <!--&lt;!&ndash; transaction manager, use JtaTransactionManager for global tx &ndash;&gt;-->
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 </beans>

@@ -7,7 +7,7 @@ CREATE TABLE `user` (
   `userId` int(100) NOT NULL AUTO_INCREMENT,
   `userName` varchar(40) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `e-mail` varchar(320) NOT NULL,
+  `email` varchar(320) NOT NULL,
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
