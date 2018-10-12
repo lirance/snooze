@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.oregonstate.snooze.model.GroupSchedule">
     <id column="scheduleId" jdbcType="INTEGER" property="scheduleId" />
     <result column="groupId" jdbcType="INTEGER" property="groupId" />
+    <result column="scheduleName" jdbcType="VARCHAR" property="scheduleName"/>
     <result column="scheduleDes" jdbcType="VARCHAR" property="scheduleDes" javaType="java.util.Map"/>
     <result column="start" jdbcType="BIT" property="start" />
     <result column="end" jdbcType="BIT" property="end" />
@@ -23,9 +24,9 @@
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.GroupSchedule">
-    insert into schedule_g (scheduleId, groupId, scheduleDes, 
+    insert into schedule_g (scheduleId, groupId, scheduleName, scheduleDes,
       start, end, minHours)
-    values (#{scheduleId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, #{scheduleDes,jdbcType=VARCHAR},
+    values (#{scheduleId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, #{scheduleName,jdbcType=VARCHAR}, #{scheduleDes,jdbcType=VARCHAR},
       #{start,jdbcType=BIT}, #{end,jdbcType=BIT}, #{minHours,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.GroupSchedule">
@@ -36,6 +37,9 @@
       </if>
       <if test="groupId != null">
         groupId,
+      </if>
+      <if test="scheduleName != null">
+        scheduleName,
       </if>
       <if test="scheduleDes != null">
         scheduleDes,
@@ -57,6 +61,9 @@
       <if test="groupId != null">
         #{groupId,jdbcType=INTEGER},
       </if>
+      <if test="scheduleName != null">
+        #{shceduleName,jdbcType=VARCHAR},
+      </if>
       <if test="scheduleDes != null">
         #{scheduleDes,jdbcType=VARCHAR},
       </if>
@@ -77,6 +84,9 @@
       <if test="groupId != null">
         groupId = #{groupId,jdbcType=INTEGER},
       </if>
+      <if test="scheduleName != null">
+        groupId = #{scheduleName,jdbcType=INTEGER},
+      </if>
       <if test="scheduleDes != null">
         scheduleDes = #{scheduleDes,jdbcType=VARCHAR},
       </if>
@@ -95,6 +105,7 @@
   <update id="updateByPrimaryKey" parameterType="com.oregonstate.snooze.model.GroupSchedule">
     update schedule_g
     set groupId = #{groupId,jdbcType=INTEGER},
+      scheduleName = #{scheduleName,jdbcType=VARCHAR},
       scheduleDes = #{scheduleDes,jdbcType=VARCHAR},
       start = #{start,jdbcType=BIT},
       end = #{end,jdbcType=BIT},

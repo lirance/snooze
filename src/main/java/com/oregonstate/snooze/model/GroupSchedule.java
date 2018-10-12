@@ -9,6 +9,8 @@ public class GroupSchedule {
 
     private Integer groupId;
 
+    private String scheduleName;
+
     private Map<Integer, Boolean> scheduleDes;
 
     private Boolean start = false;
@@ -31,6 +33,14 @@ public class GroupSchedule {
 
     public void setGroupId(Integer groupId) {
         this.groupId = groupId;
+    }
+
+    public String getScheduleName() {
+        return scheduleName;
+    }
+
+    public void setScheduleName(String scheduleName) {
+        this.scheduleName = scheduleName;
     }
 
     public Map<Integer, Boolean> getScheduleDes() {
