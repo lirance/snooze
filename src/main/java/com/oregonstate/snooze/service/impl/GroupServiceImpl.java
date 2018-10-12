@@ -22,4 +22,9 @@ public class GroupServiceImpl implements GroupService {
     public int insert(Group record) {
         return groupMapper.insert(record);
     }
+
+    @Override
+    public Group selectByGroupId(int groupId) {
+        return groupMapper.selectByPrimaryKey(groupId);
+    }
 }

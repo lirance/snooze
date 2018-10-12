@@ -21,9 +21,9 @@
     where userId = #{userId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.User">
-    insert into user (userId, userName, password, 
+    insert into user (userName, password,
       email)
-    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{eMail,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.User">
