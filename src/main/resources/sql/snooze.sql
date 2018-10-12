@@ -46,6 +46,7 @@ DROP TABLE IF EXISTS `schedule_g`;
 CREATE TABLE `schedule_g` (
 `scheduleId` int (100) NOT NULL AUTO_INCREMENT,
 `groupId` int (100) NOT NULL,
+`scheduleName` varchar (40) NOT NULL,
 -- total schedule description, it's a map, (String, bool) for time and selected/unselected
 `scheduleDes` varchar (1024),
 `start` boolean DEFAULT 0,
