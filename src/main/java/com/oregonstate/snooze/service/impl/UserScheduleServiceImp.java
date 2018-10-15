@@ -1,7 +1,6 @@
 package com.oregonstate.snooze.service.impl;
 
 import com.oregonstate.snooze.dao.UserScheduleMapper;
-import com.oregonstate.snooze.model.GroupSchedule;
 import com.oregonstate.snooze.model.UserSchedule;
 import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.UserScheduleService;
