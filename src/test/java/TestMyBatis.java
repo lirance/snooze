@@ -1,9 +1,6 @@
 import com.alibaba.fastjson.JSON;
-import com.oregonstate.snooze.model.User;
-import com.oregonstate.snooze.model.UserSchedule;
-import com.oregonstate.snooze.model.UserScheduleKey;
-import com.oregonstate.snooze.service.UserScheduleService;
-import com.oregonstate.snooze.service.UserService;
+import com.oregonstate.snooze.model.*;
+import com.oregonstate.snooze.service.*;
 import org.apache.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -24,58 +21,77 @@ public class TestMyBatis {
 
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
 
-    // @Resource
-    // private TestService userService = null;
-    @Resource
-    private UserScheduleService groupScheduleService = null;
-    @Resource
-    private UserService groupService = null;
 
+    @Resource
+    private UserService userService = null;
 
     @org.junit.Test
-    public void testUserTable() throws Exception {
-        User group = new User();
-        UserSchedule groupSchedule = new UserSchedule();
-        group.setUserId(1);
-        group.setUserName("t425");
-        group.setPassword("34342");
-        group.seteMail("arr234tr@fsljf.com");
-       // groupService.insert(group);
+    public void testUserTable() {
+        User user = new User();
+        user.setUserName("t425");
+        user.setPassword("34342");
+        user.seteMail("arr234tr@fsljf.com");
+       // userService.insert(user);
+
+
+    }
+
+
+    @Resource
+    private UserScheduleService userScheduleService = null;
+
+    @org.junit.Test
+    public void testScheduleUTable() {
         UserScheduleKey userScheduleKey = new UserScheduleKey();
         userScheduleKey.setUserId(1);
         userScheduleKey.setScheduleId(2);
-        groupSchedule=groupScheduleService.selectByPrimaryKey(userScheduleKey);
-
-        System.out.println(JSON.toJSONString(groupSchedule));
-
-//
-//        groupSchedule.setUserId(1);
-//        groupSchedule.setScheduleId(2);
-//        groupSchedule.setHours("24");
-//
-//        Map<Integer, Boolean> sdMap = new HashMap<>();
-//        sdMap.put(709, true);
-//        sdMap.put(112, false);
-//
-//
-//        groupSchedule.setScheduleDes(sdMap);
-       // groupScheduleService.insert(groupSchedule);
-
-
-        // List<TestUser> test = userService.findUser();
-//        TestUser record = new TestUser();
-//        record.setAge(1);
-//        record.setId(100);
-//        record.setPassword("wer");
-//        record.setUserName("erqwtf");
-        //   userService.insert(record);
-
-
-        // int test=userService.testSQL();
-        // System.out.println(test.getUserName());
-        // logger.info("值："+test.getUserName());
-        // logger.info(JSON.toJSONString(test));
+        UserSchedule groupSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
+        logger.info(JSON.toJSONString(groupSchedule));
     }
+
+
+    @Resource
+    private GroupService groupService = null;
+
+    @org.junit.Test
+    public void testGroupTable() {
+        Group group = new Group();
+        group.setGroupName("test_group_name");
+        //groupService.insert(group);
+        logger.info(JSON.toJSONString(groupService.selectByGroupId(1)));
+
+    }
+
+
+    @Resource
+    private GroupScheduleService groupScheduleService = null;
+
+    @org.junit.Test
+    public void testScheduleGTable() {
+        GroupSchedule groupSchedule = new GroupSchedule();
+        groupSchedule.setGroupId(1);
+        groupSchedule.setScheduleId(1);
+        groupSchedule.setScheduleName("test_schedule_name");
+        Map<Integer, Boolean> groupDes = new HashMap<>();
+        groupDes.put(123, true);
+        groupDes.put(123, false);
+        groupSchedule.setScheduleDes(groupDes);
+       // groupScheduleService.insert(groupSchedule);
+    }
+
+
+    @Resource
+    private GroupUserService groupUserService = null;
+
+    @org.junit.Test
+    public void testGroupUserTable(){
+        GroupUser groupUser = new GroupUser();
+        groupUser.setGroupId(1);
+        groupUser.setUserId(1);
+        groupUser.setManager(true);
+        //groupUserService.insert(groupUser);
+    }
+
 }
 
 

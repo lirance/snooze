@@ -20,8 +20,8 @@
     where groupId = #{groupId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.Group">
-    insert into `group` (groupId, groupName)
-    values (#{groupId,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR})
+    insert into `group` (groupName)
+    values (#{groupName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.Group">
     insert into `group`

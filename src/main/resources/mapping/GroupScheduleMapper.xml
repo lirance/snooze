@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.oregonstate.snooze.model.GroupSchedule">
     <id column="scheduleId" jdbcType="INTEGER" property="scheduleId" />
     <result column="groupId" jdbcType="INTEGER" property="groupId" />
+    <result column="scheduleName" jdbcType="VARCHAR" property="scheduleName"/>
     <result column="scheduleDes" jdbcType="VARCHAR" property="scheduleDes" javaType="java.util.Map"/>
     <result column="start" jdbcType="BIT" property="start" />
     <result column="end" jdbcType="BIT" property="end" />
@@ -23,9 +24,9 @@
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.GroupSchedule">
-    insert into schedule_g (scheduleId, groupId, scheduleDes, 
+    insert into schedule_g (groupId, scheduleName, scheduleDes,
       start, end, minHours)
-    values (#{scheduleId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, #{scheduleDes,jdbcType=VARCHAR},
+    values (#{groupId,jdbcType=INTEGER}, #{scheduleName,jdbcType=VARCHAR}, #{scheduleDes,jdbcType=VARCHAR},
       #{start,jdbcType=BIT}, #{end,jdbcType=BIT}, #{minHours,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.GroupSchedule">
@@ -36,6 +37,9 @@
       </if>
       <if test="groupId != null">
         groupId,
+      </if>
+      <if test="scheduleName != null">
+        scheduleName,
       </if>
       <if test="scheduleDes != null">
         scheduleDes,

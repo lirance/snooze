@@ -11,4 +11,6 @@ import com.oregonstate.snooze.model.Group;
 public interface GroupService {
 
     int insert(Group record);
+
+    Group selectByGroupId(int groupId);
 }
