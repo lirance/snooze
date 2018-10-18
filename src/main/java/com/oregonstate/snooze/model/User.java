@@ -1,5 +1,7 @@
 package com.oregonstate.snooze.model;
 
+import javax.jws.soap.SOAPBinding;
+
 public class User {
     private Integer userId;
 

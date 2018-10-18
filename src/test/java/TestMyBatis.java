@@ -31,9 +31,9 @@ public class TestMyBatis {
         user.setUserName("t425");
         user.setPassword("34342");
         user.seteMail("arr234tr@fsljf.com");
-       // userService.insert(user);
-
-
+        // userService.insert(user);
+        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
+        System.out.println(JSON.toJSONString(userresutl));
     }
 
 

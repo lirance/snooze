@@ -21,6 +21,13 @@ public class UserServiceImp implements UserService {
 
     @Override
     public int insert(User record) {
+        record.setPassword(Integer.toString(record.getPassword().hashCode()));
         return userMapper.insert(record);
     }
+
+    @Override
+    public User selectByEmail(String email) {
+        return userMapper.selectByEmail(email);
+    }
+    //TODO selectByEmail
 }
