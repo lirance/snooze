@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
 
 
 <body ng-app="myApp">
-
+<script src="angularjslab.js"></script>
 <header>
     <!--  -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -77,12 +80,12 @@
     </div>
 
     <div class="form-label-group text-center main">
-        <input type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus ng-model="user.email" >
+        <input type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus ng-model="users.email" >
         <label for="inputEmail">Email address</label>
     </div>
 
     <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="user.password">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="users.password">
         <label for="inputPassword">Password</label>
     </div>
 
@@ -96,35 +99,35 @@
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitForm()">Log in</button>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
 </form>
 
 
 <script>
     var app = angular.module("myApp",[]);
-    app.controller('carController',function ($scope,$http) {
-        $scope.user = {}
+    app.controller('loginController',function ($scope,$http) {
+        // $scope.user = {};
         $scope.submitForm = function () {
-            console.log('enter submitForm');
+            // console.log('enter submitForm');
             $http({
                 method:'post',
-                url:'/login',
-                data:$.param($scope.user),
+                url:'/#',
+                data:$.param($scope.users),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             }).then(function(resp){
                 console.log('Login success');
-                if($scope.loginActionData.token){
-                    sessionStorage.setItem("token", $scope.loginActionData.token);
-                    sessionStorage.setItem("tsname", $scope.loginActionData.name);
-                    sessionStorage.setItem("rights", $scope.loginActionData.rights);
-                    sessionStorage.setItem("userId", $scope.loginActionData.userId);
-                    sessionStorage.setItem("departmentsId", $scope.loginActionData.departmentsId);
-                    sessionStorage.setItem("departmentsName", $scope.loginActionData.departmentsName);
-                    $state.go('person.html');
-                }
+                // if($scope.loginActionData.token){
+                //   sessionStorage.setItem("token", $scope.loginActionData.token);
+                //   sessionStorage.setItem("tsname", $scope.loginActionData.name);
+                //   sessionStorage.setItem("rights", $scope.loginActionData.rights);
+                //   sessionStorage.setItem("userId", $scope.loginActionData.userId);
+                //   sessionStorage.setItem("departmentsId", $scope.loginActionData.departmentsId);
+                //   sessionStorage.setItem("departmentsName", $scope.loginActionData.departmentsName);
+                //   $state.go('person.html');
+                // }
 
 
 
