@@ -3,6 +3,8 @@ pageEncoding="UTF-8"%>
 
 
 
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -99,7 +101,7 @@ pageEncoding="UTF-8"%>
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitForm()">Log in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
 </form>
 
@@ -107,33 +109,26 @@ pageEncoding="UTF-8"%>
 <script>
     var app = angular.module("myApp",[]);
     app.controller('loginController',function ($scope,$http) {
-        // $scope.user = {};
+        $scope.user = {};
         $scope.submitForm = function () {
             // console.log('enter submitForm');
             $http({
                 method:'post',
-                url:'/#',
+                url:'',
                 data:$.param($scope.users),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                transformRequest: function (data) {
+                    return $.param(data);
                 }
+            }).then(function(data){
+                console.log('Login success',data);
+
+
+
+
             }).then(function(resp){
-                console.log('Login success');
-                // if($scope.loginActionData.token){
-                //   sessionStorage.setItem("token", $scope.loginActionData.token);
-                //   sessionStorage.setItem("tsname", $scope.loginActionData.name);
-                //   sessionStorage.setItem("rights", $scope.loginActionData.rights);
-                //   sessionStorage.setItem("userId", $scope.loginActionData.userId);
-                //   sessionStorage.setItem("departmentsId", $scope.loginActionData.departmentsId);
-                //   sessionStorage.setItem("departmentsName", $scope.loginActionData.departmentsName);
-                //   $state.go('person.html');
-                // }
-
-
-
-
-            },function(resp){
-                $('#loginAction').modal('show');
                 console.log('Email or Passowrd Error');
                 console.log(resp);
             });
