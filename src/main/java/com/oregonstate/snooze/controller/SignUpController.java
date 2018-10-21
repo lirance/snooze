@@ -18,11 +18,11 @@ public class SignUpController {
 
     @RequestMapping(value = "/signup")
     @ResponseBody
-    public boolean SignUp(String inputUserID, String inputPassword, String inputEmail){
+    public boolean SignUp(String inputUsername, String inputPassword, String inputEmail){
         User user = userService.selectByEmail(inputEmail);
         if (user == null) {
             User newUser = new User();
-            newUser.setUserName(inputUserID);
+            newUser.setUserName(inputUsername);
             newUser.setPassword(inputPassword);
             newUser.seteMail(inputEmail);
             userService.insert(newUser);
