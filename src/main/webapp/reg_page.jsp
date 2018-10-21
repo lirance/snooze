@@ -92,25 +92,23 @@
     </nav>
 </header>
 
-<br/>
-
 
 
 
 <br>
-<br>
-<br>
+<div class="text-center mb-2">
 
+    <img src="imgs/snoozelogo.jpeg" alt="" width="300" height="250">
+
+</div>
 
 <div class="text-center mb-4">
     <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
 </div>
 
 
-<br>
 
-
-<div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">>
+<div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">
 
 
     <div class="divForm">
@@ -128,7 +126,6 @@
                 <label for="UserName">UserName</label>
                 <input type="text" class="form-control" id="UserName" placeholder="" value="" required autofocus
                        ng-model="users.inputUsername" style="width: 207%">
-                <p>{{users.inputUsername}}</p>
                 <div class="invalid-feedback">
                     Valid_user_name_is_required
                 </div>
@@ -146,14 +143,12 @@
                 <input type="email" id="inputEmail" class="form-control" placeholder="xxxxxxxxx@xxx.xxx" required
                        autofocus ng-model="users.inputEmail" style="width: 207%">
 
-                <p>{{users.inputEmail}}</p>
                 <br>
 
                 <label for="inputPassword">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="" required
                        ng-model="users.inputPassword" style="width: 207%">
 
-                <p>{{users.inputPassword}}</p>
             </div>
 
 
@@ -177,7 +172,7 @@
                         <br>
                         <br>
                         <button class="btn btn-lg btn-primary btn-block " style="width: 80%" align="center"
-                                type="submit">Clean
+                                type="reset">Clean
                         </button>
 
                     </div>
@@ -216,14 +211,14 @@
             }).then(function(resp){
                 if (resp.data === "true"){
                     console.log(resp.data);
-                    alert("Regetrest Succeed"+resp.data)
-                    window.location.href="http://http://localhost:8080/login_page.jsp";
+                    alert("Register Succeed");
+                    window.location.href="http://localhost:8080/login_page.jsp";
 
 
 
                 }else if(resp.data === "false") {
                     console.log('Email or Passowrd Error', resp.data);
-                    alert("Email had been occupied ",resp.data);
+                    alert("Email had been occupied ");
                 }
 
 
