@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-
 @Controller
 @RequestMapping("/snooze")
 public class SignUpController {
