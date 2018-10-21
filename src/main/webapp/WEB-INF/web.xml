@@ -67,7 +67,7 @@
         <url-pattern>*.css</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>/login_page.jsp</welcome-file>
     </welcome-file-list>
 
     <!-- session configuration  -->
