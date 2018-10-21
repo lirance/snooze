@@ -2,6 +2,10 @@
          pageEncoding="UTF-8"%>
 
 
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -133,7 +137,7 @@
 
     <!-- a link for sign up page -->
     <ul class="list-help text-center" >
-        <a href="http://http://localhost:8080/reg.jsp">Don't have account?</a >
+        <a href="http://localhost:8080/reg_page.jsp">Don't have account?</a >
     </ul>
 
     <br>
@@ -169,8 +173,8 @@
             }).then(function(resp){
                 if (resp.data === "true"){
                     console.log(resp.data);
-                    alert("Signin Success")
-                    window.location.href="http://http://localhost:8080/login_page.jsp";
+                    alert("Signin Success");
+                    window.location.href="http://localhost:8080/login_page.jsp";
 
 
 
