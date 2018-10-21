@@ -170,7 +170,7 @@
                 if (resp.data === "true"){
                     console.log(resp.data);
                     alert("Signin Success");
-                    window.location.href="http://localhost:8080/login_page.jsp";
+                    window.location.href="http://localhost:8080/main_page.jsp";
 
 
 

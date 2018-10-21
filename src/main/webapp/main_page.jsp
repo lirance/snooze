@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
     <title>Personal Main Page</title>
+
+
 </head>
 
 
@@ -65,8 +67,19 @@
         </div>
     </nav>
 </header>
+<br>
+<br><br><br><br><br><br><br>
+<div class="text-center" >
+    <p>
+        <lable >
+            Main Page
+
+        </lable>
 
 
+    </p>
+
+</div>
 
 
 </body>
