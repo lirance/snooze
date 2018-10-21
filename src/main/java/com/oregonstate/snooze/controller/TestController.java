@@ -18,12 +18,12 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/snooze/test")
+@RequestMapping("/login'")
 public class TestController {
 
 @Autowired
     TestService testService;
-    @RequestMapping(value = "/testUser.json", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public String testUser() throws Exception {
         List<TestUser> testUser = testService.findUser();

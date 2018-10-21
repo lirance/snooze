@@ -10,4 +10,6 @@ import com.oregonstate.snooze.model.User;
 
 public interface UserService {
     int insert(User record);
+
+    User selectByEmail(String email);
 }

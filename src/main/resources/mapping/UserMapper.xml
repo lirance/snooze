@@ -79,4 +79,10 @@
       email = #{eMail,jdbcType=VARCHAR}
     where userId = #{userId,jdbcType=INTEGER}
   </update>
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where email = #{eMail,jdbcType=VARCHAR} limit 1
+  </select>
 </mapper>
