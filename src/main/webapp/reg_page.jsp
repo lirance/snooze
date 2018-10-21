@@ -92,22 +92,20 @@
     </nav>
 </header>
 
-<br/>
-
 
 
 
 <br>
-<br>
-<br>
+<div class="text-center mb-2">
 
+    <img src="imgs/snoozelogo.jpeg" alt="" width="300" height="250">
+
+</div>
 
 <div class="text-center mb-4">
     <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
 </div>
 
-
-<br>
 
 
 <div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">
@@ -174,7 +172,7 @@
                         <br>
                         <br>
                         <button class="btn btn-lg btn-primary btn-block " style="width: 80%" align="center"
-                                type="submit">Clean
+                                type="reset">Clean
                         </button>
 
                     </div>
