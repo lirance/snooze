@@ -15,7 +15,7 @@ public class LogInController {
     @Autowired
     UserService userService;
 
-        @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login")
     @ResponseBody
     public boolean LogIn(String inputPassword,String inputEmail) {
         User user = userService.selectByEmail(inputEmail);
