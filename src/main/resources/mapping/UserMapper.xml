@@ -83,7 +83,6 @@
     select
     <include refid="Base_Column_List" />
     from user
-    where email = #{eMail,jdbcType=VARCHAR}
+    where email = #{eMail,jdbcType=VARCHAR} limit 1
   </select>
-  <!-- TODO add a update form that contain the sql of select User by email-->
 </mapper>

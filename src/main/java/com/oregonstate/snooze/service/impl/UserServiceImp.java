@@ -29,5 +29,4 @@ public class UserServiceImp implements UserService {
     public User selectByEmail(String email) {
         return userMapper.selectByEmail(email);
     }
-    //TODO selectByEmail
 }
