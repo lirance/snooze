@@ -110,7 +110,7 @@
 <br>
 
 
-<div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">>
+<div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">
 
 
     <div class="divForm">
@@ -128,7 +128,6 @@
                 <label for="UserName">UserName</label>
                 <input type="text" class="form-control" id="UserName" placeholder="" value="" required autofocus
                        ng-model="users.inputUsername" style="width: 207%">
-                <p>{{users.inputUsername}}</p>
                 <div class="invalid-feedback">
                     Valid_user_name_is_required
                 </div>
@@ -146,14 +145,12 @@
                 <input type="email" id="inputEmail" class="form-control" placeholder="xxxxxxxxx@xxx.xxx" required
                        autofocus ng-model="users.inputEmail" style="width: 207%">
 
-                <p>{{users.inputEmail}}</p>
                 <br>
 
                 <label for="inputPassword">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="" required
                        ng-model="users.inputPassword" style="width: 207%">
 
-                <p>{{users.inputPassword}}</p>
             </div>
 
 
@@ -216,14 +213,14 @@
             }).then(function(resp){
                 if (resp.data === "true"){
                     console.log(resp.data);
-                    alert("Regetrest Succeed"+resp.data)
-                    window.location.href="http://http://localhost:8080/login_page.jsp";
+                    alert("Register Succeed");
+                    window.location.href="http://localhost:8080/login_page.jsp";
 
 
 
                 }else if(resp.data === "false") {
                     console.log('Email or Passowrd Error', resp.data);
-                    alert("Email had been occupied ",resp.data);
+                    alert("Email had been occupied ");
                 }
 
 
