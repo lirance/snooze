@@ -215,7 +215,6 @@
                     window.location.href="http://localhost:8080/login_page.jsp";
 
 
-in
                 }else if(resp.data === "false") {
                     console.log('Email or Passowrd Error', resp.data);
                     alert("Email had been occupied ");
