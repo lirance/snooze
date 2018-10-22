@@ -40,9 +40,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a >
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a >
-                </li>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link disabled" href="#">Disabled</a >--%>
+                <%--</li>--%>
             </ul>
             <!-- <form class="form-inline mt-2 mt-md-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -56,10 +56,10 @@
               Options
             </a >
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" class="text-center">
-              <a class="dropdown-item" href="#">LogIn</a >
-              <a class="dropdown-item" href="#">Register</a >
+              <a class="dropdown-item" href="login_page.jsp">LogIn</a >
+              <a class="dropdown-item" href="reg_page.jsp">Register</a >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a >
+              <a class="dropdown-item" href="login_page.jsp">Logout</a >
           </div>
           </li>
         </span>
@@ -170,7 +170,7 @@
                 if (resp.data === "true"){
                     console.log(resp.data);
                     alert("Signin Success");
-                    window.location.href="http://localhost:8080/login_page.jsp";
+                    window.location.href="http://localhost:8080/main_page.jsp";
 
 
 
