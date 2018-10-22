@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author: Chendi Zhang
  * @date: 9/27/18
- * @description:
+ * @description: test controller to test the if the json can get from the front end
  */
 
 @Controller

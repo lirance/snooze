@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
- * @description:
+ * @description: group schedule service implement , get group schedule description, update group schedule
  **/
 @Service
 public class GroupScheduleServiceImpl implements GroupScheduleService {

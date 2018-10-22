@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
- * @description:
+ * @description: user schedule service implement.
  **/
 @Service
 public class UserScheduleServiceImp implements UserScheduleService {

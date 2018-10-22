@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
- * @description:
+ * @description: group service implement
  **/
 
 @Service
