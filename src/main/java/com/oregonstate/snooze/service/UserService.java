@@ -8,8 +8,7 @@ import com.oregonstate.snooze.model.User;
  * @description:
  **/
 
-public interface UserService {
-    int insert(User record);
+public interface UserService extends BaseObjectService<User, Integer> {
 
     User selectByEmail(String email);
 }

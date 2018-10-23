@@ -58,7 +58,7 @@ public class TestMyBatis {
         Group group = new Group();
         group.setGroupName("test_group_name");
         //groupService.insert(group);
-        logger.info(JSON.toJSONString(groupService.selectByGroupId(1)));
+        logger.info(JSON.toJSONString(groupService.selectByPrimaryKey(1)));
 
     }
 

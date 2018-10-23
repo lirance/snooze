@@ -10,8 +10,6 @@ import com.oregonstate.snooze.model.UserScheduleKey;
  * @description:
  **/
 
-public interface UserScheduleService {
-    int insert(UserSchedule record);
+public interface UserScheduleService extends BaseObjectService<UserSchedule, UserScheduleKey> {
 
-    UserSchedule selectByPrimaryKey(UserScheduleKey key);
 }

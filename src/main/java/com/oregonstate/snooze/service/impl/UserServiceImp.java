@@ -26,6 +26,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public User selectByPrimaryKey(Integer userId) {
+        return userMapper.selectByPrimaryKey(userId);
+    }
+
+    @Override
     public User selectByEmail(String email) {
         return userMapper.selectByEmail(email);
     }

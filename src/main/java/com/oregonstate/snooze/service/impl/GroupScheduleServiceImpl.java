@@ -21,4 +21,9 @@ public class GroupScheduleServiceImpl implements GroupScheduleService {
     public int insert(GroupSchedule record) {
         return groupScheduleDao.insert(record);
     }
+
+    @Override
+    public GroupSchedule selectByPrimaryKey(Integer groupId) {
+        return groupScheduleDao.selectByPrimaryKey(groupId);
+    }
 }
