@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+    <title>Personal Main Page</title>
+    <style CSS>
+
+        #sidebar {
+            overflow: hidden;
+            z-index: 3;
+        }
+        #sidebar .list-group {
+            min-width: 400px;
+            background-color: #333;
+            min-height: 100vh;
+        }
+        #sidebar i {
+            margin-right: 6px;
+        }
+
+        #sidebar .list-group-item {
+            border-radius: 0;
+            background-color: #333;
+            color: #ccc;
+            border-left: 0;
+            border-right: 0;
+            border-color: #2c2c2c;
+            white-space: nowrap;
+        }
+
+        /* highlight active menu */
+        #sidebar .list-group-item:not(.collapsed) {
+            background-color: #222;
+        }
+
+        /* closed state */
+        #sidebar .list-group .list-group-item[aria-expanded="false"]::after {
+            content: " \f0d7";
+            font-family: FontAwesome;
+            display: inline;
+            text-align: right;
+            padding-left: 5px;
+        }
+
+        /* open state */
+        #sidebar .list-group .list-group-item[aria-expanded="true"] {
+            background-color: #222;
+        }
+        #sidebar .list-group .list-group-item[aria-expanded="true"]::after {
+            content: " \f0da";
+            font-family: FontAwesome;
+            display: inline;
+            text-align: right;
+            padding-left: 5px;
+        }
+
+        /* level 1*/
+        #sidebar .list-group .collapse .list-group-item,
+        #sidebar .list-group .collapsing .list-group-item  {
+            padding-left: 20px;
+        }
+
+        /* level 2*/
+        #sidebar .list-group .collapse > .collapse .list-group-item,
+        #sidebar .list-group .collapse > .collapsing .list-group-item {
+            padding-left: 30px;
+        }
+
+        /* level 3*/
+        #sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
+            padding-left: 40px;
+        }
+
+        @media (max-width:768px) {
+            #sidebar {
+                min-width: 35px;
+                max-width: 40px;
+                overflow-y: auto;
+                overflow-x: visible;
+                transition: all 0.25s ease;
+                transform: translateX(-45px);
+                position: fixed;
+            }
+
+            #sidebar.show {
+                transform: translateX(0);
+            }
+
+            #sidebar::-webkit-scrollbar{ width: 0px; }
+
+            #sidebar, #sidebar .list-group {
+                min-width: 35px;
+                overflow: visible;
+            }
+            /* overlay sub levels on small screens */
+            #sidebar .list-group .collapse.show, #sidebar .list-group .collapsing {
+                position: relative;
+                z-index: 1;
+                width: 190px;
+                top: 0;
+            }
+            #sidebar .list-group > .list-group-item {
+                text-align: center;
+                padding: .75rem .5rem;
+            }
+            /* hide caret icons of top level when collapsed */
+            #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
+            #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
+                display:none;
+            }
+        }
+
+        .collapse.show {
+            visibility: visible;
+        }
+        .collapsing {
+            visibility: visible;
+            height: 0;
+            -webkit-transition-property: height, visibility;
+            transition-property: height, visibility;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        .collapsing.width {
+            -webkit-transition-property: width, visibility;
+            transition-property: width, visibility;
+            width: 0;
+            height: 100%;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body ng-app="myApp">
+<div class="container-fluid">
+    <div class="row d-flex d-md-block flex-nowrap wrapper">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+            <div class="list-group border-0 card text-center text-md-left">
+
+                <a href="#" class="list-group-item d-inline-block collapsed"><span class="oi oi-person" title="person" aria-hidden="true"></span> <i class="fa fa-film"></i> <span
+                        class="d-none d-md-inline">Edit Profile</span></a>
+
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse"
+                ><span class="oi oi-project" title="project" aria-hidden="true"></span> <span class="d-none d-md-inline">Group Setting</span></a>
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action" data-parent="#sidebar">
+                        <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
+                        Already Choosed    </a>
+
+
+
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <span class="oi oi-circle-check" title="circle-check" aria-hidden="true"></span>
+                        Current Choosing</a>
+
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
+                        Group Setting</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
+            <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+            <div class="page-header">
+                <h2>Edit Your Profile</h2>
+            </div>
+            <hr>
+
+
+
+            <br>
+
+            <label for="UserName">Change UserName</label>
+            <input type="text" class="form-control" id="UserName" placeholder="" value="" required autofocus
+                   ng-model="user.username" style="width:70%">
+
+
+            <br>
+
+
+            <!-- Email and password   -->
+
+            <label for="inputEmail">Default Email Address</label>
+
+
+
+
+            <output type="email" id="inputEmail" class="form-control" required
+                    autofocus ng-model="user.email" style="width:70%"> </output>
+
+
+            <br>
+
+            <label for="inputPassword">Change Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="" required
+                   ng-model="user.password" style="width:70%">
+
+
+
+            <br>
+
+
+            <div class="col-md-8 order-md-1">
+
+
+                <div class="row">
+                    <!-- Save botton -->
+                    <div class="col-md-6 mb-3">
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" style="width: 80%" align="center"
+                                type="submit">Save
+                        </button>
+                    </div>
+
+                    <!-- Clean botton -->
+                    <div class="col-md-6 mb-3">
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block " style="width: 80%" align="center"
+                                type="reset">Clean
+                        </button>
+
+                    </div>
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+
+</body>
+</html>
