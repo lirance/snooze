@@ -27,4 +27,9 @@ public class GroupUserServiceImpl implements GroupUserService {
     public GroupUser selectByPrimaryKey(GroupUserKey groupUserKey) {
         return groupUserMapper.selectByPrimaryKey(groupUserKey);
     }
+
+    @Override
+    public int updateByPrimaryKey(GroupUser groupUser) {
+        return groupUserMapper.updateByPrimaryKey(groupUser);
+    }
 }

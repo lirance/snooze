@@ -1,6 +1,7 @@
 package com.oregonstate.snooze.service.impl;
 
 import com.oregonstate.snooze.dao.UserScheduleMapper;
+import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.model.UserSchedule;
 import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.UserScheduleService;
@@ -26,5 +27,10 @@ public class UserScheduleServiceImp implements UserScheduleService {
     @Override
     public UserSchedule selectByPrimaryKey(UserScheduleKey key) {
         return userScheduleMapper.selectByPrimaryKey(key);
+    }
+
+    @Override
+    public int updateByPrimaryKey(UserSchedule userSchedule) {
+        return userScheduleMapper.updateByPrimaryKey(userSchedule);
     }
 }

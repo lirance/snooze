@@ -28,4 +28,9 @@ public class GroupServiceImpl implements GroupService {
         return groupMapper.selectByPrimaryKey(groupId);
     }
 
+    @Override
+    public int updateByPrimaryKey(Group group) {
+        return groupMapper.updateByPrimaryKey(group);
+    }
+
 }
