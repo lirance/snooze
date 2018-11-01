@@ -39,4 +39,9 @@ public class TestServiceImpl implements TestService {
     public TestUser selectByPrimaryKey(Integer integer) {
         return testUserMapper.selectByPrimaryKey(integer);
     }
+
+    @Override
+    public int updateByPrimaryKey(TestUser testUser) {
+        return testUserMapper.updateByPrimaryKey(testUser);
+    }
 }

@@ -11,4 +11,6 @@ import com.oregonstate.snooze.model.User;
 public interface UserService extends BaseObjectService<User, Integer> {
 
     User selectByEmail(String email);
+
+    Boolean changeProfile(String newUsername, String newPassword, User user);
 }

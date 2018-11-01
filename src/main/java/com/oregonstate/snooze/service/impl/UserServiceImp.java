@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImp implements UserService {
 
+    final static String NULL = "null";
+
     @Autowired
     private UserMapper userMapper;
 
@@ -31,7 +33,32 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public int updateByPrimaryKey(User user) {
+        return userMapper.updateByPrimaryKey(user);
+    }
+
+    @Override
     public User selectByEmail(String email) {
         return userMapper.selectByEmail(email);
+    }
+
+    @Override
+    public Boolean changeProfile(String newUsername, String newPassword, User user) {
+        if (!newUsername.equals(NULL) && newPassword.equals(NULL)) {
+            user.setUserName(newUsername);
+            updateByPrimaryKey(user);
+            return true;
+        } else if (!newPassword.equals(NULL) && newUsername.equals(NULL)) {
+            user.setPassword(newPassword);
+            updateByPrimaryKey(user);
+            return true;
+        } else if (!newUsername.equals(NULL) && !newPassword.equals(NULL)) {
+            user.setUserName(newUsername);
+            user.setPassword(newPassword);
+            updateByPrimaryKey(user);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

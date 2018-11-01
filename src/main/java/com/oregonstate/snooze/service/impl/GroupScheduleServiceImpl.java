@@ -15,15 +15,20 @@ import org.springframework.stereotype.Service;
 public class GroupScheduleServiceImpl implements GroupScheduleService {
 
     @Autowired
-    private GroupScheduleMapper groupScheduleDao;
+    private GroupScheduleMapper groupScheduleMapper;
 
     @Override
     public int insert(GroupSchedule record) {
-        return groupScheduleDao.insert(record);
+        return groupScheduleMapper.insert(record);
     }
 
     @Override
     public GroupSchedule selectByPrimaryKey(Integer groupId) {
-        return groupScheduleDao.selectByPrimaryKey(groupId);
+        return groupScheduleMapper.selectByPrimaryKey(groupId);
+    }
+
+    @Override
+    public int updateByPrimaryKey(GroupSchedule groupSchedule) {
+        return groupScheduleMapper.updateByPrimaryKey(groupSchedule);
     }
 }

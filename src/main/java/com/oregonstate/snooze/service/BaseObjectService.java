@@ -13,4 +13,6 @@ public interface BaseObjectService<Object, ObjectKey> {
     int insert(Object record);
 
     Object selectByPrimaryKey(ObjectKey objectKey);
+
+    int updateByPrimaryKey(Object object);
 }

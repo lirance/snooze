@@ -10,28 +10,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/snooze")
-public class SignUpController {
+public class EditProfileController {
+
 
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/signUp")
+    @RequestMapping(value = "/editProfile")
     @ResponseBody
-    public boolean signUp(String inputUsername, String inputPassword, String inputEmail){
+    public boolean editProfile(String inputEmail, String inputPassword,String newUsername, String newPassword) {
         User user = userService.selectByEmail(inputEmail);
-        if (user == null) {
-            User newUser = new User();
-            newUser.setUserName(inputUsername);
-            newUser.setPassword(inputPassword);
-            newUser.seteMail(inputEmail);
-            userService.insert(newUser);
-            return true;
+        if ((user.getPassword()).equals(Integer.toString(inputPassword.hashCode()))){
+            return userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
         }
-        else{
+        else {
             return false;
         }
     }
+
 }
-
-
-
