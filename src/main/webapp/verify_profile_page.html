@@ -9,173 +9,127 @@
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
     <title>Personal Main Page</title>
-    <style CSS>
+
+    <style>
 
         #sidebar {
-            overflow: hidden;
-            z-index: 3;
-        }
-        #sidebar .list-group {
-            min-width: 400px;
-            background-color: #333;
-            min-height: 100vh;
-        }
-        #sidebar i {
-            margin-right: 6px;
+            /* don't forget to add all the previously mentioned styles here too */
+            background: #7386D5;
+            color: #fff;
+            transition: all 0.3s;
         }
 
-        #sidebar .list-group-item {
-            border-radius: 0;
-            background-color: #333;
-            color: #ccc;
-            border-left: 0;
-            border-right: 0;
-            border-color: #2c2c2c;
-            white-space: nowrap;
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
         }
 
-        /* highlight active menu */
-        #sidebar .list-group-item:not(.collapsed) {
-            background-color: #222;
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
         }
 
-        /* closed state */
-        #sidebar .list-group .list-group-item[aria-expanded="false"]::after {
-            content: " \f0d7";
-            font-family: FontAwesome;
-            display: inline;
-            text-align: right;
-            padding-left: 5px;
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
         }
 
-        /* open state */
-        #sidebar .list-group .list-group-item[aria-expanded="true"] {
-            background-color: #222;
-        }
-        #sidebar .list-group .list-group-item[aria-expanded="true"]::after {
-            content: " \f0da";
-            font-family: FontAwesome;
-            display: inline;
-            text-align: right;
-            padding-left: 5px;
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
         }
 
-        /* level 1*/
-        #sidebar .list-group .collapse .list-group-item,
-        #sidebar .list-group .collapsing .list-group-item  {
-            padding-left: 20px;
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
         }
 
-        /* level 2*/
-        #sidebar .list-group .collapse > .collapse .list-group-item,
-        #sidebar .list-group .collapse > .collapsing .list-group-item {
-            padding-left: 30px;
+        #sidebar ul li.active > a, a[aria-expanded="true"] {
+            color: #fff;
+            background: #6d7fcc;
         }
 
-        /* level 3*/
-        #sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
-            padding-left: 40px;
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
         }
-
-        @media (max-width:768px) {
-            #sidebar {
-                min-width: 35px;
-                max-width: 40px;
-                overflow-y: auto;
-                overflow-x: visible;
-                transition: all 0.25s ease;
-                transform: translateX(-45px);
-                position: fixed;
-            }
-
-            #sidebar.show {
-                transform: translateX(0);
-            }
-
-            #sidebar::-webkit-scrollbar{ width: 0px; }
-
-            #sidebar, #sidebar .list-group {
-                min-width: 35px;
-                overflow: visible;
-            }
-            /* overlay sub levels on small screens */
-            #sidebar .list-group .collapse.show, #sidebar .list-group .collapsing {
-                position: relative;
-                z-index: 1;
-                width: 190px;
-                top: 0;
-            }
-            #sidebar .list-group > .list-group-item {
-                text-align: center;
-                padding: .75rem .5rem;
-            }
-            /* hide caret icons of top level when collapsed */
-            #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
-            #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
-                display:none;
-            }
-        }
-
-        .collapse.show {
-            visibility: visible;
-        }
-        .collapsing {
-            visibility: visible;
-            height: 0;
-            -webkit-transition-property: height, visibility;
-            transition-property: height, visibility;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-        }
-        .collapsing.width {
-            -webkit-transition-property: width, visibility;
-            transition-property: width, visibility;
-            width: 0;
-            height: 100%;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-        }
-
-
-
     </style>
 </head>
 
 
 <body ng-app="myApp">
+
+
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
-        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show">
             <div class="list-group border-0 card text-center text-md-left">
 
-                <a href="#" class="list-group-item d-inline-block collapsed"><span class="oi oi-person" title="person" aria-hidden="true"></span> <i class="fa fa-film"></i> <span
-                        class="d-none d-md-inline">Edit Profile</span></a>
+                <div class="wrapper">
+                    <!-- Sidebar --->
+                    <nav id="sidebar">
+                        <ul class="list-unstyled components">
 
-                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse"
-                ><span class="oi oi-project" title="project" aria-hidden="true"></span> <span class="d-none d-md-inline">Group Setting</span></a>
+                            <li class="active">
 
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action" data-parent="#sidebar">
-                        <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
-                        Already Choosed    </a>
+                                <a href="#" data-toggle="collapse"
+                                   class="list-group-item">
+                                    <span class="oi oi-person" title="person" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Edit Profile</span>
+                                </a>
+                            <li>
+
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                   class="list-group-item dropdown-toggle">
+
+                                    <span class="oi oi-project" title="project" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Group Setting</span>
+                                </a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action"
+                                           data-parent="#sidebar">
+                                            <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
+                                            Already Choosed
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <span class="oi oi-circle-check" title="circle-check"
+                                                  aria-hidden="true"></span>
+                                            Current Choosing
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
+                                            Group Setting
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+
+                                <a href="#" data-toggle="collapse"
+                                   class="list-group-item">
+                                    <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
+                                    <span class="d-none d-inline"></span>
+                                </a>
+                            <li>
 
 
-
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <span class="oi oi-circle-check" title="circle-check" aria-hidden="true"></span>
-                        Current Choosing</a>
-
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                        Group Setting</a>
+                        </ul>
+                    </nav>
 
                 </div>
             </div>
+
         </div>
-
-
-
-
 
 
         <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
@@ -185,10 +139,10 @@
             </div>
             <hr>
 
-            <label for="inputEmail">Default Email Address</label>
+            <label for="inputEmail">Verify Email Address</label>
 
-            <output type="email" id="inputEmail" class="form-control" required
-                    autofocus ng-model="user.email" style="width:70%"> </output>
+            <input type="email" id="inputEmail" class="form-control" required
+                   autofocus ng-model="user.email" style="width:70%">
 
 
             <br>
@@ -196,10 +150,6 @@
             <label for="inputPassword">Original Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="" required
                    ng-model="user.password" style="width:70%">
-
-
-
-
 
 
             <div class="col-md-8 order-md-1">
@@ -235,6 +185,13 @@
         </main>
     </div>
 </div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="jquery/jquery-3.2.1.js"></script>
+<script src="js/Popper.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
 
 
 </body>
