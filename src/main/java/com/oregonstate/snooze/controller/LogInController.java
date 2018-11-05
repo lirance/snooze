@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-@SessionAttributes({"email","username"})
+@SessionAttributes({"user"})
 @RequestMapping("/snooze")
 public class LogInController {
 
@@ -23,8 +23,7 @@ public class LogInController {
     public boolean logIn(String inputPassword, String inputEmail, ModelMap map) {
         User user = userService.selectByEmail(inputEmail);
         if (user != null) {
-            map.addAttribute("email", user.geteMail());
-            map.addAttribute("username",user.getUserName());
+            map.addAttribute("user",user);
             return (user.getPassword()).equals(Integer.toString(inputPassword.hashCode()));
         } else {
             return false;
