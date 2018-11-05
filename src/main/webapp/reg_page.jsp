@@ -43,7 +43,7 @@
 </head>
 
 
-<body ng-app="regApp">
+<body ng-app="myApp">
 
 <script src="angularjslab.js"></script>
 
@@ -108,12 +108,12 @@
 
 
 
-<div class="col-md-6 order-md-1 " ng-app="regApp" ng-controller="regController">
+<div class="col-md-6 order-md-1 " ng-app="myApp" ng-controller="regController">
 
 
     <div class="divForm">
 
-        <form class="needs-validation" novalidate ng-app="regApp" ng-controller="regController">
+        <form class="needs-validation" novalidate ng-app="myApp" ng-controller="regController">
 
 
             <div class="row">
@@ -184,47 +184,48 @@
     </div>
 </div>
 
-<script>
-    var reapp = angular.module('regApp',[]);
-    reapp.controller('regController',function ($scope,$http) {
-        $scope.users = {};
+<script src="js/login_conlor.js"></script>
+<%--<script>--%>
+    <%--var reapp = angular.module('regApp',[]);--%>
+    <%--reapp.controller('regController',function ($scope,$http) {--%>
+        <%--$scope.users = {};--%>
 
-        $scope.submitForm = function () {
-            // console.log('enter submitForm');
-            $http({
-                method:'post',
-                url:'/snooze/signup',
-                params:{
-                    "inputEmail":$scope.users.inputEmail,
-                    "inputPassword":$scope.users.inputPassword,
-                    "resp":$scope.resp,
-                    "inputUsername":$scope.users.inputUsername
+        <%--$scope.submitForm = function () {--%>
+            <%--// console.log('enter submitForm');--%>
+            <%--$http({--%>
+                <%--method:'post',--%>
+                <%--url:'/snooze/signUp',--%>
+                <%--params:{--%>
+                    <%--"inputEmail":$scope.users.inputEmail,--%>
+                    <%--"inputPassword":$scope.users.inputPassword,--%>
+                    <%--"resp":$scope.resp,--%>
+                    <%--"inputUsername":$scope.users.inputUsername--%>
 
-                },
+                <%--},--%>
 
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-                // transformRequest: function (params) {
-                //     return $.param(params);
-                // }
-            }).then(function(resp){
-                if (resp.data === "true"){
-                    console.log(resp.data);
-                    alert("Register Succeed");
-                    window.location.href="http://localhost:8080/login_page.jsp";
-
-
-                }else if(resp.data === "false") {
-                    console.log('Email or Passowrd Error', resp.data);
-                    alert("Email had been occupied ");
-                }
+                <%--headers: {--%>
+                    <%--'Content-Type': 'application/x-www-form-urlencoded'--%>
+                <%--}--%>
+                <%--// transformRequest: function (params) {--%>
+                <%--//     return $.param(params);--%>
+                <%--// }--%>
+            <%--}).then(function(resp){--%>
+                <%--if (resp.data === "true"){--%>
+                    <%--console.log(resp.data);--%>
+                    <%--alert("Register Succeed");--%>
+                    <%--window.location.href="http://localhost:8080/login_page.jsp";--%>
 
 
-            });
-        }
-    });
-</script>
+                <%--}else if(resp.data === "false") {--%>
+                    <%--console.log('Email or Passowrd Error', resp.data);--%>
+                    <%--alert("Email had been occupied ");--%>
+                <%--}--%>
+
+
+            <%--});--%>
+        <%--}--%>
+    <%--});--%>
+<%--</script>--%>
 
 
 

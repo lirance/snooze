@@ -1,10 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Yi
-  Date: 10/21/18
-  Time: 3:45 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,75 +10,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
     <title>Personal Main Page</title>
 
+    <style>
 
+        #sidebar {
+            /* don't forget to add all the previously mentioned styles here too */
+            background: #7386D5;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+
+        #sidebar ul li.active > a, a[aria-expanded="true"] {
+            color: #fff;
+            background: #6d7fcc;
+        }
+
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
+        }
+    </style>
 </head>
-
 
 
 <body ng-app="myApp">
 
-<header>
-    <!--  -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href=" ">SNOOZE</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <!-- <form class="form-inline mt-2 mt-md-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
 
-            <span>
-          <li class="nav-item dropdown" navbar-light>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-              Options
-            </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" class="text-center">
-              <a class="dropdown-item" href="#">LogIn</a>
-              <a class="dropdown-item" href="#">Register</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
-          </div>
-          </li>
+<script src="angularjslab.js"></script>
+<script src="js/ui_router.js"></script>
 
-            </span>
+<div class="container-fluid">
+    <div class="row d-flex d-md-block flex-nowrap wrapper">
+        <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show">
+            <div class="list-group border-0 card text-center text-md-left">
+
+                <div class="wrapper">
+                    <!-- Sidebar --->
+                    <nav id="sidebar">
+                        <ul class="list-unstyled components">
+
+                            <li class="active">
+
+                                <a href="#" data-toggle="collapse"
+                                   class="list-group-item">
+                                    <span class="oi oi-person" title="person" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Edit Profile</span>
+                                </a>
+                            <li>
+
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                   class="list-group-item dropdown-toggle">
+
+                                    <span class="oi oi-project" title="project" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Group Setting</span>
+                                </a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action"
+                                           data-parent="#sidebar">
+                                            <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
+                                            Already Choosed
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <span class="oi oi-circle-check" title="circle-check"
+                                                  aria-hidden="true"></span>
+                                            Current Choosing
+                                        </a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
+                                            Group Setting
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="active">
+
+                                <a href="#" data-toggle="collapse"
+                                   class="list-group-item">
+                                    <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
+                                    <span class="d-none d-inline"></span>
+                                </a>
+                            <li>
+
+
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
 
         </div>
-    </nav>
-</header>
-<br>
-<br><br><br><br><br><br><br>
-<div class="text-center" >
-    <p>
-        <lable >
-            Main Page
 
-        </lable>
+        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+            <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+            <div class="page-header">
+                <h2>Profile</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="demo" class="width collapse show" aria-expanded="true">
+                        <div class="list-group" style="width:400px;color: #5a6268">
+                            <p>
+                            <div class="form-group">
+                                <label for="Email1" >Email address</label>
+                                <output type="email" class="form-control" id="Email1">
+                                    ${sessionScope.email}
+                                </output>
+                            </div>
+                            </p>
+
+                            <p>
+                            <div class="form-group">
+                                <label for="OutputUsername" >UserName</label>
+                                <output type="email" class="form-control" id="OutputUsername">
+                                    ${sessionScope.username}
+
+                                </output>
+                            </div
+                            ></p>
+                        </div>
+                    </div>
+                </div>
 
 
-    </p>
+            </div>
 
+        </main>
+    </div>
 </div>
-
-
-</body>
-</html>
+<script src="js/Esurvice.js"></script>
+<script src="js/login_conlor.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="jquery/jquery-3.2.1.js"></script>
+<script src="Popper.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
