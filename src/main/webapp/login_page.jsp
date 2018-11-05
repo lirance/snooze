@@ -3,7 +3,7 @@
 
 
 
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!doctype html>
@@ -22,8 +22,9 @@
 
 
 <body ng-app="myApp">
-
 <script src="angularjslab.js"></script>
+<script src="js/ui_router.js"></script>
+
 <header>
     <!--  -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -71,6 +72,7 @@
 <br/>
 <br/>
 <br/>
+<div ui-view></div>
 <!--   login form -->
 <form class="form-signin text-center" ng-app="myApp" ng-controller="loginController">
 
@@ -143,47 +145,48 @@
     </div>
 
 </form>
-<script>
-    var app = angular.module('myApp',[]);
-    app.controller('loginController',function ($scope,$http) {
-        $scope.users = {};
+<script src="js/login_conlor.js"></script>
+<%--<script>--%>
+    <%--var app = angular.module('myApp',[]);--%>
+    <%--app.controller('loginController',function ($scope,$http) {--%>
+        <%--$scope.users = {};--%>
 
-        $scope.submitForm = function () {
-            // console.log('enter submitForm');
-            $http({
-                method:'post',
-                url:'/snooze/login',
-                params:{
-                    "inputEmail":$scope.users.inputEmail,
-                    "inputPassword":$scope.users.inputPassword,
-                    "resp":$scope.resp
+        <%--$scope.submitForm = function () {--%>
+            <%--// console.log('enter submitForm');--%>
+            <%--$http({--%>
+                <%--method:'post',--%>
+                <%--url:'/snooze/login',--%>
+                <%--params:{--%>
+                    <%--"inputEmail":$scope.users.inputEmail,--%>
+                    <%--"inputPassword":$scope.users.inputPassword,--%>
+                    <%--"resp":$scope.resp--%>
 
-                },
+                <%--},--%>
 
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-                // transformRequest: function (params) {
-                //     return $.param(params);
-                // }
-            }).then(function(resp){
-                if (resp.data === "true"){
-                    console.log(resp.data);
-                    alert("Signin Success");
-                    window.location.href="http://localhost:8080/main_page.jsp";
-
-
-
-                }else if(resp.data === "false") {
-                    console.log('Email or Passowrd Error');
-                    alert("Email or Passoword error");
-                }
+                <%--headers: {--%>
+                    <%--'Content-Type': 'application/x-www-form-urlencoded'--%>
+                <%--}--%>
+                <%--// transformRequest: function (params) {--%>
+                <%--//     return $.param(params);--%>
+                <%--// }--%>
+            <%--}).then(function(resp){--%>
+                <%--if (resp.data === "true"){--%>
+                    <%--console.log(resp.data);--%>
+                    <%--alert("Signin Success");--%>
+                    <%--window.location.href="http://localhost:8080/main_page.jsp";--%>
 
 
-            });
-        }
-    });
-</script>
+
+                <%--}else if(resp.data === "false") {--%>
+                    <%--console.log('Email or Passowrd Error');--%>
+                    <%--alert("Email or Passoword error");--%>
+                <%--}--%>
+
+
+            <%--});--%>
+        <%--}--%>
+    <%--});--%>
+<%--</script>--%>
 
 
 
@@ -191,8 +194,9 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>
+<script src="Popper.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
