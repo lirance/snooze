@@ -31,4 +31,9 @@ public class GroupScheduleServiceImpl implements GroupScheduleService {
     public int updateByPrimaryKey(GroupSchedule groupSchedule) {
         return groupScheduleMapper.updateByPrimaryKey(groupSchedule);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Integer scheduleId) {
+        return groupScheduleMapper.deleteByPrimaryKey(scheduleId);
+    }
 }
