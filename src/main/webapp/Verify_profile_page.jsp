@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: yin
+  Date: 11/1/18
+  Time: 4:03 PM
+  To change this template use File | Settings | File Templates.
+--%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
@@ -12,63 +20,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet"  href="bootstrap/css/sidebar.css">
+    <title>Verify Password Page</title>
 
-    <title>Personal Main Page</title>
-
-    <style>
-
-        #sidebar {
-            /* don't forget to add all the previously mentioned styles here too */
-            background: #7386D5;
-            color: #fff;
-            transition: all 0.3s;
-        }
-
-        #sidebar .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
-        }
-
-        #sidebar ul.components {
-            padding: 20px 0;
-            border-bottom: 1px solid #47748b;
-        }
-
-        #sidebar ul p {
-            color: #fff;
-            padding: 10px;
-        }
-
-        #sidebar ul li a {
-            padding: 10px;
-            font-size: 1.1em;
-            display: block;
-        }
-
-        #sidebar ul li a:hover {
-            color: #7386D5;
-            background: #fff;
-        }
-
-        #sidebar ul li.active > a, a[aria-expanded="true"] {
-            color: #fff;
-            background: #6d7fcc;
-        }
-
-        ul ul a {
-            font-size: 0.9em !important;
-            padding-left: 30px !important;
-            background: #6d7fcc;
-        }
-    </style>
 </head>
 
 
-<body ng-app="showApp" ng-controller="showController">
-
-
+<body ng-app="mainVefiApp" ng-controller="VerifyCtrl">
 <script src="angularjslab.js"></script>
-<script src="js/ui_router.js"></script>
 
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
@@ -82,7 +41,8 @@
 
                             <li class="active">
 
-                                <a href="Verify_profile_page.jsp" class="list-group-item">
+                                <a href="#" data-toggle="collapse"
+                                   class="list-group-item">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
                                 </a>
@@ -138,70 +98,74 @@
 
         </div>
 
-        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
+
+        <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
             <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
             <div class="page-header">
-                <h2>Profile</h2>
+                <h2>Please verify your original password</h2>
             </div>
             <hr>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="demo" class="width collapse show" aria-expanded="true">
-                        <div class="list-group" style="width:400px;color: #5a6268">
-                            <p>
-                            <div class="form-group">
-                                <label for="Email1" >Email address</label>
-                                <output type="email" class="form-control" id="Email1">
-                                    ${sessionScope.user.eMail}
 
-                                </output>
-                            <%--<div ng-show="menuState.show">--%>
-                                <%--<form class="form-signin text-center" ng-app="showApp'" ng-controller="showController" ng-submit="submitForm()">--%>
+            <form class="form-verify" ng-app="mainVefiApp" ng-controller="VerifyCtrl">
 
+            <label for="outputEmail">Default Email Address</label>
 
-                                    <%--<!-- email form -->--%>
-                                    <%--<div>--%>
-                                        <%--<input id="inputEmail" name="email" type="email" placeholder="Email Address" required autofocus--%>
-                                               <%--ng-model="users.inputEmail" style="width: 40%">--%>
-                                        <%--users.inputEmail = ${sessionScope.user.eMail}--%>
-                                    <%--</div>--%>
-
-                        <%--</form>--%>
+            <output type="email" id="outputEmail" class="form-control" required
+                   autofocus style="width:70%">
+                ${sessionScope.user.eMail}
+                </output>
 
 
 
-                            <%--</div>--%>
+            <br>
 
-                            </div>
-                            </p>
+            <label for="inputPassword">Original Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="" required
+                   ng-model="users.password" style="width:70%" >
 
-                            <p>
-                            <div class="form-group">
-                                <label for="OutputUsername" >UserName</label>
-                                <output type="text" class="form-control" id="OutputUsername">
-                                    ${sessionScope.user.userName}
 
-                                </output>
-                            </div>
-                            </p>
-                        </div>
+            <div class="col-md-8 order-md-1">
+
+
+                <div class="row">
+                    <!-- Save botton -->
+                    <div class="col-md-6 mb-3">
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" style="width: 80%" align="center"
+                                type="submit" ng-click="submitForm()">Submit
+                        </button>
                     </div>
+
+                    <!-- Clean botton -->
+                    <div class="col-md-6 mb-3">
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block " style="width: 80%" align="center"
+                                type="reset">Clean
+                        </button>
+
+                    </div>
+                    <br>
+
+                    <br>
                 </div>
-
-
             </div>
+            </form>
 
         </main>
     </div>
 </div>
-<script src="js/main_page_show.js"></script>
+<script src="js/Verify_pass_user_info.js"></script>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>
-<script src="Popper.js"></script>
+<script src="js/Popper.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
+
 
 </body>
 </html>
-
-
