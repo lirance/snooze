@@ -32,4 +32,9 @@ public class GroupUserServiceImpl implements GroupUserService {
     public int updateByPrimaryKey(GroupUser groupUser) {
         return groupUserMapper.updateByPrimaryKey(groupUser);
     }
+
+    @Override
+    public int deleteByPrimaryKey(GroupUserKey groupUserKey) {
+        return groupUserMapper.deleteByPrimaryKey(groupUserKey);
+    }
 }

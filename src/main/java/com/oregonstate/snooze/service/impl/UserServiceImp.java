@@ -38,6 +38,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public int deleteByPrimaryKey(Integer userId) {
+        return userMapper.deleteByPrimaryKey(userId);
+    }
+
+    @Override
     public User selectByEmail(String email) {
         return userMapper.selectByEmail(email);
     }

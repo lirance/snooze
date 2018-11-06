@@ -33,4 +33,9 @@ public class GroupServiceImpl implements GroupService {
         return groupMapper.updateByPrimaryKey(group);
     }
 
+    @Override
+    public int deleteByPrimaryKey(Integer groupId) {
+        return groupMapper.deleteByPrimaryKey(groupId);
+    }
+
 }

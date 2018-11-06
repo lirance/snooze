@@ -33,4 +33,9 @@ public class UserScheduleServiceImp implements UserScheduleService {
     public int updateByPrimaryKey(UserSchedule userSchedule) {
         return userScheduleMapper.updateByPrimaryKey(userSchedule);
     }
+
+    @Override
+    public int deleteByPrimaryKey(UserScheduleKey userScheduleKey) {
+        return userScheduleMapper.deleteByPrimaryKey(userScheduleKey);
+    }
 }

@@ -64,7 +64,7 @@
 </head>
 
 
-<body ng-app="myApp">
+<body>
 
 
 <script src="angularjslab.js"></script>
@@ -82,7 +82,7 @@
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
+                                <a href="Verify_profile_page.jsp" data-toggle="collapse"
                                    class="list-group-item">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
@@ -153,7 +153,8 @@
                             <div class="form-group">
                                 <label for="Email1" >Email address</label>
                                 <output type="email" class="form-control" id="Email1">
-                                    ${sessionScope.email}
+                                    ${sessionScope.user.eMail}
+
                                 </output>
                             </div>
                             </p>
@@ -161,12 +162,12 @@
                             <p>
                             <div class="form-group">
                                 <label for="OutputUsername" >UserName</label>
-                                <output type="email" class="form-control" id="OutputUsername">
-                                    ${sessionScope.username}
+                                <output type="text" class="form-control" id="OutputUsername">
+                                    ${sessionScope.user.userName}
 
                                 </output>
-                            </div
-                            ></p>
+                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -177,10 +178,12 @@
         </main>
     </div>
 </div>
-<script src="js/Esurvice.js"></script>
-<script src="js/login_conlor.js"></script>
+<script src="js/main_page_show.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>
 <script src="Popper.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>

@@ -15,4 +15,6 @@ public interface BaseObjectService<Object, ObjectKey> {
     Object selectByPrimaryKey(ObjectKey objectKey);
 
     int updateByPrimaryKey(Object object);
+
+    int deleteByPrimaryKey(ObjectKey objectKey);
 }
