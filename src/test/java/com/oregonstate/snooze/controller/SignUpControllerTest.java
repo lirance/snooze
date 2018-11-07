@@ -1,6 +1,7 @@
 package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.User;
+import com.oregonstate.snooze.service.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,14 +24,17 @@ public class SignUpControllerTest {
     @Autowired
     private SignUpController signUpController;
 
+    @Autowired
+    private UserService userService;
+
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
     }
 
     @After
-    public void tearDown() throws Exception {
-        User user = signUpController.userService.selectByEmail("test@test");
-        assertEquals(1, signUpController.userService.deleteByPrimaryKey(user.getUserId()));
+    public void tearDown() {
+        User user = userService.selectByEmail("test@test");
+        assertEquals(1, userService.deleteByPrimaryKey(user.getUserId()));
     }
 
     @Test

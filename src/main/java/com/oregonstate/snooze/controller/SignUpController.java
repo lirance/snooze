@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/snooze")
 public class SignUpController {
 
-    final UserService userService;
+    private final UserService userService;
 
     @Autowired
     public SignUpController(UserService userService) {
