@@ -44,35 +44,12 @@
                             <li>
 
                             <li class="active">
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                                   class="list-group-item dropdown-toggle">
+                                <a href="#homeSubmenu" class="list-group-item ">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
-                                    <span class="d-none d-inline">Group Setting</span>
+                                    <span class="d-none d-inline">Group</span>
                                 </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
-                                            Already Choosed
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-circle-check" title="circle-check"
-                                                  aria-hidden="true"></span>
-                                            Current Choosing
-                                        </a>
 
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                            Group Setting
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <li class="active">
@@ -96,7 +73,7 @@
         <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
             <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
             <div class="page-header">
-                <h2>Profile</h2>
+                <h2> Your Profile</h2>
             </div>
             <hr>
             <div class="row">
