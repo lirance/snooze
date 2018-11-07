@@ -121,7 +121,7 @@
 
             <label for="inputPassword">Original Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="" required
-                   ng-model="users.password" style="width:70%" >
+                   ng-model="users.inputPassword" style="width:70%" >
 
 
             <div class="col-md-8 order-md-1">
