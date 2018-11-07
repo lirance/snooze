@@ -42,43 +42,20 @@
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
-                                   class="list-group-item">
+                                <a href="#" class="list-group-item" style="background-color: #0056b3">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
                                 </a>
                             <li>
 
                             <li class="active">
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                                   class="list-group-item dropdown-toggle">
+                                <a href="#homeSubmenu"
+                                   class="list-group-item">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
-                                    <span class="d-none d-inline">Group Setting</span>
+                                    <span class="d-none d-inline">Group</span>
                                 </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
-                                            Already Choosed
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-circle-check" title="circle-check"
-                                                  aria-hidden="true"></span>
-                                            Current Choosing
-                                        </a>
 
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                            Group Setting
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <li class="active">
@@ -180,6 +157,8 @@
         </form>
     </div>
 </div>
+
+
 <script src="js/main_page_edit.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
