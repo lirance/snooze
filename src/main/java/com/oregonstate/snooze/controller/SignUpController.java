@@ -17,7 +17,7 @@ public class SignUpController {
 
     @RequestMapping(value = "/signUp")
     @ResponseBody
-    public boolean signUp(String inputUsername, String inputPassword, String inputEmail){
+    public boolean signUp(String inputUsername, String inputPassword, String inputEmail) {
         User user = userService.selectByEmail(inputEmail);
         if (user == null) {
             User newUser = new User();
@@ -26,8 +26,7 @@ public class SignUpController {
             newUser.seteMail(inputEmail);
             userService.insert(newUser);
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

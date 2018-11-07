@@ -22,19 +22,19 @@ public class TestMyBatis {
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
 
 
-    @Resource
-    private UserService userService = null;
-
-    @org.junit.Test
-    public void testUserTable() {
-        User user = new User();
-        user.setUserName("t425");
-        user.setPassword("34342");
-        user.seteMail("arr234tr@fsljf.com");
-        // userService.insert(user);
-        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
-        System.out.println(JSON.toJSONString(userresutl));
-    }
+//    @Resource
+//    private UserService userService = null;
+//
+//    @org.junit.Test
+//    public void testUserTable() {
+//        User user = new User();
+//        user.setUserName("t425");
+//        user.setPassword("34342");
+//        user.seteMail("arr234tr@fsljf.com");
+//        // userService.insert(user);
+//        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
+//        System.out.println(JSON.toJSONString(userresutl));
+//    }
 
 
     @Resource

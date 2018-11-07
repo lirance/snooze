@@ -1,7 +1,5 @@
 package com.oregonstate.snooze.service;
 
-import com.oregonstate.snooze.model.GroupSchedule;
-
 /**
  * @author: Chendi Zhang
  * @date: 9/27/18

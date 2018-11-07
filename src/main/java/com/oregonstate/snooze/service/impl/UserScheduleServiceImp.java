@@ -1,7 +1,6 @@
 package com.oregonstate.snooze.service.impl;
 
 import com.oregonstate.snooze.dao.UserScheduleMapper;
-import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.model.UserSchedule;
 import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.UserScheduleService;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Service;
  * @date: 10/6/18
  * @description: user schedule service implement.
  **/
+
 @Service
 public class UserScheduleServiceImp implements UserScheduleService {
 

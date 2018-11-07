@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
  * @date: 10/12/18
  * @description: group user service implement
  **/
+
 @Service
 public class GroupUserServiceImpl implements GroupUserService {
 

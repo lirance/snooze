@@ -7,7 +7,6 @@ import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 
 import java.sql.*;
-import java.util.Date;
 import java.util.Map;
 
 /**

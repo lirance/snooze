@@ -21,8 +21,9 @@ import java.util.List;
 @RequestMapping("/login'")
 public class TestController {
 
-@Autowired
+    @Autowired
     TestService testService;
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public String testUser() throws Exception {

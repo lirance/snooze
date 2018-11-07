@@ -30,7 +30,7 @@ public class SignUpControllerTest {
     @After
     public void tearDown() throws Exception {
         User user = signUpController.userService.selectByEmail("test@test");
-        assertEquals(1,signUpController.userService.deleteByPrimaryKey(user.getUserId()));
+        assertEquals(1, signUpController.userService.deleteByPrimaryKey(user.getUserId()));
     }
 
     @Test
