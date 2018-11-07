@@ -136,7 +136,7 @@
 
 
             <label for="inputPassword">Change Password</label>
-            <input type="password" id="inputPassword" class="form-control"
+            <input type="password" id="inputPassword" class="form-control" placeholder="" required
                    ng-model="users.inputPassword" style="width:70%">
 
 
