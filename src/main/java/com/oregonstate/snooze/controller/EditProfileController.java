@@ -4,8 +4,11 @@ import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -18,12 +21,12 @@ public class EditProfileController {
 
     @RequestMapping(value = "/editProfile")
     @ResponseBody
-    public boolean editProfile(String inputEmail, String inputPassword,String newUsername, String newPassword) {
-        User user = userService.selectByEmail(inputEmail);
-        if ((user.getPassword()).equals(Integer.toString(inputPassword.hashCode()))){
+    public boolean editProfile(HttpSession session, String inputPassword, String newUsername, String newPassword) {
+        User user = (User) session.getAttribute("user");
+        //User user = userService.selectByEmail(inputEmail);
+        if ((user.getPassword()).equals(Integer.toString(inputPassword.hashCode()))) {
             return userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
-        }
-        else {
+        } else {
             return false;
         }
     }
