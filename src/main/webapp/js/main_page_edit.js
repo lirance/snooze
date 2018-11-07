@@ -8,8 +8,8 @@ app.controller('editProController',function ($scope,$http) {
             method:'post',
             url:'/snooze/editProfile',
             params:{
-                "inputPassword":$scope.users.inputPassword,
-                "inputUsername":$scope.users.inputUsername
+                "newUsername":$scope.users.inputPassword,
+                "newPassword":$scope.users.inputUsername
 
             },
 

@@ -25,7 +25,8 @@
 
 </head>
 
-
+<script src="angularjslab.js"></script>
+<script src="js/ui_router.js"></script>
 <body ng-app="editProApp" ng-controller="editProController">
 
 

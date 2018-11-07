@@ -7,7 +7,7 @@ app.controller('VerifyCtrl',function ($scope,$http) {
 
         $http({
             method:'post',
-            url:'/snooze/editProfile',
+            url:'/snooze/verifyProfile',
             params:{
                 "inputPassword":$scope.users.inputPassword
                 // "resp":$scope.resp
