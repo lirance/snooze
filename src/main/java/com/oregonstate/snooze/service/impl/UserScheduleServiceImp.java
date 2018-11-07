@@ -16,8 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserScheduleServiceImp implements UserScheduleService {
 
+    private final UserScheduleMapper userScheduleMapper;
+
     @Autowired
-    private UserScheduleMapper userScheduleMapper;
+    public UserScheduleServiceImp(UserScheduleMapper userScheduleMapper) {
+        this.userScheduleMapper = userScheduleMapper;
+    }
 
     @Override
     public int insert(UserSchedule record) {

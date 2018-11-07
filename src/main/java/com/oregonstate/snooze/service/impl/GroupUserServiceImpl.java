@@ -16,8 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GroupUserServiceImpl implements GroupUserService {
 
+    private final GroupUserMapper groupUserMapper;
+
     @Autowired
-    GroupUserMapper groupUserMapper;
+    public GroupUserServiceImpl(GroupUserMapper groupUserMapper) {
+        this.groupUserMapper = groupUserMapper;
+    }
 
     @Override
     public int insert(GroupUser record) {

@@ -14,6 +14,7 @@ import java.util.Map;
  * @date: 10/6/18
  * @description:
  **/
+
 @MappedJdbcTypes({JdbcType.VARCHAR})
 @MappedTypes({Map.class})
 public class ScheduleTypeHandler implements TypeHandler<Map<Integer, Boolean>> {

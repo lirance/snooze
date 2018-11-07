@@ -18,8 +18,12 @@ import java.util.List;
 @Service
 public class TestServiceImpl implements TestService {
 
+    private final TestUserMapper testUserMapper;
+
     @Autowired
-    private TestUserMapper testUserMapper;
+    public TestServiceImpl(TestUserMapper testUserMapper) {
+        this.testUserMapper = testUserMapper;
+    }
 
     @Override
     public List<TestUser> findUser() {

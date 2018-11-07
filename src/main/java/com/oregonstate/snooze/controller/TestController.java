@@ -18,22 +18,21 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/login'")
+@RequestMapping("/test/login'")
 public class TestController {
 
+    private final TestService testService;
+
     @Autowired
-    TestService testService;
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public String testUser() throws Exception {
         List<TestUser> testUser = testService.findUser();
         return JSON.toJSONString(testUser);
-    }
-
-    @RequestMapping(value = "/testUser.html")
-    public String html() {
-        return "testUser";
     }
 
 }

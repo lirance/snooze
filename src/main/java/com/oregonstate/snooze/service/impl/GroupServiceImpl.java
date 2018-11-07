@@ -15,8 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GroupServiceImpl implements GroupService {
 
+    private final GroupMapper groupMapper;
+
     @Autowired
-    private GroupMapper groupMapper;
+    public GroupServiceImpl(GroupMapper groupMapper) {
+        this.groupMapper = groupMapper;
+    }
 
     @Override
     public int insert(Group record) {

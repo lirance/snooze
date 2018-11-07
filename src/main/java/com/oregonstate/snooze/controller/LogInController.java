@@ -18,8 +18,12 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/snooze")
 public class LogInController {
 
+    private final UserService userService;
+
     @Autowired
-    UserService userService;
+    public LogInController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/logIn")
     @ResponseBody

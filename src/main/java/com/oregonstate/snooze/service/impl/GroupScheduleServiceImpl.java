@@ -14,8 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GroupScheduleServiceImpl implements GroupScheduleService {
 
+    private final GroupScheduleMapper groupScheduleMapper;
+
     @Autowired
-    private GroupScheduleMapper groupScheduleMapper;
+    public GroupScheduleServiceImpl(GroupScheduleMapper groupScheduleMapper) {
+        this.groupScheduleMapper = groupScheduleMapper;
+    }
 
     @Override
     public int insert(GroupSchedule record) {

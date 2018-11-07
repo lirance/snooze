@@ -7,5 +7,9 @@ package com.oregonstate.snooze.utils;
  **/
 
 public class StaticStrings {
-    public final static String SESSION_ATTRIBUTES_USER ="user";
+
+    public final static String NULL = "null";
+
+    //session attributes
+    public final static String SESSION_ATTRIBUTES_USER = "user";
 }

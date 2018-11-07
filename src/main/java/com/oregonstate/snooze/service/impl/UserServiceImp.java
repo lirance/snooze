@@ -3,6 +3,7 @@ package com.oregonstate.snooze.service.impl;
 import com.oregonstate.snooze.dao.UserMapper;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.UserService;
+import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImp implements UserService {
 
-    final static String NULL = "null";
+    private final UserMapper userMapper;
 
     @Autowired
-    private UserMapper userMapper;
+    public UserServiceImp(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 
 
     @Override
@@ -49,15 +52,15 @@ public class UserServiceImp implements UserService {
 
     @Override
     public Boolean changeProfile(String newUsername, String newPassword, User user) {
-        if (!newUsername.equals(NULL) && newPassword.equals(NULL)) {
+        if (!newUsername.equals(StaticStrings.NULL) && newPassword.equals(StaticStrings.NULL)) {
             user.setUserName(newUsername);
             updateByPrimaryKey(user);
             return true;
-        } else if (!newPassword.equals(NULL) && newUsername.equals(NULL)) {
+        } else if (!newPassword.equals(StaticStrings.NULL) && newUsername.equals(StaticStrings.NULL)) {
             user.setPassword(newPassword);
             updateByPrimaryKey(user);
             return true;
-        } else if (!newUsername.equals(NULL) && !newPassword.equals(NULL)) {
+        } else if (!newUsername.equals(StaticStrings.NULL) && !newPassword.equals(StaticStrings.NULL)) {
             user.setUserName(newUsername);
             user.setPassword(newPassword);
             updateByPrimaryKey(user);

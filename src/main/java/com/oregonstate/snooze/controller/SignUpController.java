@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/snooze")
 public class SignUpController {
 
+    final UserService userService;
+
     @Autowired
-    UserService userService;
+    public SignUpController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/signUp")
     @ResponseBody

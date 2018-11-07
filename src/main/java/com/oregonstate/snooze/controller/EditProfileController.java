@@ -16,8 +16,12 @@ import javax.servlet.http.HttpSession;
 public class EditProfileController {
 
 
+    private final UserService userService;
+
     @Autowired
-    UserService userService;
+    public EditProfileController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/editProfile")
     @ResponseBody
