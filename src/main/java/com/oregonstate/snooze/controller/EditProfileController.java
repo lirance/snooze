@@ -2,6 +2,7 @@ package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.UserService;
+import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,9 +23,9 @@ public class EditProfileController {
     @RequestMapping(value = "/editProfile")
     @ResponseBody
     public boolean editProfile(HttpSession session, String newUsername, String newPassword, ModelMap map) {
-        User user = (User) session.getAttribute("user");
+        User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
-        map.addAttribute("user", user);
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_USER, user);
         return true;
     }
 
