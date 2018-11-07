@@ -22,11 +22,9 @@ public class EditProfileController {
 
     @RequestMapping(value = "/editProfile")
     @ResponseBody
-    public boolean editProfile(HttpSession session, String newUsername, String newPassword, ModelMap map) {
+    public boolean editProfile(HttpSession session, String newUsername, String newPassword) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
-        userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_USER, user);
-        return true;
+        return userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
     }
 
 }
