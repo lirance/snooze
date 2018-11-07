@@ -21,14 +21,9 @@ public class EditProfileController {
 
     @RequestMapping(value = "/editProfile")
     @ResponseBody
-    public boolean editProfile(HttpSession session, String inputPassword, String newUsername, String newPassword) {
+    public boolean editProfile(HttpSession session, String newUsername, String newPassword) {
         User user = (User) session.getAttribute("user");
-        //User user = userService.selectByEmail(inputEmail);
-        if ((user.getPassword()).equals(Integer.toString(inputPassword.hashCode()))) {
-            return userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
-        } else {
-            return false;
-        }
+        return userService.changeProfile(newUsername, String.valueOf(newPassword.hashCode()), user);
     }
 
 }
