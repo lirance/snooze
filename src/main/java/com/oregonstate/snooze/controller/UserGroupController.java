@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: Chendi Zhang
@@ -24,6 +26,7 @@ import java.util.List;
 public class UserGroupController {
 
     private final JoinService joinService;
+    private static Map<String, List<Group>> resultMap;
 
     @Autowired
     public UserGroupController(JoinService joinService) {
@@ -33,16 +36,20 @@ public class UserGroupController {
     @RequestMapping(value = "/groupManager.json")
     @ResponseBody
     public String groupManager(HttpSession session) {
+        resultMap = new HashMap<>();
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         List<Group> groupsManager = joinService.selectGroupsByUserId(user.getUserId(), true);
-        return JSON.toJSONString(groupsManager);
+        resultMap.put("groupManager", groupsManager);
+        return JSON.toJSONString(resultMap);
     }
 
     @RequestMapping(value = "/groupGeneral.json")
     @ResponseBody
     public String groupGeneral(HttpSession session) {
+        resultMap = new HashMap<>();
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         List<Group> groupsGeneral = joinService.selectGroupsByUserId(user.getUserId(), false);
-        return JSON.toJSONString(groupsGeneral);
+        resultMap.put("groupManager", groupsGeneral);
+        return JSON.toJSONString(resultMap);
     }
 }

@@ -14,17 +14,11 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@SessionAttributes({
-        StaticStrings.SESSION_ATTRIBUTES_USER,
-        StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER,
-        StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL,
-        StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER_SIZE,
-        StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL_SIZE})
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_USER})
 @RequestMapping("/snooze")
 public class LogInController {
 
     private final UserService userService;
-
 
     @Autowired
     public LogInController(UserService userService/*, JoinService joinService*/) {
