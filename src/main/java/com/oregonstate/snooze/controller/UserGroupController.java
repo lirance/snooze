@@ -30,15 +30,15 @@ public class UserGroupController {
 
     @RequestMapping(value = "/groupManager.json")
     @ResponseBody
-    public String groupManager(HttpSession session) {
+    public  List<Group> groupManager(HttpSession session) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
-        return JSON.toJSONString(joinService.selectGroupsByUserId(user.getUserId(), true));
+        return joinService.selectGroupsByUserId(user.getUserId(), true);
     }
 
     @RequestMapping(value = "/groupGeneral.json")
     @ResponseBody
-    public String groupGeneral(HttpSession session) {
+    public List<Group> groupGeneral(HttpSession session) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
-        return JSON.toJSONString(joinService.selectGroupsByUserId(user.getUserId(), false));
+        return joinService.selectGroupsByUserId(user.getUserId(), false);
     }
 }
