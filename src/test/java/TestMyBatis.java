@@ -16,26 +16,25 @@ import java.util.Map;
  * @date: 9/28/18
  * @description:
  **/
-@RunWith(SpringJUnit4ClassRunner.class)        // implement the SpringJUnit4ClassRunner class
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class TestMyBatis {
 
     private static Logger logger = Logger.getLogger(TestMyBatis.class);
 
 
-//    @Resource
-//    private UserService userService = null;
-//
-//    @org.junit.Test
-//    public void testUserTable() {
-//        User user = new User();
-//        user.setUserName("t425");
-//        user.setPassword("34342");
-//        user.seteMail("arr234tr@fsljf.com");
-//        // userService.insert(user);
-//        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
-//        System.out.println(JSON.toJSONString(userresutl));
-//    }
+    @Resource
+    private UserService userService = null;
+
+    @org.junit.Test
+    public void testUserTable() {
+        User user = new User();
+        user.setUserName("t425");
+        user.setPassword("34342");
+        user.seteMail("arr234tr@fsljf.com");
+        // userService.insert(user);
+        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
+    }
 
 
     @Resource
@@ -77,7 +76,7 @@ public class TestMyBatis {
         groupDes.put(123, true);
         groupDes.put(123, false);
         groupSchedule.setScheduleDes(groupDes);
-       // groupScheduleService.insert(groupSchedule);
+        // groupScheduleService.insert(groupSchedule);
     }
 
 
@@ -90,11 +89,11 @@ public class TestMyBatis {
         groupUser.setGroupId(5);
         groupUser.setUserId(12);
         groupUser.setManager(true);
-        GroupUserKey groupUserKey=new GroupUserKey();
+        GroupUserKey groupUserKey = new GroupUserKey();
         groupUserKey.setGroupId(1);
         groupUserKey.setUserId(12);
-        //groupUserService.selectByPrimaryKey(groupUserKey);
-       // groupUserService.insert(groupUser);
+        groupUserService.selectByPrimaryKey(groupUserKey);
+        // groupUserService.insert(groupUser);
     }
 
 
@@ -103,7 +102,7 @@ public class TestMyBatis {
 
     @Test
     public void testJoinMapper() {
-        System.out.println(JSON.toJSONString(joinService.selectGroupsByUserId(12,true)));
+        System.out.println(JSON.toJSONString(joinService.selectGroupsByUserId(12, true)));
 
     }
 
