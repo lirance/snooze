@@ -1,5 +1,6 @@
 package com.oregonstate.snooze.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.oregonstate.snooze.model.Group;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.JoinService;
@@ -56,21 +57,23 @@ public class LogInController {
 
     @RequestMapping(value = "/groupManager")
     @ResponseBody
-    public void groupManager(HttpSession session, ModelMap map){
+    public String groupManager(HttpSession session, ModelMap map) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         List<Group> groupsManager = joinService.selectGroupsByUserId(user.getUserId(), true);
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER, groupsManager);
-        int groupsManagerSize = groupsManager.size();
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER_SIZE, groupsManagerSize);
+//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER, groupsManager);
+//        int groupsManagerSize = groupsManager.size();
+//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER_SIZE, groupsManagerSize);
+        return JSON.toJSONString(groupsManager);
     }
 
     @RequestMapping(value = "/groupGeneral")
     @ResponseBody
-    public void groupGeneral(HttpSession session, ModelMap map){
+    public String groupGeneral(HttpSession session, ModelMap map) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         List<Group> groupsGeneral = joinService.selectGroupsByUserId(user.getUserId(), false);
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL, groupsGeneral);
-        int groupsGeneralSize = groupsGeneral.size();
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL_SIZE, groupsGeneralSize);
+//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL, groupsGeneral);
+//        int groupsGeneralSize = groupsGeneral.size();
+//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL_SIZE, groupsGeneralSize);
+        return JSON.toJSONString(groupsGeneral);
     }
 }
