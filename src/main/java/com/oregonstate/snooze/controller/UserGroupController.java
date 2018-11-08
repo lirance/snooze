@@ -1,6 +1,5 @@
 package com.oregonstate.snooze.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.oregonstate.snooze.model.Group;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.JoinService;
@@ -11,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: Chendi Zhang
@@ -34,7 +31,7 @@ public class UserGroupController {
 
     @RequestMapping(value = "/groupManager.json")
     @ResponseBody
-    public  List<Group> groupManager(HttpSession session) {
+    public List<Group> groupManager(HttpSession session) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         return joinService.selectGroupsByUserId(user.getUserId(), true);
     }
