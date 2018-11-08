@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 
 @Controller
@@ -23,42 +22,40 @@ import java.util.List;
 public class GroupSettingController {
 
     @Resource
-    private final UserService userService;
     private final GroupService groupService;
     private final GroupUserService groupUserService;
-    private final JoinService joinService;
 
     @Autowired
-    public GroupSettingController(UserService userService, JoinService joinService, GroupService groupService, GroupUserService groupUserService) {
-        this.userService = userService;
+    public GroupSettingController(GroupService groupService, GroupUserService groupUserService) {
         this.groupService = groupService;
         this.groupUserService = groupUserService;
-        this.joinService = joinService;
     }
 
     @RequestMapping(value = "/groupCreate")
     @ResponseBody
-    public void groupCreate(HttpSession session, String groupName){
+    public void groupCreate(HttpSession session, String inputGroupName){
         User user = (User) session.getAttribute("user");
         Group newGroup = new Group();
-        newGroup.setGroupName(groupName);
+        newGroup.setGroupName(inputGroupName);
         groupService.insert(newGroup);
 
         GroupUser newGroupUser = new GroupUser();
         newGroupUser.setManager(true);
         newGroupUser.setUserId(user.getUserId());
         newGroupUser.setGroupId(newGroup.getGroupId());
+        groupUserService.insert(newGroupUser);
     }
 
     @RequestMapping(value = "/groupJoin")
     @ResponseBody
-    public void groupJoin(HttpSession session, int groupId){
+    public void groupJoin(HttpSession session, int inputGroupId){
         User user = (User) session.getAttribute("user");
         GroupUser newGroupUser = new GroupUser();
         newGroupUser.setManager(true);
         newGroupUser.setUserId(user.getUserId());
-        newGroupUser.setGroupId(groupId);
+        newGroupUser.setGroupId(inputGroupId);
         newGroupUser.setManager(false);
+        groupUserService.insert(newGroupUser);
     }
 }
 
