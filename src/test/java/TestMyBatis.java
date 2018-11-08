@@ -2,6 +2,7 @@ import com.alibaba.fastjson.JSON;
 import com.oregonstate.snooze.model.*;
 import com.oregonstate.snooze.service.*;
 import org.apache.log4j.Logger;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -84,12 +85,26 @@ public class TestMyBatis {
     private GroupUserService groupUserService = null;
 
     @org.junit.Test
-    public void testGroupUserTable(){
+    public void testGroupUserTable() {
         GroupUser groupUser = new GroupUser();
-        groupUser.setGroupId(1);
-        groupUser.setUserId(1);
+        groupUser.setGroupId(5);
+        groupUser.setUserId(12);
         groupUser.setManager(true);
-        //groupUserService.insert(groupUser);
+        GroupUserKey groupUserKey=new GroupUserKey();
+        groupUserKey.setGroupId(1);
+        groupUserKey.setUserId(12);
+        //groupUserService.selectByPrimaryKey(groupUserKey);
+       // groupUserService.insert(groupUser);
+    }
+
+
+    @Resource
+    private JoinService joinService = null;
+
+    @Test
+    public void testJoinMapper() {
+        System.out.println(JSON.toJSONString(joinService.selectGroupsByUserId(12,true)));
+
     }
 
 }
