@@ -1,7 +1,6 @@
 package com.oregonstate.snooze.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.oregonstate.snooze.model.Group;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.JoinService;
 import com.oregonstate.snooze.utils.StaticStrings;
@@ -11,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @author: Chendi Zhang
