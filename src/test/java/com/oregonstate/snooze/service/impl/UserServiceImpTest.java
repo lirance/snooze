@@ -28,7 +28,7 @@ public class UserServiceImpTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         user = new User();
         user.setUserName("t425");
         user.setPassword("34342");
@@ -36,7 +36,7 @@ public class UserServiceImpTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         //test delete
         assertEquals(1, userService.deleteByPrimaryKey(userService.selectByEmail("arr234tr@fsljf.com").getUserId()));
     }
@@ -47,7 +47,6 @@ public class UserServiceImpTest {
 
         //test insert
         assertEquals(1, userService.insert(user));
-        System.out.println(user.getUserId());
 
         //test select by email & id
         User userByEmail = userService.selectByEmail("arr234tr@fsljf.com");
