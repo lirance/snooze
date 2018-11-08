@@ -38,10 +38,10 @@ public class GroupSettingController {
 
     @RequestMapping(value = "/groupCreate")
     @ResponseBody
-    public void groupCreate(HttpSession session, String name){
+    public void groupCreate(HttpSession session, String groupName){
         User user = (User) session.getAttribute("user");
         Group newGroup = new Group();
-        newGroup.setGroupName(name);
+        newGroup.setGroupName(groupName);
         groupService.insert(newGroup);
 
         GroupUser newGroupUser = new GroupUser();
