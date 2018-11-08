@@ -89,7 +89,7 @@
 
                             <br>
 
-                            <a href="#" class="btn btn-success btn-lg"
+                            <a href="join_group.jsp" class="btn btn-success btn-lg"
                                style="width:80%" role="button" aria-disabled="true"> Join</a>
 
 
@@ -99,7 +99,7 @@
                         <div class="col-md-6 mb-3">
                             <br>
 
-                            <a href="#" class="btn btn-success btn-lg"
+                            <a href="create_Group_page.jsp" class="btn btn-success btn-lg"
                                style="width:80%" role="button" aria-disabled="true"> Create</a>
 
                         </div>

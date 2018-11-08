@@ -25,7 +25,7 @@
 
 
 <body ng-app="groupSetApp" ng-controller="creatGroupCtrl">
-
+<script src="angularjslab.js"></script>
 
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
