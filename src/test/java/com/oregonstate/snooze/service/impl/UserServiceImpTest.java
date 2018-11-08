@@ -47,6 +47,7 @@ public class UserServiceImpTest {
 
         //test insert
         assertEquals(1, userService.insert(user));
+        System.out.println(user.getUserId());
 
         //test select by email & id
         User userByEmail = userService.selectByEmail("arr234tr@fsljf.com");

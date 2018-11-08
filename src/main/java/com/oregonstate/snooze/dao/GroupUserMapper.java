@@ -3,6 +3,8 @@ package com.oregonstate.snooze.dao;
 import com.oregonstate.snooze.model.GroupUser;
 import com.oregonstate.snooze.model.GroupUserKey;
 
+import java.util.List;
+
 public interface GroupUserMapper {
     int deleteByPrimaryKey(GroupUserKey key);
 
@@ -15,4 +17,6 @@ public interface GroupUserMapper {
     int updateByPrimaryKeySelective(GroupUser record);
 
     int updateByPrimaryKey(GroupUser record);
+
+    List<GroupUser> selectGroupByUserId(int userId);
 }

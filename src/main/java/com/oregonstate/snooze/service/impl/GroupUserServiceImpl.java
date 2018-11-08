@@ -7,6 +7,8 @@ import com.oregonstate.snooze.service.GroupUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: chendi Zhang
  * @date: 10/12/18
@@ -41,5 +43,10 @@ public class GroupUserServiceImpl implements GroupUserService {
     @Override
     public int deleteByPrimaryKey(GroupUserKey groupUserKey) {
         return groupUserMapper.deleteByPrimaryKey(groupUserKey);
+    }
+
+    @Override
+    public List<GroupUser> selectGroupByUserId(int userId) {
+        return groupUserMapper.selectGroupByUserId(userId);
     }
 }
