@@ -1,9 +1,6 @@
 package com.oregonstate.snooze.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.oregonstate.snooze.model.Group;
 import com.oregonstate.snooze.model.User;
-import com.oregonstate.snooze.service.JoinService;
 import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 
 @Controller
@@ -28,12 +24,12 @@ import java.util.List;
 public class LogInController {
 
     private final UserService userService;
-    private final JoinService joinService;
+
 
     @Autowired
-    public LogInController(UserService userService, JoinService joinService) {
+    public LogInController(UserService userService/*, JoinService joinService*/) {
         this.userService = userService;
-        this.joinService = joinService;
+
     }
 
     @RequestMapping(value = "/logIn")
@@ -55,25 +51,4 @@ public class LogInController {
         return (user.getPassword()).equals(Integer.toString(inputPassword.hashCode()));
     }
 
-    @RequestMapping(value = "/groupManager")
-    @ResponseBody
-    public String groupManager(HttpSession session, ModelMap map) {
-        User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
-        List<Group> groupsManager = joinService.selectGroupsByUserId(user.getUserId(), true);
-//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER, groupsManager);
-//        int groupsManagerSize = groupsManager.size();
-//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_MANAGER_SIZE, groupsManagerSize);
-        return JSON.toJSONString(groupsManager);
-    }
-
-    @RequestMapping(value = "/groupGeneral")
-    @ResponseBody
-    public String groupGeneral(HttpSession session, ModelMap map) {
-        User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
-        List<Group> groupsGeneral = joinService.selectGroupsByUserId(user.getUserId(), false);
-//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL, groupsGeneral);
-//        int groupsGeneralSize = groupsGeneral.size();
-//        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUP_GENERAL_SIZE, groupsGeneralSize);
-        return JSON.toJSONString(groupsGeneral);
-    }
 }
