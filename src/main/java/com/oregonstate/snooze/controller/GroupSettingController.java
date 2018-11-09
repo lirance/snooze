@@ -5,6 +5,8 @@ import com.oregonstate.snooze.model.GroupUser;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.GroupService;
 import com.oregonstate.snooze.service.GroupUserService;
+import com.oregonstate.snooze.utils.StaticStrings;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/snooze")
 public class GroupSettingController {
 
+    private static Logger logger = Logger.getLogger(GroupSettingController.class);
+
     @Resource
     private final GroupService groupService;
     private final GroupUserService groupUserService;
@@ -30,8 +34,8 @@ public class GroupSettingController {
 
     @RequestMapping(value = "/groupCreate")
     @ResponseBody
-    public void groupCreate(HttpSession session, String inputGroupName){
-        User user = (User) session.getAttribute("user");
+    public boolean groupCreate(HttpSession session, String inputGroupName) {
+        User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         Group newGroup = new Group();
         newGroup.setGroupName(inputGroupName);
         groupService.insert(newGroup);
@@ -41,18 +45,24 @@ public class GroupSettingController {
         newGroupUser.setUserId(user.getUserId());
         newGroupUser.setGroupId(newGroup.getGroupId());
         groupUserService.insert(newGroupUser);
+        return true;
     }
 
     @RequestMapping(value = "/groupJoin")
     @ResponseBody
-    public void groupJoin(HttpSession session, int inputGroupId){
-        User user = (User) session.getAttribute("user");
+    public boolean groupJoin(HttpSession session, int inputGroupId) {
+        User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         GroupUser newGroupUser = new GroupUser();
-        newGroupUser.setManager(true);
-        newGroupUser.setUserId(user.getUserId());
-        newGroupUser.setGroupId(inputGroupId);
-        newGroupUser.setManager(false);
-        groupUserService.insert(newGroupUser);
+        try {
+            newGroupUser.setManager(false);
+            newGroupUser.setUserId(user.getUserId());
+            newGroupUser.setGroupId(inputGroupId);
+            groupUserService.insert(newGroupUser);
+        } catch (Exception exception) {
+            //logger.info("catch exception", exception);
+            return false;
+        }
+        return true;
     }
 }
 
