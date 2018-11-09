@@ -98,7 +98,7 @@ app.controller('joinGroupCtrl',function ($scope,$http){
 
             }else if(resp.data === "false") {
                 console.log('This group already exists');
-                alert("This group already exists");
+                alert("You have already in this group or This group does not exists");
             }
 
 
