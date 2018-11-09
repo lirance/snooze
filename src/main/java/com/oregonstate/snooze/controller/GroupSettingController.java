@@ -32,7 +32,7 @@ public class GroupSettingController {
         this.groupUserService = groupUserService;
     }
 
-    @RequestMapping(value = "/groupCreate")
+    @RequestMapping(value = "/group/create")
     @ResponseBody
     public boolean groupCreate(HttpSession session, String inputGroupName) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
@@ -48,7 +48,7 @@ public class GroupSettingController {
         return true;
     }
 
-    @RequestMapping(value = "/groupJoin")
+    @RequestMapping(value = "/group/join")
     @ResponseBody
     public boolean groupJoin(HttpSession session, int inputGroupId) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
