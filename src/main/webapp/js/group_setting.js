@@ -34,7 +34,7 @@ app.controller('creatGroupCtrl',function ($scope,$http) {
         // console.log('enter submitForm');
         $http({
             method:'post',
-            url:'/snooze/groupCreate',
+            url:'/snooze/group/create',
             params:{
                 "inputGroupName":$scope.users.inputGroupName
                 // "resp":$scope.resp
@@ -74,7 +74,7 @@ app.controller('joinGroupCtrl',function ($scope,$http){
         // console.log('enter submitForm');
         $http({
             method:'post',
-            url:'/snooze/groupJoin',
+            url:'/snooze/group/join',
             params:{
                 "inputGroupId":$scope.users.inputGroupId
                 // "resp":$scope.resp
