@@ -23,7 +23,57 @@ app.controller('showGroupCtrl',function ($scope,$http){
         // $scope.ugi =JSON.parse(resp.data);
         $scope.Ggroup=resp.data;
         // alert($scope.ugi);
-    })
+    });
+    $scope.passMgroupID = function(IDID){
+        $scope.passGroupID = IDID;
+        $http({
+            method:'post',
+            url:'/snooze/group/passGroupID',
+            params:{
+                "passGroupID":$scope.passGroupID
+
+            },
+
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(function(resp){
+                console.log(resp.data);
+                window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
+
+
+
+        });
+
+
+
+    };
+    $scope.passGgroupID = function(IDID){
+        $scope.passGroupID = IDID;
+        $http({
+            method:'post',
+            url:'/snooze/group/passGroupID',
+            params:{
+                "passGroupID":$scope.passGroupID
+
+            },
+
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(function(resp){
+            console.log(resp.data);
+            alert($scope.passGroupID);
+            window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+
+
+
+        });
+
+
+
+    }
+
 });
 
 
@@ -105,3 +155,10 @@ app.controller('joinGroupCtrl',function ($scope,$http){
         });
     }
 });
+
+
+
+
+
+
+

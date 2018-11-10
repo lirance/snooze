@@ -33,10 +33,10 @@ public class ScheduleGroupSettingController {
     }
 
 
-    @RequestMapping(value = "/group/ScheduleShow")
+    @RequestMapping(value = "/group/passGroupID")
     @ResponseBody
-    public boolean scheduleShow(Integer inputGroupId, ModelMap map){
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, inputGroupId);
+    public boolean scheduleShow(Integer passGroupID, ModelMap map){
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
         return true;
     }
 

@@ -118,22 +118,24 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Group Name</th>
+                    <th >Group Name</th>
                     <th>Group ID</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
 
-                <tr ng-repeat="group in Ggroup " >
-                    <td>{{group.groupName }}</td>
-                    <td>{{group.groupId }}</td>
+                        <tr ng-repeat="group in Ggroup ">
+                        <td ng-click="passGgroupID(group.groupId)">
+                            {{group.groupName }}
+                        </td>
+                        <td ng-click="passGroupID(group.groupId)">
+                            {{group.groupId}}
+                        </td>
 
                 </tr>
 
                 </tr>
-
-
 
 
                 </tbody>
@@ -157,20 +159,11 @@
                 <!--example-->
                 <div>
                     <tr ng-repeat="group in Mgropus " >
-                        <td>{{group.groupName }}</td>
-                        <td>{{group.groupId }}</td>
+                        <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
+                        <td ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
 
                     </tr>
                 </div>
-                <!--example-->
-                <%--<tr>--%>
-                    <%--<td>--%>
-                        <%--<output type="GroupName" id="GroupName6"></output>--%>
-                    <%--</td>--%>
-                    <%--<td>--%>
-                        <%--<output type="GroupID" id="GroupID6"></output>--%>
-                    <%--</td>--%>
-                <%--</tr>--%>
 
                 </tbody>
             </table>
