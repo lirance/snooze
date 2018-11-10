@@ -9,14 +9,17 @@ import com.oregonstate.snooze.utils.StaticStrings;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 
 @Controller
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_USER})
 @RequestMapping("/snooze")
 public class GroupSettingController {
 
@@ -34,7 +37,7 @@ public class GroupSettingController {
 
     @RequestMapping(value = "/group/create")
     @ResponseBody
-    public boolean groupCreate(HttpSession session, String inputGroupName) {
+    public boolean groupCreate(HttpSession session, String inputGroupName, ModelMap map) {
         User user = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
         Group newGroup = new Group();
         newGroup.setGroupName(inputGroupName);
@@ -44,6 +47,7 @@ public class GroupSettingController {
         newGroupUser.setManager(true);
         newGroupUser.setUserId(user.getUserId());
         newGroupUser.setGroupId(newGroup.getGroupId());
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUPID, newGroup.getGroupId());
         groupUserService.insert(newGroupUser);
         return true;
     }
