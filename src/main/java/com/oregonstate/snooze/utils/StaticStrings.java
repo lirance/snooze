@@ -12,5 +12,6 @@ public class StaticStrings {
 
     //session attributes
     public final static String SESSION_ATTRIBUTES_USER = "user";
-    public final static String SESSION_ATTRIBUTES_GROUPID = "groupId";
+    public final static String SESSION_ATTRIBUTES_MANAGER_GROUP_ID = "managerGroupId";
+    public final static String SESSION_ATTRIBUTES_CURRENT_GROUP_ID = "generalGroupId";
 }

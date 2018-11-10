@@ -9,6 +9,7 @@ import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,11 +33,18 @@ public class ScheduleGroupSettingController {
     }
 
 
+    @RequestMapping(value = "/group/ScheduleShow")
+    @ResponseBody
+    public boolean scheduleShow(Integer inputGroupId, ModelMap map){
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, inputGroupId);
+        return true;
+    }
+
     @RequestMapping(value = "/group/voidSchedule")
     @ResponseBody
     public boolean scheduleCreateManager(HttpSession session, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
 
-        Integer groupId = (int)session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUPID);
+        Integer groupId = (int)session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID);
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);

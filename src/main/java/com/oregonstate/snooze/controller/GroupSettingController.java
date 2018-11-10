@@ -47,7 +47,7 @@ public class GroupSettingController {
         newGroupUser.setManager(true);
         newGroupUser.setUserId(user.getUserId());
         newGroupUser.setGroupId(newGroup.getGroupId());
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUPID, newGroup.getGroupId());
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID, newGroup.getGroupId());
         groupUserService.insert(newGroupUser);
         return true;
     }
