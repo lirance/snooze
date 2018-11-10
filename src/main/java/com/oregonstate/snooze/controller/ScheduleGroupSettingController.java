@@ -34,7 +34,7 @@ public class ScheduleGroupSettingController {
 
     @RequestMapping(value = "/group/voidSchedule")
     @ResponseBody
-    public boolean scheduleCreate(HttpSession session, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
+    public boolean scheduleCreateManager(HttpSession session, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
 
         Integer groupId = (int)session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_GROUPID);
 
@@ -48,7 +48,7 @@ public class ScheduleGroupSettingController {
 
     @RequestMapping(value = "/group/newSchedule")
     @ResponseBody
-    public boolean scheduleCreate(Integer inputGroupId, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
+    public boolean scheduleCreateGeneral(Integer inputGroupId, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
