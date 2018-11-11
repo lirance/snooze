@@ -86,7 +86,7 @@
 
         </div>
 
-        <from class="form-showGroup text-center" ng-app="groupSetApp" ng-controller="joinGroupCtrl">
+        <from class="form-showGroup" ng-app="groupSetApp" ng-controller="joinGroupCtrl">
             <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
                 <a href="join_group.jsp" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                 <div class="page-header">
