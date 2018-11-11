@@ -70,8 +70,6 @@ app.controller('showGroupCtrl',function ($scope,$http){
 
         });
 
-
-
     }
 
 });

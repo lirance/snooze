@@ -42,7 +42,7 @@
 
                             <li class="active">
 
-                                <a href="#" class="list-group-item" style="background-color: #0056b3">
+                                <a href="Verify_profile_page.jsp" class="list-group-item" style="background-color: #0056b3">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
                                 </a>
