@@ -60,7 +60,6 @@
                             <li class="active">
                                 <a href="group_setting_page.jsp"
                                    class="list-group-item">
-
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Group</span>
                                 </a>
