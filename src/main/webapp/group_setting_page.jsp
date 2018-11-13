@@ -113,7 +113,7 @@
             <br>
             <br>
 
-            <h5>The Group You Joined___Member</h5>
+            <h5>The Group You Joined</h5>
 
             <table class="table table-striped">
                 <thead>
@@ -147,7 +147,7 @@
             <br>
 
 
-            <h5>The Group You Created___Manger</h5>
+            <h5>The Group You Created</h5>
 
 
             <table class="table table-striped">
