@@ -55,7 +55,7 @@
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
+                                <a href="#"
                                    class="list-group-item">
                                     <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Log Out</span>
