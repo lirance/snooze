@@ -57,8 +57,8 @@
 
                                 <a href="#" data-toggle="collapse"
                                    class="list-group-item">
-                                    <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                    <span class="d-none d-inline"></span>
+                                    <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Log Out</span>
                                 </a>
                             <li>
 
@@ -113,13 +113,14 @@
             <br>
             <br>
 
-            <p>The Group You Joined___Member</p>
+            <h5>The Group You Joined___Member</h5>
 
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th >Group Name</th>
                     <th>Group ID</th>
+                    <th >Group Name</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -145,14 +146,15 @@
             <br>
 
 
-            <p>The Group You Created___Manger</p>
+            <h5>The Group You Created___Manger</h5>
 
 
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Group Name</th>
                     <th>Group ID</th>
+                    <th>Group Name</th>
+
                 </tr>
                 </thead>
                 <tbody>
