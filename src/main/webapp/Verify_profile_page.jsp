@@ -38,11 +38,19 @@
                     <!-- Sidebar --->
                     <nav id="sidebar">
                         <ul class="list-unstyled components">
+                            <li class="active">
+
+                                <a href="main_page.jsp"
+                                   class="list-group-item">
+                                    <span class="oi oi-home" title="home" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Main Page</span>
+                                </a>
+                            <li>
 
                             <li class="active">
 
-                                <a href="Verify_profile_page.jsp" data-toggle="collapse"
-                                   class="list-group-item">
+                                <a href="Verify_profile_page.jsp"
+                                   class="list-group-item" style="background-color: #0056b3">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
                                 </a>

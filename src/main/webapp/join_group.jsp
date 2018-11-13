@@ -29,6 +29,15 @@
 
                             <li class="active">
 
+                                <a href="main_page.jsp"
+                                   class="list-group-item">
+                                    <span class="oi oi-home" title="home" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Main Page</span>
+                                </a>
+                            <li>
+
+                            <li class="active">
+
                                 <a href="Verify_profile_page.jsp" data-toggle="collapse"
                                    class="list-group-item">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>

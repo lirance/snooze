@@ -38,7 +38,14 @@
                     <!-- Sidebar --->
                     <nav id="sidebar">
                         <ul class="list-unstyled components">
+                            <li class="active">
 
+                                <a href="main_page.jsp"
+                                   class="list-group-item">
+                                    <span class="oi oi-home" title="home" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Main Page</span>
+                                </a>
+                            <li>
                             <li class="active">
 
                                 <a href="Verify_profile_page.jsp"
