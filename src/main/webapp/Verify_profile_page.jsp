@@ -41,7 +41,7 @@
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
+                                <a href="Verify_profile_page.jsp" data-toggle="collapse"
                                    class="list-group-item">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
@@ -82,7 +82,7 @@
 
                             <li class="active">
 
-                                <a href="#"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Log Out</span>

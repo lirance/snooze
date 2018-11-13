@@ -55,7 +55,7 @@
 
                             <li class="active">
 
-                                <a href="#"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Log Out</span>
@@ -127,11 +127,12 @@
                 <tr>
 
                         <tr ng-repeat="group in Ggroup ">
-                        <td ng-click="passGgroupID(group.groupId)">
+                    <td ng-click="passGroupID(group.groupId)">
+                        {{group.groupId}}
+                    </td>
+
+                    <td ng-click="passGgroupID(group.groupId)">
                             {{group.groupName }}
-                        </td>
-                        <td ng-click="passGroupID(group.groupId)">
-                            {{group.groupId}}
                         </td>
 
                 </tr>
@@ -161,8 +162,8 @@
                 <!--example-->
                 <div>
                     <tr ng-repeat="group in Mgropus " >
-                        <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
                         <td ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
+                        <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
 
                     </tr>
                 </div>

@@ -39,9 +39,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
             }
         }).then(function(resp){
                 console.log(resp.data);
-                window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
-
-
+                window.location.href="http://localhost:8080/member_list_manger_page.jsp";
 
         });
 
@@ -64,7 +62,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
         }).then(function(resp){
             console.log(resp.data);
             alert($scope.passGroupID);
-            window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+            window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
 
 
 
@@ -100,7 +98,7 @@ app.controller('creatGroupCtrl',function ($scope,$http) {
                 console.log(resp.data);
                 // alert("Join Group Success");
                 alert("Create Group Success");
-                window.location.href="http://localhost:8080/group_setting_page.jsp";
+                window.location.href="http://localhost:8080/create_schedule.jsp";
 
 
             }else if(resp.data === "false") {
