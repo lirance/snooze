@@ -25,7 +25,7 @@ app.controller('loginController',function ($scope,$http) {
         }).then(function(resp){
             if (resp.data === "true"){
                 console.log(resp.data);
-                alert("Signin Success");
+                //alert("Signin Success");
                 window.location.href="http://localhost:8080/main_page.jsp";
 
 
