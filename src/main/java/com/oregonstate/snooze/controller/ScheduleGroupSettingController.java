@@ -40,28 +40,26 @@ public class ScheduleGroupSettingController {
         return true;
     }
 
-    @RequestMapping(value = "/group/voidSchedule")
+    @RequestMapping(value = "/manager/select/time")
     @ResponseBody
-    public boolean scheduleCreateManager(HttpSession session, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
+    public boolean scheduleCreateManager(HttpSession session, String inputScheduleName){
 
         Integer groupId = (int)session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID);
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
         newGroupSchedule.setGroupId(groupId);
-        newGroupSchedule.setScheduleDes(inputScheduleDes);
         groupScheduleService.insert(newGroupSchedule);
         return true;
     }
 
-    @RequestMapping(value = "/group/newSchedule")
+    @RequestMapping(value = "/manager/select/time")
     @ResponseBody
-    public boolean scheduleCreateGeneral(Integer inputGroupId, String inputScheduleName, Map<Integer, Boolean> inputScheduleDes){
+    public boolean scheduleCreateGeneral(Integer inputGroupId, String inputScheduleName){
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
         newGroupSchedule.setGroupId(inputGroupId);
-        newGroupSchedule.setScheduleDes(inputScheduleDes);
         groupScheduleService.insert(newGroupSchedule);
         return true;
     }
