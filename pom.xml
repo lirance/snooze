@@ -17,7 +17,7 @@
         <project.reporting.ourputEncoding>UTF-8</project.reporting.ourputEncoding>
 
         <!-- spring version -->
-        <spring.version>4.3.17.RELEASE</spring.version>
+        <spring.version>4.3.18.RELEASE</spring.version>
 
         <!--mybatis version-->
         <mybatis.version>3.2.8</mybatis.version>
