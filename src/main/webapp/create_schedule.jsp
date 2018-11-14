@@ -137,7 +137,7 @@
                 <br>
                 <br>
                 <input type="text" class="form-control" id="schName" placeholder="" value="" required autofocus
-                       ng-model="users.inputSchedualName" style="width:70%">
+                       ng-model="users.inputGroupName" style="width:70%">
 
 
 
@@ -153,9 +153,10 @@
                             <br>
                             <br>
                             <br>
-                            <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
-                                    type="submit" ng-click="submitForm()">Submit
-                            </button>
+
+                            <a href="group_setting_page.jsp" class="btn btn-success btn-lg"
+                               style="width:80%" role="button" aria-disabled="true">Submit</a>
+
                         </div>
 
 
@@ -165,7 +166,7 @@
                             <br>
                             <br>
                             <button class="btn btn-lg btn-success btn-block " style="width: 80%" align="center"
-                                    type="reset" value="Reset" >Clean
+                                    type="reset" value="Reset" ng-click="submitForm()">Clean
                             </button>
                         </div>
                         <br>
@@ -179,9 +180,9 @@
 
 </div>
 </div>
-<script src="js/schedual_seeting.js"> </script>
 
-
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>
 <script src="js/Popper.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
