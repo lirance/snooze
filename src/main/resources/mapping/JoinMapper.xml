@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oregonstate.snooze.dao.JoinMapper">
+    <resultMap id="GroupResultMap" type="com.oregonstate.snooze.model.Group">
+        <id column="groupId" jdbcType="INTEGER" property="groupId"/>
+        <result column="groupName" jdbcType="VARCHAR" property="groupName"/>
+    </resultMap>
+    <sql id="Group_Column_List">
+      groupId, groupName
+    </sql>
+    <select id="selectGroupsByUserId" resultMap="GroupResultMap">
+        select
+        `group`.groupId,groupName
+        from `group`
+        join `group_user`
+        on `group`.groupId=`group_user`.groupId
+        where userId = #{0} and manager = #{1}
+    </select>
+
+
+</mapper>

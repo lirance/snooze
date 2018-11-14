@@ -10,13 +10,18 @@ import org.springframework.stereotype.Service;
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
- * @description:
+ * @description: user schedule service implement.
  **/
+
 @Service
 public class UserScheduleServiceImp implements UserScheduleService {
 
+    private final UserScheduleMapper userScheduleMapper;
+
     @Autowired
-    private UserScheduleMapper userScheduleMapper;
+    public UserScheduleServiceImp(UserScheduleMapper userScheduleMapper) {
+        this.userScheduleMapper = userScheduleMapper;
+    }
 
     @Override
     public int insert(UserSchedule record) {
@@ -26,5 +31,15 @@ public class UserScheduleServiceImp implements UserScheduleService {
     @Override
     public UserSchedule selectByPrimaryKey(UserScheduleKey key) {
         return userScheduleMapper.selectByPrimaryKey(key);
+    }
+
+    @Override
+    public int updateByPrimaryKey(UserSchedule userSchedule) {
+        return userScheduleMapper.updateByPrimaryKey(userSchedule);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(UserScheduleKey userScheduleKey) {
+        return userScheduleMapper.deleteByPrimaryKey(userScheduleKey);
     }
 }

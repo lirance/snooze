@@ -7,7 +7,6 @@ import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 
 import java.sql.*;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -15,6 +14,7 @@ import java.util.Map;
  * @date: 10/6/18
  * @description:
  **/
+
 @MappedJdbcTypes({JdbcType.VARCHAR})
 @MappedTypes({Map.class})
 public class ScheduleTypeHandler implements TypeHandler<Map<Integer, Boolean>> {

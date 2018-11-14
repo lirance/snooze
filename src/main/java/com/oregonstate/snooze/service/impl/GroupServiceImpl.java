@@ -9,14 +9,18 @@ import org.springframework.stereotype.Service;
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
- * @description:
+ * @description: group service implement
  **/
 
 @Service
 public class GroupServiceImpl implements GroupService {
 
+    private final GroupMapper groupMapper;
+
     @Autowired
-    private GroupMapper groupMapper;
+    public GroupServiceImpl(GroupMapper groupMapper) {
+        this.groupMapper = groupMapper;
+    }
 
     @Override
     public int insert(Group record) {
@@ -24,7 +28,18 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group selectByGroupId(int groupId) {
+    public Group selectByPrimaryKey(Integer groupId) {
         return groupMapper.selectByPrimaryKey(groupId);
     }
+
+    @Override
+    public int updateByPrimaryKey(Group group) {
+        return groupMapper.updateByPrimaryKey(group);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Integer groupId) {
+        return groupMapper.deleteByPrimaryKey(groupId);
+    }
+
 }

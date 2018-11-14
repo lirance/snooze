@@ -20,7 +20,7 @@
     delete from user
     where userId = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.oregonstate.snooze.model.User">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="userId" parameterType="com.oregonstate.snooze.model.User">
     insert into user (userName, password,
       email)
     values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},

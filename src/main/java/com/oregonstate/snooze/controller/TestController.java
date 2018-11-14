@@ -14,25 +14,25 @@ import java.util.List;
 /**
  * @author: Chendi Zhang
  * @date: 9/27/18
- * @description:
+ * @description: test controller to test the if the json can get from the front end
  */
 
 @Controller
-@RequestMapping("/login'")
+@RequestMapping("/test/login'")
 public class TestController {
 
-@Autowired
-    TestService testService;
+    private final TestService testService;
+
+    @Autowired
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public String testUser() throws Exception {
         List<TestUser> testUser = testService.findUser();
         return JSON.toJSONString(testUser);
-    }
-
-    @RequestMapping(value = "/testUser.html")
-    public String html() {
-        return "testUser";
     }
 
 }

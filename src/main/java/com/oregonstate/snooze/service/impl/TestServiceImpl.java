@@ -12,14 +12,18 @@ import java.util.List;
 /**
  * @author: Chendi Zhang
  * @date: 9/27/18
- * @description:
+ * @description: test service implement, test if the service can work.
  */
 
 @Service
 public class TestServiceImpl implements TestService {
 
+    private final TestUserMapper testUserMapper;
+
     @Autowired
-    private TestUserMapper testUserMapper;
+    public TestServiceImpl(TestUserMapper testUserMapper) {
+        this.testUserMapper = testUserMapper;
+    }
 
     @Override
     public List<TestUser> findUser() {
@@ -33,5 +37,20 @@ public class TestServiceImpl implements TestService {
     @Override
     public int insert(TestUser record) {
         return testUserMapper.insert(record);
+    }
+
+    @Override
+    public TestUser selectByPrimaryKey(Integer integer) {
+        return testUserMapper.selectByPrimaryKey(integer);
+    }
+
+    @Override
+    public int updateByPrimaryKey(TestUser testUser) {
+        return testUserMapper.updateByPrimaryKey(testUser);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Integer integer) {
+        return testUserMapper.deleteByPrimaryKey(integer);
     }
 }

@@ -1,6 +1,5 @@
 package com.oregonstate.snooze.service;
 
-import com.oregonstate.snooze.model.GroupSchedule;
 import com.oregonstate.snooze.model.UserSchedule;
 import com.oregonstate.snooze.model.UserScheduleKey;
 
@@ -10,8 +9,6 @@ import com.oregonstate.snooze.model.UserScheduleKey;
  * @description:
  **/
 
-public interface UserScheduleService {
-    int insert(UserSchedule record);
+public interface UserScheduleService extends BaseObjectService<UserSchedule, UserScheduleKey> {
 
-    UserSchedule selectByPrimaryKey(UserScheduleKey key);
 }

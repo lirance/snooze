@@ -7,6 +7,6 @@ import com.oregonstate.snooze.model.GroupSchedule;
  * @date: 10/6/18
  * @description:
  **/
-public interface GroupScheduleService {
-    int insert(GroupSchedule record);
+
+public interface GroupScheduleService extends BaseObjectService<GroupSchedule, Integer> {
 }

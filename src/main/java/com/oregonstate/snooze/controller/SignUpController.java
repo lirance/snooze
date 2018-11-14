@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/snooze")
 public class SignUpController {
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
-    @RequestMapping(value = "/signup")
+    @Autowired
+    public SignUpController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @RequestMapping(value = "/signUp")
     @ResponseBody
-    public boolean SignUp(String inputUsername, String inputPassword, String inputEmail){
+    public boolean signUp(String inputUsername, String inputPassword, String inputEmail) {
         User user = userService.selectByEmail(inputEmail);
         if (user == null) {
             User newUser = new User();
@@ -26,8 +30,7 @@ public class SignUpController {
             newUser.seteMail(inputEmail);
             userService.insert(newUser);
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

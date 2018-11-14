@@ -8,9 +8,5 @@ import com.oregonstate.snooze.model.Group;
  * @description:
  **/
 
-public interface GroupService {
-
-    int insert(Group record);
-
-    Group selectByGroupId(int groupId);
+public interface GroupService extends BaseObjectService<Group, Integer> {
 }

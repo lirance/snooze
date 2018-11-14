@@ -19,7 +19,7 @@
     delete from `group`
     where groupId = #{groupId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.oregonstate.snooze.model.Group">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="groupId" parameterType="com.oregonstate.snooze.model.Group">
     insert into `group` (groupName)
     values (#{groupName,jdbcType=VARCHAR})
   </insert>

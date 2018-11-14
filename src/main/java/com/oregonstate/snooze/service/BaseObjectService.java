@@ -6,5 +6,13 @@ package com.oregonstate.snooze.service;
  * @description:
  */
 
-public interface BaseObjectService {
+public interface BaseObjectService<Object, ObjectKey> {
+
+    int insert(Object record);
+
+    Object selectByPrimaryKey(ObjectKey objectKey);
+
+    int updateByPrimaryKey(Object object);
+
+    int deleteByPrimaryKey(ObjectKey objectKey);
 }

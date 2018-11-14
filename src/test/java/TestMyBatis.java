@@ -2,6 +2,7 @@ import com.alibaba.fastjson.JSON;
 import com.oregonstate.snooze.model.*;
 import com.oregonstate.snooze.service.*;
 import org.apache.log4j.Logger;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -15,7 +16,7 @@ import java.util.Map;
  * @date: 9/28/18
  * @description:
  **/
-@RunWith(SpringJUnit4ClassRunner.class)        // implement the SpringJUnit4ClassRunner class
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class TestMyBatis {
 
@@ -33,7 +34,6 @@ public class TestMyBatis {
         user.seteMail("arr234tr@fsljf.com");
         // userService.insert(user);
         User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
-        System.out.println(JSON.toJSONString(userresutl));
     }
 
 
@@ -58,7 +58,7 @@ public class TestMyBatis {
         Group group = new Group();
         group.setGroupName("test_group_name");
         //groupService.insert(group);
-        logger.info(JSON.toJSONString(groupService.selectByGroupId(1)));
+        logger.info(JSON.toJSONString(groupService.selectByPrimaryKey(1)));
 
     }
 
@@ -76,7 +76,7 @@ public class TestMyBatis {
         groupDes.put(123, true);
         groupDes.put(123, false);
         groupSchedule.setScheduleDes(groupDes);
-       // groupScheduleService.insert(groupSchedule);
+        // groupScheduleService.insert(groupSchedule);
     }
 
 
@@ -84,12 +84,26 @@ public class TestMyBatis {
     private GroupUserService groupUserService = null;
 
     @org.junit.Test
-    public void testGroupUserTable(){
+    public void testGroupUserTable() {
         GroupUser groupUser = new GroupUser();
-        groupUser.setGroupId(1);
-        groupUser.setUserId(1);
+        groupUser.setGroupId(5);
+        groupUser.setUserId(12);
         groupUser.setManager(true);
-        //groupUserService.insert(groupUser);
+        GroupUserKey groupUserKey = new GroupUserKey();
+        groupUserKey.setGroupId(1);
+        groupUserKey.setUserId(12);
+        groupUserService.selectByPrimaryKey(groupUserKey);
+        // groupUserService.insert(groupUser);
+    }
+
+
+    @Resource
+    private JoinService joinService = null;
+
+    @Test
+    public void testJoinMapper() {
+        System.out.println(JSON.toJSONString(joinService.selectGroupsByUserId(12, true)));
+
     }
 
 }

@@ -10,10 +10,9 @@ import java.util.List;
  * @description:
  */
 
-public interface TestService {
+public interface TestService extends BaseObjectService<TestUser, Integer> {
 
     List<TestUser> findUser() throws Exception;
 
-    int insert(TestUser record);
 
 }
