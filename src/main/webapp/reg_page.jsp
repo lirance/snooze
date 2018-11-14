@@ -140,8 +140,12 @@
                 <br/>
 
 
-                <input type="email" id="inputEmail" class="form-control" placeholder="xxxxxxxxx@xxx.xxx" required
-                       autofocus ng-model="users.inputEmail" style="width: 207%">
+                <%--<input type="email" id="inputEmail" class="form-control" placeholder="xxxxxxxxx@xxx.xxx" required--%>
+                       <%--autofocus ng-model="users.inputEmail" style="width: 207%">--%>
+
+
+                <input id="inputEmail" name="email" type="email" placeholder="xxxxxxxxx@xxx.xxx" required autofocus
+                       ng-model="users.inputEmail" style="width: 207%">
 
                 <br>
 
