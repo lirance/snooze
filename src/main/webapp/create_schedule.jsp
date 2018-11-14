@@ -153,10 +153,9 @@
                             <br>
                             <br>
                             <br>
-
-                            <a href="group_setting_page.jsp" class="btn btn-success btn-lg"
-                               style="width:80%" role="button" aria-disabled="true">Submit</a>
-
+                            <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
+                                    type="submit">Submit
+                            </button>
                         </div>
 
 
