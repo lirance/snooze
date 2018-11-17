@@ -135,7 +135,7 @@
                 <tr>
 
                         <tr ng-repeat="group in Ggroup ">
-                    <td ng-click="passGroupID(group.groupId)">
+                    <td ng-click="passGgroupID(group.groupId)">
                         {{group.groupId}}
                     </td>
 

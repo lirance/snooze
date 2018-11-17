@@ -61,9 +61,8 @@ app.controller('showGroupCtrl',function ($scope,$http){
             }
         }).then(function(resp){
             console.log(resp.data);
-            alert($scope.passGroupID);
+            //alert($scope.passGroupID);
             window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
-
 
 
         });
