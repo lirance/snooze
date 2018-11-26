@@ -43,8 +43,6 @@ app.controller('showGroupCtrl',function ($scope,$http){
 
         });
 
-
-
     };
     $scope.passGgroupID = function(IDID){
         $scope.passGroupID = IDID;
@@ -153,7 +151,18 @@ app.controller('joinGroupCtrl',function ($scope,$http){
 
 
 
+app.controller('groupMemberCtrl',function ($scope,$http){
 
 
+    $http({
+        method:'GET',
+        url:'/snooze/groupMember.json'
+
+    }).then(function (resp)
+    {
+        $scope.groupMember=resp.data;
+        // alert($scope.ugi);
+    });
 
 
+});
