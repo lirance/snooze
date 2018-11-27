@@ -34,7 +34,7 @@
                         <ul class="list-unstyled components">
                             <li class="active">
 
-                                <a href="#"
+                                <a href="main_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-home" title="home" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Main Page</span>
@@ -42,7 +42,7 @@
                             <li>
                             <li class="active">
 
-                                <a href="#"
+                                <a href="Verify_profile_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-person" title="person" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Edit Profile</span>
@@ -58,7 +58,7 @@
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                        <a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action"
                                            style="background-color: #80bdff">
                                             <span class="oi oi-circle-check" title="circle-check"
                                                   aria-hidden="true"></span>
@@ -67,7 +67,7 @@
 
                                     </li>
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
+                                        <a href="publish_menber_page_shedual.jsp" class="list-group-item list-group-item-action">
                                             <span class="oi oi-flag" title="flag"
                                                   aria-hidden="true"></span>
                                             Published
@@ -79,7 +79,7 @@
 
                             <li class="active">
 
-                                <a href="#"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Log Out</span>
@@ -746,7 +746,7 @@
                             <div class="col-lg">
 
                                 <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
-                                        type="submit" ng-click="show()">Submit
+                                        type="submit" ng-click="show(),submitForm()">Submit
                                 </button>
 
 
