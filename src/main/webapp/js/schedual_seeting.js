@@ -65,29 +65,32 @@ app.controller('selectTimeCtrl',function ($scope,$http) {
             if(obj[k].checked)
                 $scope.check_val.push(obj[k].value);
         }
-        //alert($scope.check_val);
+        console.log($scope.check_val);
+        alert($scope.check_val);
+        $http({
+            method:'post',
+            url:'/snooze/member/select/time',
+            params:{
+                "selectedTime":$scope.check_val
+
+            },
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+
+        }).then(function(resp){
+            if (resp.data === "true"){
+                console.log(resp.data);
+                alert("Shift Submitted");
+                window.location.href="http://localhost:8080/group_setting_page.jsp";
+            } else if(resp.data === "false") {
+                console.log('Email or Passowrd Error');
+                alert("Error");
+            }
+
+        });
     };
 
-    $scope.submitForm = function () {
-            $http({
-                method:'post',
-                url:'/snooze/manager/select/time',
-                params:{
-                    "selectedTime":$scope.check_val
-
-                },
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-
-            }).then(function(resp){
-                if (resp.data === "true"){
-                    console.log(resp.data);
-                    alert("Shift Submitted");
-                    window.location.href="http://localhost:8080/group_setting_page.jsp";
-                }
-            });
-        }
 
 });
 

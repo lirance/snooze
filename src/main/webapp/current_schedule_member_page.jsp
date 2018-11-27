@@ -746,7 +746,7 @@
                             <div class="col-lg">
 
                                 <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
-                                        type="submit" ng-click="show(),submitForm()">Submit
+                                        type="submit" ng-click="show()">Submit
                                 </button>
 
 
