@@ -28,7 +28,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
         $scope.passGroupID = IDID;
         $http({
             method:'post',
-            url:'/snooze/group/passGroupID',
+            url:'/snooze/manager/enter/group',
             params:{
                 "passGroupID":$scope.passGroupID
 
@@ -53,7 +53,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
         $scope.passGroupID = IDID;
         $http({
             method:'post',
-            url:'/snooze/group/passGroupID',
+            url:'/snooze/member/enter/group',
             params:{
                 "passGroupID":$scope.passGroupID
 
