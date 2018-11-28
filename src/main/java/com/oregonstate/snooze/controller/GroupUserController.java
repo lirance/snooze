@@ -28,14 +28,14 @@ public class GroupUserController {
         this.joinService = joinService;
     }
 
-    @RequestMapping(value = "/Managers.json")
+    @RequestMapping(value = "/managers.json")
     @ResponseBody
     public List<User> getGroupManagers(HttpSession session) {
         int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
         return joinService.selectUsersByGroupId(groupId, true);
     }
 
-    @RequestMapping(value = "/Members.json")
+    @RequestMapping(value = "/generalMembers.json")
     @ResponseBody
     public List<User> getGroupMembers(HttpSession session) {
         int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
