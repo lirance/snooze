@@ -105,6 +105,17 @@
                 <hr>
 
 
+                <label for="groupame" >Group Name</label>
+                <output type="text" id="groupame" class="form-control" required
+                        autofocus ng-model="user.inputGroupName" style="width:70%"> </output>
+                <br>
+
+                <label for="scheduleName">Current Schedule name</label>
+                <output type="text" id="scheduleName" class="form-control" required
+                        autofocus ng-model="user.inputScheduleName" style="width:70%"> </output>
+                <br>
+
+                <br>
                 <br>
 
 
