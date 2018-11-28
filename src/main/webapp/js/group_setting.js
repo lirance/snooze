@@ -38,8 +38,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-                // console.log(resp.data);
-                // window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+
             if (resp.data === "true"){
                 console.log(resp.data);
                 window.location.href="http://localhost:8080/member_list_manger_page.jsp";
@@ -189,13 +188,13 @@ app.controller('groupMemberCtrl',function ($scope,$http){
 
     $http({
         method:'GET',
-        url:'/snooze/groupMember.json'
+        url:'/snooze///generalMembers.json'
 
     }).then(function (resp)
     {
-        $scope.groupMember=resp.data;
-        // alert($scope.ugi);
+        $scope.allmembers=resp.data;
     });
+
 
 
 });
