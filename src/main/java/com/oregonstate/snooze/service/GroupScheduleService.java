@@ -9,4 +9,7 @@ import com.oregonstate.snooze.model.GroupSchedule;
  **/
 
 public interface GroupScheduleService extends BaseObjectService<GroupSchedule, Integer> {
+
+    GroupSchedule getGroupCurrentSchedule(int groupId);
+
 }

@@ -23,10 +23,13 @@
       and userId = #{userId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.UserSchedule">
-    insert into schedule_u (scheduleId, userId, scheduleDes, 
+    insert into schedule_u (scheduleId, userId, scheduleDes,
       hours)
     values (#{scheduleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{scheduleDes,jdbcType=VARCHAR},
       #{hours,jdbcType=VARCHAR})
+      ON DUPLICATE KEY UPDATE
+			 scheduleDes = VALUES(scheduleDes),
+			 hours = VALUES(hours)
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.UserSchedule">
     insert into schedule_u

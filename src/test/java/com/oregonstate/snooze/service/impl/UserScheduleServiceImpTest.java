@@ -45,4 +45,8 @@ public class UserScheduleServiceImpTest {
     @Test
     public void deleteByPrimaryKey() {
     }
+
+    @Test
+    public void updateUserSchedule() {
+    }
 }
