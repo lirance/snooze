@@ -11,4 +11,6 @@ import com.oregonstate.snooze.model.UserScheduleKey;
 
 public interface UserScheduleService extends BaseObjectService<UserSchedule, UserScheduleKey> {
 
+    int updateUserSchedule(String [] selectedTime, int scheduleId, int userId);
+
 }

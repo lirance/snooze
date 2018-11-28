@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
  * @date: 10/6/18
  * @description: group schedule service implement , get group schedule description, update group schedule
  **/
+
 @Service
 public class GroupScheduleServiceImpl implements GroupScheduleService {
 
@@ -40,4 +41,10 @@ public class GroupScheduleServiceImpl implements GroupScheduleService {
     public int deleteByPrimaryKey(Integer scheduleId) {
         return groupScheduleMapper.deleteByPrimaryKey(scheduleId);
     }
+
+    @Override
+    public GroupSchedule getGroupCurrentSchedule(int groupId) {
+        return groupScheduleMapper.selectCurrentScheduleByGroupId(groupId);
+    }
+
 }

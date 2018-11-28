@@ -7,6 +7,9 @@ import com.oregonstate.snooze.service.UserScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
@@ -41,5 +44,22 @@ public class UserScheduleServiceImp implements UserScheduleService {
     @Override
     public int deleteByPrimaryKey(UserScheduleKey userScheduleKey) {
         return userScheduleMapper.deleteByPrimaryKey(userScheduleKey);
+    }
+
+    @Override
+    public int updateUserSchedule(String [] selectedTime, int scheduleId, int userId) {
+
+        Map<Integer, Boolean> userScheduleMap = new HashMap<>();
+        for (String time : selectedTime) {
+            userScheduleMap.put(Integer.parseInt(time), true);
+        }
+
+        UserSchedule userSchedule = new UserSchedule();
+        userSchedule.setScheduleId(scheduleId);
+        userSchedule.setUserId(userId);
+        userSchedule.setScheduleDes(userScheduleMap);
+        userSchedule.setHours(String.valueOf(selectedTime.length));
+
+        return userScheduleMapper.insert(userSchedule);
     }
 }
