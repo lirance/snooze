@@ -2,7 +2,6 @@ package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.GroupSchedule;
 import com.oregonstate.snooze.model.User;
-import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.GroupScheduleService;
 import com.oregonstate.snooze.service.UserScheduleService;
 import com.oregonstate.snooze.utils.StaticStrings;
@@ -78,16 +77,13 @@ public class UserScheduleController {
         try {
             GroupSchedule groupSchedule = groupScheduleService.getGroupCurrentSchedule(passGroupID);
             int scheduleId = groupSchedule.getScheduleId();
-            map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
 
+            map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
             int userId = ((User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER)).getUserId();
-            UserScheduleKey userScheduleKey = new UserScheduleKey();
-            userScheduleKey.setScheduleId(scheduleId);
-            userScheduleKey.setUserId(userId);
 
             if (groupSchedule.getStart() && groupSchedule.getEnd()) {
                 return "showSchedule";
-            } else if (userScheduleService.selectByPrimaryKey(userScheduleKey) == null) {
+            } else if (!userScheduleService.userScheduleChoosed(userId, scheduleId)) {
                 return "notChoose";
             } else {
                 return "alreadyChoose";

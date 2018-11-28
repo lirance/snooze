@@ -1,16 +1,11 @@
 package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.GroupSchedule;
-import com.oregonstate.snooze.model.User;
-import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.GroupScheduleService;
-import com.oregonstate.snooze.service.UserScheduleService;
-import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -25,14 +20,12 @@ public class ScheduleGroupSettingController {
 
     private static Logger logger = Logger.getLogger(GroupSettingController.class);
     private final GroupScheduleService groupScheduleService;
-    private final UserScheduleService userScheduleService;
 
     @Autowired
-    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService, UserService userService, UserScheduleService userScheduleService) {
+    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService) {
         this.groupScheduleService = groupScheduleService;
-        this.userScheduleService = userScheduleService;
-    }
 
+    }
 
 
     @RequestMapping(value = "/create/schedule")
@@ -44,6 +37,7 @@ public class ScheduleGroupSettingController {
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
         newGroupSchedule.setGroupId(groupId);
+
         // automatically start the schedule when create
         newGroupSchedule.setStart(true);
         groupScheduleService.insert(newGroupSchedule);

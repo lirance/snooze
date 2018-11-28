@@ -19,4 +19,16 @@ public class UserScheduleControllerTest {
     @Test
     public void memberSelect() {
     }
+
+    @Test
+    public void memberSelect1() {
+    }
+
+    @Test
+    public void managerEnterGroup() {
+    }
+
+    @Test
+    public void scheduleShow() {
+    }
 }

@@ -21,7 +21,7 @@ public class LogInController {
     private final UserService userService;
 
     @Autowired
-    public LogInController(UserService userService/*, JoinService joinService*/) {
+    public LogInController(UserService userService) {
         this.userService = userService;
 
     }

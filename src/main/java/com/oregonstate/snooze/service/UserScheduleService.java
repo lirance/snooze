@@ -13,4 +13,6 @@ public interface UserScheduleService extends BaseObjectService<UserSchedule, Use
 
     int updateUserSchedule(String [] selectedTime, int scheduleId, int userId);
 
+    boolean userScheduleChoosed(int userId, int scheduleId);
+
 }
