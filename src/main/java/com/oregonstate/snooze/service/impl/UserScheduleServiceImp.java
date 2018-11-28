@@ -62,4 +62,12 @@ public class UserScheduleServiceImp implements UserScheduleService {
 
         return userScheduleMapper.insert(userSchedule);
     }
+
+    @Override
+    public boolean userScheduleChoosed(int userId, int scheduleId) {
+        UserScheduleKey userScheduleKey = new UserScheduleKey();
+        userScheduleKey.setScheduleId(scheduleId);
+        userScheduleKey.setUserId(userId);
+        return userScheduleMapper.selectByPrimaryKey(userScheduleKey)!=null;
+    }
 }
