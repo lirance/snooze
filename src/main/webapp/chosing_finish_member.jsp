@@ -136,9 +136,8 @@
 
                             <div class="col-md">
 
-                                <button class="btn btn-md btn-success btn-block" style="width: 80%" align="center"
-                                        type="submit" >ReChoose
-                                </button>
+                                <a href="current_schedule_member_page.jsp" class="btn btn-success btn-md"
+                                   style="width:80%" role="button" aria-disabled="true"> ReChoose</a>
 
 
                             </div>
