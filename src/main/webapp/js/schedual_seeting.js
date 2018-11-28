@@ -6,7 +6,7 @@ app.controller('createScheduleCtrl',function ($scope,$http) {
             method:'post',
             url:'/snooze/create/schedule',
             params:{
-                "inputSchedualName":$scope.users.inputSchedualName
+                "inputScheduleName":$scope.users.inputScheduleName
 
             },
 
@@ -246,8 +246,9 @@ app.controller('endCtrl',function ($scope,$http){
             }
 
         });
-    }
+    };
 
 
 
 });
+

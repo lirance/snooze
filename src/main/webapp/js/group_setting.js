@@ -38,9 +38,14 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
+                // console.log(resp.data);
+                // window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+            if (resp.data === "true"){
                 console.log(resp.data);
                 window.location.href="http://localhost:8080/member_list_manger_page.jsp";
-
+            }else if(resp.data === "false") {
+                console.log('This group already exists');
+            }
         });
 
     };
@@ -58,9 +63,21 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-            console.log(resp.data);
-            //alert($scope.passGroupID);
-            window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
+
+            if (resp.data === "showSchedule"){
+                console.log(resp.data);
+                window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
+            }else if(resp.data === "notChoose") {
+                console.log('go to choose');
+                window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
+
+            }else if(resp.data === alreadyChoose ){
+                console.log('alreadyChoose');
+                window.location.href="http://localhost:8080/chosing_finish_member.jsp";
+
+            }else if(resp.data === error){
+                alert("Error")
+            }
 
 
         });

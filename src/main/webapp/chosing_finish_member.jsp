@@ -1,15 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: yin
-  Date: 11/12/18
-  Time: 4:28 PM
+  Date: 11/27/18
+  Time: 10:04 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
+
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +25,13 @@
     <link rel="stylesheet" href="bootstrap/css/sidebar.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 
-    <title>Create Group</title>
+    <title> Current Schedule For Member </title>
 
 </head>
 
 
-<body ng-app="scheduleApp" ng-controller="createScheduleCtrl">
+<body ng-app="scheduleApp">
+
 <script src="angularjslab.js"></script>
 
 <div class="container-fluid">
@@ -60,54 +65,35 @@
                                    class="list-group-item dropdown-toggle">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
-                                    <span class="d-none d-inline">Group</span>
-                                </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-people" title="people" aria-hidden="true"></span>
-                                            </span>
-                                            Group Member
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="active">
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                                   class="list-group-item dropdown-toggle">
-
-                                    <span class="oi oi-folder" title="folder" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Schedule</span>
                                 </a>
-                                <ul class="collapse list-unstyled show" id="homeSubmenu1">
+                                <ul class="collapse list-unstyled show" id="homeSubmenu">
                                     <li>
                                         <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar"style="background-color: #80bdff">
-                                            <span class="oi oi-browser" title="browser" aria-hidden="true"></span>
-                                            </span>
-                                            Current Using
+                                           style="background-color: #80bdff">
+                                            <span class="oi oi-circle-check" title="circle-check"
+                                                  aria-hidden="true"></span>
+                                            Current Choosing
                                         </a>
-                                    </li>
 
+                                    </li>
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
-                                            </span>
-                                            Already Produce
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                            <span class="oi oi-flag" title="flag"
+                                                  aria-hidden="true"></span>
+                                            Published
                                         </a>
                                     </li>
                                 </ul>
+
                             </li>
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
-                                    <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                    <span class="d-none d-inline"></span>
+                                    <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Log Out</span>
                                 </a>
                             <li>
 
@@ -120,65 +106,53 @@
 
         </div>
 
-
-        <from class="form-signin" ng-controller="createScheduleCtrl">
+        <from>
             <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
                 <a href="#" data-target="#sidebar" data-toggle="collapse"><i
                         class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                 <div class="page-header">
-                    <h2>Create Schedule</h2>
+                    <h4>Congratulations, you have successfully selected the class.</h4>
                 </div>
                 <hr>
 
 
                 <br>
 
-                <label for="schName">Enter the schedule name</label>
+
                 <br>
                 <br>
-                <input type="text" class="form-control" id="schName" placeholder="" value="" required autofocus
-                       ng-model="users.inputScheduleName" style="width:70%">
+                <br>
+                <from>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg">
+
+                                <!--<a href="#" class="btn btn-success btn-lg"-->
+                                <!--style="width:80%" role="button" aria-disabled="true"> Back</a>-->
+                            </div>
+                            <div class="col-lg">
+
+                            </div>
+
+                            <div class="col-md">
+
+                                <button class="btn btn-md btn-success btn-block" style="width: 80%" align="center"
+                                        type="submit" >ReChoose
+                                </button>
 
 
-
-
-
-
-                <div class="col-md-8 order-md-1">
-
-
-                    <div class="row">
-                        <!-- Save botton -->
-                        <div class="col-md-6 mb-3">
-                            <br>
-                            <br>
-                            <br>
-
-                            <a href="group_setting_page.jsp" class="btn btn-success btn-lg"
-                               style="width:80%" role="button" aria-disabled="true" ng-click="submitForm()">Submit</a>
+                            </div>
 
                         </div>
-
-
-                        <!-- Clean botton -->
-                        <div class="col-md-6 mb-3">
-                            <br>
-                            <br>
-                            <br>
-                            <button class="btn btn-lg btn-success btn-block " style="width: 80%" align="center"
-                                    type="reset" value="Reset" >Clean
-                            </button>
-                        </div>
-                        <br>
-                        <br>
                     </div>
-                </div>
+
+                </from>
+
 
             </main>
+
         </from>
     </div>
-
-</div>
 </div>
 <script src="js/schedual_seeting.js"></script>
 <!-- Optional JavaScript -->
