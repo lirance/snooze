@@ -33,33 +33,7 @@ public class ScheduleGroupSettingController {
         this.userScheduleService = userScheduleService;
     }
 
-    @RequestMapping(value = "/group/passGroupID")
-    @ResponseBody
-    public String scheduleShow(HttpSession session, Integer passGroupID, ModelMap map) {
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
 
-        try {
-            GroupSchedule groupSchedule = groupScheduleService.getGroupCurrentSchedule(passGroupID);
-            int scheduleId = groupSchedule.getScheduleId();
-            map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
-
-            int userId = ((User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER)).getUserId();
-            UserScheduleKey userScheduleKey = new UserScheduleKey();
-            userScheduleKey.setScheduleId(scheduleId);
-            userScheduleKey.setUserId(userId);
-
-            if (groupSchedule.getStart() && groupSchedule.getEnd()) {
-                return "showSchedule";
-            } else if (userScheduleService.selectByPrimaryKey(userScheduleKey) == null) {
-                return "notChoose";
-            } else {
-                return "alreadyChoose";
-            }
-        } catch (Exception e) {
-            logger.error("no schedule in group", e);
-            return "error";
-        }
-    }
 
     @RequestMapping(value = "/create/schedule")
     @ResponseBody

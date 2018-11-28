@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ScheduleUserControllerTest {
+public class UserScheduleControllerTest {
 
     @Before
     public void setUp() throws Exception {
