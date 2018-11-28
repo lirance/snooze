@@ -63,21 +63,40 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
+            //alert(resp.data);
+            switch(resp.data) {
+                case '"showSchedule"':
+                    console.log(resp.data);
+                    window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
+                        break;
+                case '"notChoose"':
+                    alert(resp.data);
+                    console.log('go to choose');
+                    window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
+                    break;
+                case '"alreadyChoose"':
+                    console.log('alreadyChoose');
+                    window.location.href="http://localhost:8080/chosing_finish_member.jsp";
+                break;
+                case '"error"':
 
-            if (resp.data === "showSchedule"){
-                console.log(resp.data);
-                window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
-            }else if(resp.data === "notChoose") {
-                console.log('go to choose');
-                window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
-
-            }else if(resp.data === "alreadyChoose" ){
-                console.log('alreadyChoose');
-                window.location.href="http://localhost:8080/chosing_finish_member.jsp";
-
-            }else if(resp.data === "error"){
-                alert("Error")
+                    alert("Error");
+                    break;
             }
+            // if (resp.data === "showSchedule"){
+            //     console.log(resp.data);
+            //     window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
+            // }else if(resp.data === "notChoose") {
+            //     console.log('go to choose');
+            //     window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
+            //
+            // }else if(resp.data === "alreadyChoose" ){
+            //     console.log('alreadyChoose');
+            //     window.location.href="http://localhost:8080/chosing_finish_member.jsp";
+            //
+            // }else if(resp.data === "error"){
+            //     alert("Error")
+             //}
 
 
         });
@@ -154,13 +173,10 @@ app.controller('joinGroupCtrl',function ($scope,$http){
                 window.location.href="http://localhost:8080/group_setting_page.jsp";
 
 
-
-
             }else if(resp.data === "false") {
                 console.log('This group already exists');
                 alert("You have already in this group or This group does not exists");
             }
-
 
         });
     }
