@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID})
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID})
 @RequestMapping("/snooze")
 public class ScheduleGroupSettingController {
 
@@ -34,26 +34,17 @@ public class ScheduleGroupSettingController {
         return true;
     }
 
-    @RequestMapping(value = "/manager/select/time")
+    @RequestMapping(value = "/create/schedule")
     @ResponseBody
     public boolean scheduleCreateManager(HttpSession session, String inputScheduleName) {
 
-        Integer groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID);
+        Integer groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
         newGroupSchedule.setGroupId(groupId);
-        groupScheduleService.insert(newGroupSchedule);
-        return true;
-    }
-
-    @RequestMapping(value = "/manager/select/time")
-    @ResponseBody
-    public boolean scheduleCreateGeneral(Integer inputGroupId, String inputScheduleName) {
-
-        GroupSchedule newGroupSchedule = new GroupSchedule();
-        newGroupSchedule.setScheduleName(inputScheduleName);
-        newGroupSchedule.setGroupId(inputGroupId);
+        // automatically start the schedule when create
+        newGroupSchedule.setStart(true);
         groupScheduleService.insert(newGroupSchedule);
         return true;
     }
