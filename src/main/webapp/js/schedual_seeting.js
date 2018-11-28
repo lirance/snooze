@@ -4,7 +4,7 @@ app.controller('createScheduleCtrl',function ($scope,$http) {
     $scope.submitForm = function () {
         $http({
             method:'post',
-            url:'/snooze/manager/create/schedual',
+            url:'/snooze/create/schedule',
             params:{
                 "inputSchedualName":$scope.users.inputSchedualName
 
@@ -65,6 +65,7 @@ app.controller('selectTimeCtrl',function ($scope,$http) {
             if(obj[k].checked)
                 $scope.check_val.push(obj[k].value);
         }
+
         console.log($scope.check_val);
         alert($scope.check_val);
         $http({

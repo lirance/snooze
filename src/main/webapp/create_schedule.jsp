@@ -126,7 +126,7 @@
                 <a href="#" data-target="#sidebar" data-toggle="collapse"><i
                         class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                 <div class="page-header">
-                    <h2>Create Group</h2>
+                    <h2>Create Schedule</h2>
                 </div>
                 <hr>
 
@@ -137,7 +137,7 @@
                 <br>
                 <br>
                 <input type="text" class="form-control" id="schName" placeholder="" value="" required autofocus
-                       ng-model="users.inputGroupName" style="width:70%">
+                       ng-model="users.inputSchedualName" style="width:70%">
 
 
 
@@ -155,7 +155,7 @@
                             <br>
 
                             <a href="group_setting_page.jsp" class="btn btn-success btn-lg"
-                               style="width:80%" role="button" aria-disabled="true">Submit</a>
+                               style="width:80%" role="button" aria-disabled="true" ng-click="submitForm()">Submit</a>
 
                         </div>
 
@@ -166,7 +166,7 @@
                             <br>
                             <br>
                             <button class="btn btn-lg btn-success btn-block " style="width: 80%" align="center"
-                                    type="reset" value="Reset" ng-click="submitForm()">Clean
+                                    type="reset" value="Reset" >Clean
                             </button>
                         </div>
                         <br>
@@ -180,7 +180,7 @@
 
 </div>
 </div>
-
+<script src="js/schedual_seeting.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>
