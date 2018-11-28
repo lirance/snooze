@@ -45,8 +45,17 @@ public class TestMyBatis {
         UserScheduleKey userScheduleKey = new UserScheduleKey();
         userScheduleKey.setUserId(1);
         userScheduleKey.setScheduleId(2);
-        UserSchedule groupSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
-        logger.info(JSON.toJSONString(groupSchedule));
+        UserSchedule userSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
+        logger.info(JSON.toJSONString(userSchedule));
+        Map<Integer, Boolean> userDes = new HashMap<>();
+        userSchedule = new UserSchedule();
+        userSchedule.setUserId(12);
+        userSchedule.setScheduleId(2);
+        userDes.put(108, true);
+        userDes.put(110, true);
+        userSchedule.setScheduleDes(userDes);
+        userSchedule.setHours("3");
+        //  userScheduleService.insert(userSchedule);
     }
 
 

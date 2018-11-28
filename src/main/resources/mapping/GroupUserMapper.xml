@@ -10,7 +10,7 @@
     groupId, userId, manager
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.oregonstate.snooze.model.GroupUserKey" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from group_user
     where groupId = #{groupId,jdbcType=INTEGER}
