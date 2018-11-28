@@ -71,11 +71,11 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 console.log('go to choose');
                 window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
 
-            }else if(resp.data === alreadyChoose ){
+            }else if(resp.data === "alreadyChoose" ){
                 console.log('alreadyChoose');
                 window.location.href="http://localhost:8080/chosing_finish_member.jsp";
 
-            }else if(resp.data === error){
+            }else if(resp.data === "error"){
                 alert("Error")
             }
 
