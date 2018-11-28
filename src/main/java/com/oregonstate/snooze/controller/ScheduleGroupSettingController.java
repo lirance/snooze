@@ -1,9 +1,13 @@
 package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.GroupSchedule;
+import com.oregonstate.snooze.model.User;
+import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.GroupScheduleService;
+import com.oregonstate.snooze.service.UserScheduleService;
 import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,26 +23,49 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/snooze")
 public class ScheduleGroupSettingController {
 
+    private static Logger logger = Logger.getLogger(GroupSettingController.class);
     private final GroupScheduleService groupScheduleService;
+    private final UserScheduleService userScheduleService;
 
     @Autowired
-    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService, UserService userService) {
+    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService, UserService userService, UserScheduleService userScheduleService) {
         this.groupScheduleService = groupScheduleService;
+        this.userScheduleService = userScheduleService;
     }
-
 
     @RequestMapping(value = "/group/passGroupID")
     @ResponseBody
-    public boolean scheduleShow(Integer passGroupID, ModelMap map) {
+    public String scheduleShow(HttpSession session, Integer passGroupID, ModelMap map) {
         map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
-        return true;
+
+        try {
+            GroupSchedule groupSchedule = groupScheduleService.getGroupCurrentSchedule(passGroupID);
+            int scheduleId = groupSchedule.getScheduleId();
+            map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
+
+            int userId = ((User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER)).getUserId();
+            UserScheduleKey userScheduleKey = new UserScheduleKey();
+            userScheduleKey.setScheduleId(scheduleId);
+            userScheduleKey.setUserId(userId);
+
+            if (groupSchedule.getStart() && groupSchedule.getEnd()) {
+                return "showSchedule";
+            } else if (userScheduleService.selectByPrimaryKey(userScheduleKey) == null) {
+                return "notChoose";
+            } else {
+                return "alreadyChoose";
+            }
+        } catch (Exception e) {
+            logger.error("no schedule in group", e);
+            return "error";
+        }
     }
 
     @RequestMapping(value = "/create/schedule")
     @ResponseBody
     public boolean scheduleCreateManager(HttpSession session, String inputScheduleName) {
 
-        Integer groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
+        int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
