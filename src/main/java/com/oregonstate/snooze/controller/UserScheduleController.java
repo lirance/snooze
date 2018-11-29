@@ -66,6 +66,16 @@ public class UserScheduleController {
     @ResponseBody
     public boolean managerEnterGroup(Integer passGroupID, ModelMap map) {
         map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
+        try {
+            GroupSchedule groupSchedule = groupScheduleService.getGroupCurrentSchedule(passGroupID);
+            int scheduleId = groupSchedule.getScheduleId();
+
+            map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
+
+        } catch (Exception e) {
+            logger.error("no schedule in group", e);
+            return false;
+        }
         return true;
     }
 
