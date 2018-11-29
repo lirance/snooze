@@ -223,13 +223,14 @@ app.controller('getUnfinishedCtrl',function ($scope,$http){
 
     $http({
         method:'GET',
-        url:'/snooze//group/show/membersNotChoosed.json'
+        url:'/snooze/group/show/membersNotChoosed.json'
 
     }).then(function (resp)
     {
-        // $scope.groups =JSON.parse(resp.data);
+
         $scope.NotChoosed =resp.data;
-        // alert($scope.ugi);
+
+
     });
 
 });
