@@ -32,7 +32,7 @@ public class UserServiceImpTest {
         user = new User();
         user.setUserName("t425");
         user.setPassword("34342");
-        user.setEMail("arr234tr@fsljf.com");
+        user.seteMail("arr234tr@fsljf.com");
     }
 
     @After

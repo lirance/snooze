@@ -31,7 +31,7 @@ public class TestMyBatis {
         User user = new User();
         user.setUserName("t425");
         user.setPassword("34342");
-        user.setEMail("arr234tr@fsljf.com");
+        user.seteMail("arr234tr@fsljf.com");
         // userService.insert(user);
         User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
     }
