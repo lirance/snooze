@@ -14,7 +14,7 @@
 
 </head>
 
-<body ng-app="scheduleApp">
+<body ng-app="scheduleApp" ng-controller="getUnfinishedCtrl">
 
 <script src="angularjslab.js"></script>
 <div class="container-fluid">
@@ -45,7 +45,7 @@
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                        <a href="member_list_manger_page.jsp" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar">
                                             <span class="oi oi-people" title="people" aria-hidden="true"></span>
                                             </span>
@@ -64,7 +64,7 @@
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu1">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                        <a href="end_choosing_schedule_manager.jsp" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar" style="background-color: #80bdff">
                                             <span class="oi oi-browser" title="browser" aria-hidden="true"></span>
                                             </span>
@@ -85,7 +85,7 @@
 
                             <li class="active">
 
-                                <a href="#"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
                                     <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Log Out</span>
@@ -113,7 +113,7 @@
             <h4>Unfinished People</h4>
 
 
-            <table class="table table-striped" ng-controller="gteUnfinishedCtrl">
+            <table class="table table-striped" ng-controller="getUnfinishedCtrl">
                 <thead>
                 <br>
                 <tr>
@@ -122,27 +122,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-
-                    <td ng-repeat="unChoosed in NotChoosed">
+                <tr ng-repeat="unChoosedPeople in NotChoosed">
 
                         <td>
-                            {{unChoosed.userName}}
+                            {{unChoosedPeople.userName}}
 
                         </td>
                         <td>
-                            {{unChoosed.eMail}}
+                            {{unChoosedPeople.eMail}}
 
                         </td>
 
 
-                    </td>
-                    <%--<td>--%>
-                        <%--<output type="Username" id="Username1"></output>--%>
-                    <%--</td>--%>
-                    <%--<td>--%>
-                        <%--<output type="EmailAddress" id="EmailAddress1"></output>--%>
-                    <%--</td>--%>
                 </tr>
 
 
@@ -162,7 +153,7 @@
                     <div class="row">
                         <div class="col-lg">
 
-                            <a href="#" class="btn btn-success btn-lg"
+                            <a href="member_list_manger_page.jsp" class="btn btn-success btn-lg"
                                style="width:80%" role="button" aria-disabled="true">Back</a>
 
                         </div>
