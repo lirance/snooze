@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="active">
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false"
                                    class="list-group-item dropdown-toggle">
 
                                     <span class="oi oi-folder" title="folder" aria-hidden="true"></span>
