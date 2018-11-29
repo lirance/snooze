@@ -124,14 +124,14 @@
                 <tbody>
                 <tr>
 
-                    <td ng-repeat="unfinishedSt in UnStudents">
+                    <td ng-repeat="unChoosed in NotChoosed">
 
                         <td>
-                            {{unfinishedSt.Username}}
+                            {{unChoosed.userName}}
 
                         </td>
                         <td>
-                            {{unfinishedSt.EmailAdds}}
+                            {{unChoosed.eMail}}
 
                         </td>
 
@@ -181,8 +181,6 @@
                     </div>
                 </div>
             </from>
-
-
 
 
 

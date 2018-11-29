@@ -134,14 +134,13 @@
                 <tbody>
                 <tr>
 
-                        <tr ng-repeat="group in Ggroup ">
-                    <td ng-click="passGgroupID(group.groupId)">
-                        {{group.groupId}}
-                    </td>
+                <tr ng-repeat="group in Ggroup ">
+                    <td ng-click="passGgroupID(group.groupId)">{{group.groupId}}</td>
 
-                    <td ng-click="passGgroupID(group.groupId)">
-                            {{group.groupName }}
-                        </td>
+                    <td ng-click="passGgroupID(group.groupId)">{{group.groupName }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" ng-click="passGgroupID(group.groupId)">Enter Group</button>
+                    </td>
 
                 </tr>
 
@@ -169,9 +168,12 @@
                 <tbody>
                 <!--example-->
                 <div>
-                    <tr ng-repeat="group in Mgropus " >
+                    <tr ng-repeat="group in Mgropus" >
                         <td ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
                         <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" ng-click="passgroupID(group.groupId)">Enter Group</button>
+                        </td>
 
                     </tr>
                 </div>
