@@ -31,4 +31,13 @@
         on `user`.userId=`group_user`.userId
         where groupId = #{0} and manager = #{1}
     </select>
+
+    <select id="selectUsersByScheduleId" resultMap="UserResultMap">
+        select
+        `user`.userId,userName,password,email
+        from `user`
+        join `schedule_u`
+        on `user`.userId=`schedule_u`.userId
+        where scheduleId = #{scheduleId,jdbcType=INTEGER}
+    </select>
 </mapper>

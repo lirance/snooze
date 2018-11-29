@@ -33,4 +33,9 @@ public class JoinServiceImpl implements JoinService {
     public List<User> selectUsersByGroupId(int groupId, boolean manage) {
         return joinMapper.selectUsersByGroupId(groupId,manage);
     }
+
+    @Override
+    public List<User> getUsersAlreadyChooseShift(int scheduleId) {
+        return joinMapper.selectUsersByScheduleId(scheduleId);
+    }
 }

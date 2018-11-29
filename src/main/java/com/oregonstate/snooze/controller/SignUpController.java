@@ -27,7 +27,7 @@ public class SignUpController {
             User newUser = new User();
             newUser.setUserName(inputUsername);
             newUser.setPassword(inputPassword);
-            newUser.seteMail(inputEmail);
+            newUser.setEMail(inputEmail);
             userService.insert(newUser);
             return true;
         } else {

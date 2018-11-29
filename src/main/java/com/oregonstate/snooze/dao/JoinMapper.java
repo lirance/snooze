@@ -15,4 +15,6 @@ public interface JoinMapper {
     List<Group> selectGroupsByUserId(int userId, boolean manage);
 
     List<User> selectUsersByGroupId(int groupId, boolean manage);
+
+    List<User> selectUsersByScheduleId(int scheduleId);
 }

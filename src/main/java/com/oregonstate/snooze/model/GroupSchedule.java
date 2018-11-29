@@ -1,10 +1,8 @@
 package com.oregonstate.snooze.model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import java.util.Map;
 
-public class GroupSchedule {
+public class GroupSchedule extends BaseModelObject  {
     private Integer scheduleId;
 
     private Integer groupId;

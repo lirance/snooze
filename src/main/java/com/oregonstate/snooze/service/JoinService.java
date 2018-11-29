@@ -26,4 +26,6 @@ public interface JoinService {
      */
     List<User> selectUsersByGroupId(int groupId, boolean manage);
 
+    List<User> getUsersAlreadyChooseShift(int scheduleId);
+
 }

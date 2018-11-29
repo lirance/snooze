@@ -1,8 +1,6 @@
 package com.oregonstate.snooze.model;
 
-import javax.jws.soap.SOAPBinding;
-
-public class User {
+public class User extends BaseModelObject {
     private Integer userId;
 
     private String userName;
@@ -35,11 +33,11 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String geteMail() {
+    public String getEMail() {
         return eMail;
     }
 
-    public void seteMail(String eMail) {
+    public void setEMail(String eMail) {
         this.eMail = eMail == null ? null : eMail.trim();
     }
 }

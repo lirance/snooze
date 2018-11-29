@@ -1,6 +1,6 @@
 package com.oregonstate.snooze.model;
 
-public class GroupUserKey {
+public class GroupUserKey extends BaseModelObject {
     private Integer groupId;
 
     private Integer userId;

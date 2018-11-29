@@ -1,6 +1,6 @@
 package com.oregonstate.snooze.model;
 
-public class Group {
+public class Group extends BaseModelObject {
     private Integer groupId;
 
     private String groupName;
