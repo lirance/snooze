@@ -139,7 +139,7 @@
     <br>
     <br/>
     <div class="mt-5 mb-3 text-muted text-center">
-        <p>&copy; 2017-2018</p>
+        <p>&copy; 2016-2017</p>
     </div>
 
 </form>
