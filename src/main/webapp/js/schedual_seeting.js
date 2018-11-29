@@ -95,7 +95,7 @@ app.controller('selectTimeCtrl',function ($scope,$http) {
 
 });
 
-app.controller('getGroupMemberCtrl',function ($scope,$http) {
+app.controller('getShiftsCtrl',function ($scope,$http) {
 
 
     $http({
@@ -200,9 +200,25 @@ app.controller('getGroupMemberCtrl',function ($scope,$http) {
 
 });
 
+// app.controller('getMemberCtrl',function ($scope,$http){
+//
+//
+//     $http({
+//         method:'GET',
+//         url:'/snooze//generalMembers.json'
+//
+//     }).then(function (resp)
+//     {
+//         // $scope.groups =JSON.parse(resp.data);
+//         $scope.allmembers=resp.data;
+//         // alert($scope.ugi);
+//     });
+//
+//
+//
+// });
 
-
-app.controller('gteUnfinishedCtrl',function ($scope,$http){
+app.controller('getUnfinishedCtrl',function ($scope,$http){
 
 
     $http({

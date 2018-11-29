@@ -141,14 +141,21 @@
                 </thead>
                 <tbody>
                 <tr>
+                <%--<tr ng-repeat="group in Ggroup ">--%>
+                    <%--<td ng-click="passGgroupID(group.groupId)">--%>
+                        <%--{{group.groupId}}--%>
+                    <%--</td>--%>
 
-                <tr ng-repeat="groupMembers in groupMember ">
+                    <%--<td ng-click="passGgroupID(group.groupId)">--%>
+                        <%--{{group.groupName }}--%>
+                    <%--</td>--%>
+                <tr ng-repeat="groupMembers in allmembers">
                     <td>
                         {{groupMembers.userName}}
                     </td>
 
                     <td>
-                        {{groupMembers.emailAddress}}
+                        {{groupMembers.eMail}}
                     </td>
 
                 </tr>
