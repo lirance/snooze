@@ -2,6 +2,8 @@ package com.oregonstate.snooze.dao;
 
 import com.oregonstate.snooze.model.Group;
 
+import java.util.List;
+
 public interface GroupMapper {
     int deleteByPrimaryKey(Integer groupId);
 
@@ -14,4 +16,6 @@ public interface GroupMapper {
     int updateByPrimaryKeySelective(Group record);
 
     int updateByPrimaryKey(Group record);
+
+    List<Group> selectAllGroups();
 }

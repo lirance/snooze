@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -83,7 +84,7 @@ public class TestMyBatis {
         groupSchedule.setScheduleName("test_schedule_name");
         Map<Integer, Boolean> groupDes = new HashMap<>();
         groupDes.put(123, true);
-        groupDes.put(123, false);
+        groupDes.put(104, false);
         groupSchedule.setScheduleDes(groupDes);
         // groupScheduleService.insert(groupSchedule);
     }
@@ -104,6 +105,24 @@ public class TestMyBatis {
         groupUserService.selectByPrimaryKey(groupUserKey);
         // groupUserService.insert(groupUser);
     }
+
+//    @org.junit.Test
+//    public void insertScheduleForAllGroups() {
+//        GroupSchedule groupSchedule = new GroupSchedule();
+//       // groupSchedule.setGroupId(1);
+//        groupSchedule.setScheduleId(1);
+//        groupSchedule.setScheduleName("test_schedule_name");
+//        Map<Integer, Boolean> groupDes = new HashMap<>();
+//        groupDes.put(123, true);
+//        groupDes.put(104, false);
+//        groupSchedule.setScheduleDes(groupDes);
+//
+//        List<Group> groupList = groupService.selectAll();
+//        for (Group group:groupList){
+//            groupSchedule.setGroupId(group.getGroupId());
+//            groupScheduleService.insert(groupSchedule);
+//        }
+//    }
 
 
     @Resource
