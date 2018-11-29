@@ -69,7 +69,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
                     window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
                         break;
                 case '"notChoose"':
-                    alert(resp.data);
+                    //alert(resp.data);
                     console.log('go to choose');
                     window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
                     break;

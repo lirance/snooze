@@ -121,7 +121,10 @@
             <br>
             <br>
 
+            <from>
+
             <h5>The Group You Joined</h5>
+
 
             <table class="table table-striped">
                 <thead>
@@ -138,6 +141,7 @@
                     <td ng-click="passGgroupID(group.groupId)">{{group.groupId}}</td>
 
                     <td ng-click="passGgroupID(group.groupId)">{{group.groupName }}</td>
+
                     <td>
                         <button type="button" class="btn btn-primary" ng-click="passGgroupID(group.groupId)">Enter Group</button>
                     </td>
@@ -166,13 +170,15 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 <!--example-->
                 <div>
                     <tr ng-repeat="group in Mgropus" >
                         <td ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
                         <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
+
                         <td>
-                            <button type="button" class="btn btn-primary" ng-click="passgroupID(group.groupId)">Enter Group</button>
+                            <button type="button" class="btn btn-primary" ng-click="passMgroupID(group.groupId)">Enter Group</button>
                         </td>
 
                     </tr>
@@ -182,7 +188,7 @@
             </table>
 
             <hr>
-
+            </from>
 
         </main>
 
