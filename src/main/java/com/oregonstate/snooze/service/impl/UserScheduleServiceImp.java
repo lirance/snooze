@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,7 +48,7 @@ public class UserScheduleServiceImp implements UserScheduleService {
     }
 
     @Override
-    public int updateUserSchedule(String [] selectedTime, int scheduleId, int userId) {
+    public int updateUserSchedule(String[] selectedTime, int scheduleId, int userId) {
 
         Map<Integer, Boolean> userScheduleMap = new HashMap<>();
         for (String time : selectedTime) {
@@ -68,6 +69,16 @@ public class UserScheduleServiceImp implements UserScheduleService {
         UserScheduleKey userScheduleKey = new UserScheduleKey();
         userScheduleKey.setScheduleId(scheduleId);
         userScheduleKey.setUserId(userId);
-        return userScheduleMapper.selectByPrimaryKey(userScheduleKey)!=null;
+        return userScheduleMapper.selectByPrimaryKey(userScheduleKey) != null;
+    }
+
+    @Override
+    public List<UserSchedule> selectByScheduleId(int scheduleId) {
+        return userScheduleMapper.selectByScheduleId(scheduleId);
+    }
+
+    @Override
+    public int insertUserScheduleList(List<UserSchedule> userSchedules) {
+        return userScheduleMapper.insertAll(userSchedules);
     }
 }

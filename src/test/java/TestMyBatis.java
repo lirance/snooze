@@ -30,11 +30,13 @@ public class TestMyBatis {
     @org.junit.Test
     public void testUserTable() {
         User user = new User();
-        user.setUserName("t425");
-        user.setPassword("34342");
-        user.seteMail("arr234tr@fsljf.com");
+        user.setUserName("lirance");
+        user.setPassword(String.valueOf(("lirance").hashCode()));
+        user.seteMail("lirance.zhang@gmail.com");
+        user.setUserId(12);
+        userService.updateByPrimaryKey(user);
         // userService.insert(user);
-        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
+       // User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
     }
 
 
