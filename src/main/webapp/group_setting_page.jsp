@@ -13,7 +13,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="bootstrap/css/sidebar.css">
+    <link rel="stylesheet" href="bootstrap/css/table.css">
     <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+
+
 
     <title>Group Setting Page </title>
 
@@ -135,11 +138,13 @@
                 <tr>
 
                 <tr ng-repeat="group in Ggroup ">
-                    <td ng-click="passGgroupID(group.groupId)">{{group.groupId}}</td>
+                    <td
+                            ng-click="passGgroupID(group.groupId)">{{group.groupId}}</td>
 
-                    <td ng-click="passGgroupID(group.groupId)">{{group.groupName }}</td>
+                    <td
+                            ng-click="passGgroupID(group.groupId)">{{group.groupName }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" ng-click="passGgroupID(group.groupId)">Enter Group</button>
+                        <button type="button" class="btn btn-primary" ng-click="passGgroupID(group.groupId)">See the Detail</button>
                     </td>
 
                 </tr>
@@ -169,10 +174,12 @@
                 <!--example-->
                 <div>
                     <tr ng-repeat="group in Mgropus" >
-                        <td ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
-                        <td ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
+                        <td
+                                ng-click="passMgroupID(group.groupId)">{{group.groupId }}</td>
+                        <td
+                                ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" ng-click="passgroupID(group.groupId)">Enter Group</button>
+                            <button type="button" class="btn btn-primary" ng-click="passgroupID(group.groupId)">See the Detail</button>
                         </td>
 
                     </tr>
