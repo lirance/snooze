@@ -56,4 +56,10 @@
     set groupName = #{groupName,jdbcType=VARCHAR}
     where groupId = #{groupId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAllGroups" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from `group`
+  </select>
 </mapper>
