@@ -22,7 +22,11 @@ import javax.servlet.http.HttpSession;
  **/
 
 @Controller
-@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, StaticStrings.SESSION_ATTRIBUTES_GROUP_USER_LIST})
+@SessionAttributes({
+        StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID,
+        StaticStrings.SESSION_ATTRIBUTES_GROUP_USER_LIST,
+        StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID
+})
 @RequestMapping("/snooze")
 public class UserScheduleController {
 
