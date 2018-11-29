@@ -106,18 +106,23 @@ public class TestMyBatis {
         // groupUserService.insert(groupUser);
     }
 
-//    @org.junit.Test
-//    public void insertScheduleForAllGroups() {
-//        GroupUser groupUser = new GroupUser();
-//        groupUser.setUserId(12);
-//        groupUser.setManager(true);
-//
-//        List<Group> groupList = groupService.selectAll();
-//        for (Group group:groupList){
-//            groupUser.setGroupId(group.getGroupId());
-//            groupUserService.insert(groupUser);
-//        }
-//    }
+    @org.junit.Test
+    public void insertScheduleForAllGroups() {
+        GroupSchedule groupSchedule = new GroupSchedule();
+       // groupSchedule.setGroupId(1);
+        groupSchedule.setScheduleId(1);
+        groupSchedule.setScheduleName("test_schedule_name");
+        Map<Integer, Boolean> groupDes = new HashMap<>();
+        groupDes.put(123, true);
+        groupDes.put(104, false);
+        groupSchedule.setScheduleDes(groupDes);
+
+        List<Group> groupList = groupService.selectAll();
+        for (Group group:groupList){
+            groupSchedule.setGroupId(group.getGroupId());
+            groupScheduleService.insert(groupSchedule);
+        }
+    }
 
 
     @Resource
