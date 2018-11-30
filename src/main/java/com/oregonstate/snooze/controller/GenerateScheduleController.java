@@ -42,7 +42,7 @@ public class GenerateScheduleController {
 
     @RequestMapping(value = "/manager/schedule/generate")
     @ResponseBody
-    public boolean generateSchedule(HttpSession session, ModelMap map) {
+    public boolean generateSchedule(HttpSession session) {
         int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
         int scheduleId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID);
 
@@ -63,19 +63,24 @@ public class GenerateScheduleController {
 
         userScheduleService.insertUserScheduleList(userSchedules);
 
-        List<UserSchedule> userScheduleList = userScheduleService.selectByScheduleId(scheduleId);
 
-        Map<String, Map<String, User>> sessionMap = showSchedule(groupUsers, userScheduleList);
+        //     Map<String, Map<String, User>> sessionMap = showSchedule(groupUsers, userScheduleList);
 
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, sessionMap);
 
         return true;
     }
 
+    @RequestMapping(value = "/manager/schedule/show")
+    @ResponseBody
+    public Boolean showSchedule(HttpSession session, ModelMap modelMap) {
 
-    private Map<String, Map<String, User>> showSchedule(List<User> groupUsers, List<UserSchedule> userScheduleList) {
+        int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
+        int scheduleId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID);
 
+        List<User> groupUsers = joinService.selectUsersByGroupId(groupId, false);
+        List<UserSchedule> userScheduleList = userScheduleService.selectByScheduleId(scheduleId);
         Map<Integer, User> userMap = new HashMap<>();
+
         for (User user : groupUsers) {
             userMap.put(user.getUserId(), user);
         }
@@ -99,7 +104,9 @@ public class GenerateScheduleController {
             }
         }
 
-        return resultMap;
+        modelMap.addAttribute(StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, resultMap);
+
+        return true;
     }
 
     private List<UserSchedule> getUserSchedules(List<User> groupUsers, int scheduleId, Map<Integer, Integer> resultMap) {
