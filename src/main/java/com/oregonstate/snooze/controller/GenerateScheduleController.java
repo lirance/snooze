@@ -9,8 +9,10 @@ import com.oregonstate.snooze.service.UserScheduleService;
 import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -22,6 +24,7 @@ import java.util.*;
  **/
 
 @Controller
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP})
 @RequestMapping("/snooze")
 public class GenerateScheduleController {
 
@@ -39,7 +42,7 @@ public class GenerateScheduleController {
 
     @RequestMapping(value = "/manager/schedule/generate")
     @ResponseBody
-    public boolean generateSchedule(HttpSession session) {
+    public boolean generateSchedule(HttpSession session, ModelMap map) {
         int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
         int scheduleId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID);
 
@@ -57,17 +60,20 @@ public class GenerateScheduleController {
 
         List<UserSchedule> userSchedules = getUserSchedules(groupUsers, scheduleId, resultMap);
 
+
         userScheduleService.insertUserScheduleList(userSchedules);
+
+        List<UserSchedule> userScheduleList = userScheduleService.selectByScheduleId(scheduleId);
+
+        Map<Integer, Map<Integer, User>> sessionMap = showSchedule(groupUsers, userScheduleList);
+
+        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, sessionMap);
+
         return true;
     }
 
-    @RequestMapping(value = "/group/totalSchedule.json")
-    @ResponseBody
-    public Map<Integer, Map<Integer, User>> showSchedule(HttpSession session) {
-        int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
-        int scheduleId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID);
-        List<UserSchedule> userScheduleList = userScheduleService.selectByScheduleId(scheduleId);
-        List<User> groupUsers = joinService.selectUsersByGroupId(groupId, false);
+
+    private Map<Integer, Map<Integer, User>> showSchedule(List<User> groupUsers, List<UserSchedule> userScheduleList) {
 
         Map<Integer, User> userMap = new HashMap<>();
         for (User user : groupUsers) {

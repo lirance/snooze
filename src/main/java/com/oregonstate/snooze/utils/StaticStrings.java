@@ -16,4 +16,5 @@ public class StaticStrings {
     // public final static String SESSION_ATTRIBUTES_MANAGER_GROUP_ID = "managerGroupId";
     public final static String SESSION_ATTRIBUTES_CURRENT_GROUP_ID = "generalGroupId";
     public final static String SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID = "currentGroupScheduleId";
+    public final static String SESSION_ATTRIBUTES_SCHEDULE_MAP = "scheduleMap";
 }
