@@ -45,6 +45,21 @@ app.controller('showGroupCtrl',function ($scope,$http){
             }else if(resp.data === "false") {
                 console.log('This group already exists');
             }
+            // switch(resp.data) {
+            //     case '"UnfinishedSchedule"':
+            //         console.log(resp.data);
+            //         window.location.href="http://localhost:8080/end_choosing_schedule_manager.jsp";
+            //         break;
+            //     case '"FinishedSchedule"':
+            //         //alert(resp.data);
+            //         console.log('go to choose');
+            //         window.location.href="http://localhost:8080/current_schedule_member_page.jsp"; 待定
+            //         break;
+            //     case '"error"':
+            //
+            //         alert("Error");
+            //         break;
+            // }
         });
 
     };
@@ -62,7 +77,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-            //alert(resp.data);
+
             switch(resp.data) {
                 case '"showSchedule"':
                     console.log(resp.data);
@@ -82,20 +97,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
                     alert("Error");
                     break;
             }
-            // if (resp.data === "showSchedule"){
-            //     console.log(resp.data);
-            //     window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
-            // }else if(resp.data === "notChoose") {
-            //     console.log('go to choose');
-            //     window.location.href="http://localhost:8080/current_schedule_member_page.jsp";
-            //
-            // }else if(resp.data === "alreadyChoose" ){
-            //     console.log('alreadyChoose');
-            //     window.location.href="http://localhost:8080/chosing_finish_member.jsp";
-            //
-            // }else if(resp.data === "error"){
-            //     alert("Error")
-             //}
+
 
 
         });

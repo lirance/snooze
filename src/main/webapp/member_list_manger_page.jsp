@@ -85,7 +85,7 @@
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu1">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                        <a href="end_choosing_schedule_manager.jsp" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar">
                                             <span class="oi oi-browser" title="browser" aria-hidden="true"></span>
                                             </span>
@@ -93,11 +93,10 @@
                                         </a>
                                     </li>
 
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
-                                            </span>
+                                    <li ng-controller="groupMemberCtrl" ng-click="show()">
+                                        <a ng-click="show()" class="list-group-item list-group-item-action"
+                                           data-parent="#sidebar" >
+                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
                                             Already Produce
                                         </a>
                                     </li>

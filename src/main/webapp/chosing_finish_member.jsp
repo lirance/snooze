@@ -77,12 +77,12 @@
                                         </a>
 
                                     </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-flag" title="flag"
+                                    <li ng-controller="showPersonCtrl">
+                                        <div ng-click="show()" class="list-group-item list-group-item-action">
+                                            <span  ng-click="show()" class="oi oi-flag" title="flag"
                                                   aria-hidden="true"></span>
                                             Published
-                                        </a>
+                                        </div>
                                     </li>
                                 </ul>
 
@@ -134,10 +134,10 @@
 
                             </div>
 
-                            <div class="col-md">
+                            <div class="col-md" ng-controller="selectTimeCtrl">
 
                                 <a href="current_schedule_member_page.jsp" class="btn btn-success btn-md"
-                                   style="width:80%" role="button" aria-disabled="true"> ReChoose</a>
+                                   style="width:80%" role="button" aria-disabled="true" ng-click="show()"> ReChoose</a>
 
 
                             </div>

@@ -184,3 +184,24 @@ app.controller('endCtrl',function ($scope,$http){
 
 });
 
+
+app.controller('showPersonCtrl',function ($scope,$http) {
+
+    $scope.show = function() {
+        $http({
+            method: 'GET',
+            url: '/snooze/member/schedule/show'
+
+        }).then(function (resp) {
+            if (resp.data === "true") {
+                console.log(resp.data);
+                window.location.href = "http://localhost:8080/publish_menber_page_shedual.jsp";
+            }else if(resp.data === "false" ){
+                alert("Time of Selecting Schedule Unfinished")
+
+            }
+        });
+    }
+
+
+});
