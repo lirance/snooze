@@ -65,7 +65,7 @@ public class GenerateScheduleController {
 
         List<UserSchedule> userScheduleList = userScheduleService.selectByScheduleId(scheduleId);
 
-        Map<Integer, Map<Integer, User>> sessionMap = showSchedule(groupUsers, userScheduleList);
+        Map<String, Map<String, User>> sessionMap = showSchedule(groupUsers, userScheduleList);
 
         map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, sessionMap);
 
@@ -73,18 +73,18 @@ public class GenerateScheduleController {
     }
 
 
-    private Map<Integer, Map<Integer, User>> showSchedule(List<User> groupUsers, List<UserSchedule> userScheduleList) {
+    private Map<String, Map<String, User>> showSchedule(List<User> groupUsers, List<UserSchedule> userScheduleList) {
 
         Map<Integer, User> userMap = new HashMap<>();
         for (User user : groupUsers) {
             userMap.put(user.getUserId(), user);
         }
 
-        Map<Integer, Map<Integer, User>> resultMap = new HashMap<>();
+        Map<String, Map<String, User>> resultMap = new HashMap<>();
         // initial result map
         for (int i = 8; i <= 18; i++) {
-            Map<Integer, User> map = new HashMap<>();
-            resultMap.put(i, map);
+            Map<String, User> map = new HashMap<>();
+            resultMap.put("index" + i, map);
         }
 
         //iterate the userScheduleList
@@ -95,7 +95,7 @@ public class GenerateScheduleController {
             for (Map.Entry scheduleDes : userSchedule.getScheduleDes().entrySet()) {
                 int time = (int) scheduleDes.getKey();
                 int key = time % 100;
-                resultMap.get(key).put(time, user);
+                resultMap.get("index" + key).put("time" + time, user);
             }
         }
 
