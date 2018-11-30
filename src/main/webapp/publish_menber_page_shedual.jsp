@@ -71,14 +71,14 @@
                                     <span class="d-none d-inline">Schedule</span>
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
-                                    <li>
-                                        <a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-circle-check" title="circle-check"
-                                                  aria-hidden="true"></span>
-                                            Current Choosing
-                                        </a>
+                                    <%--<li>--%>
+                                        <%--<a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action">--%>
+                                            <%--<span class="oi oi-circle-check" title="circle-check"--%>
+                                                  <%--aria-hidden="true"></span>--%>
+                                            <%--Current Choosing--%>
+                                        <%--</a>--%>
 
-                                    </li>
+                                    <%--</li>--%>
                                     <li ng-click="show()">
                                         <div ng-click="show()" class="list-group-item list-group-item-action"
                                              data-parent="#sidebar" >
@@ -451,6 +451,16 @@
 
 
                 <br>
+
+                <div class="col-md-6 mb-3">
+
+                    <br>
+
+                    <a href="create_schedule.jsp" class="btn btn-success btn-lg"
+                       style="width:80%" role="button" aria-disabled="true"> Create New</a>
+
+
+                </div>
 
 
             </main>

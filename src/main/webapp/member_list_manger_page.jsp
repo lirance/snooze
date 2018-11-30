@@ -93,13 +93,13 @@
                                         </a>
                                     </li>
 
-                                    <li ng-controller="groupMemberCtrl" ng-click="show()">
-                                        <a ng-click="show()" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar" >
-                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
-                                            Already Produce
-                                        </a>
-                                    </li>
+                                    <%--<li ng-controller="groupMemberCtrl" ng-click="show()">--%>
+                                        <%--<a ng-click="show()" class="list-group-item list-group-item-action"--%>
+                                           <%--data-parent="#sidebar" >--%>
+                                            <%--<div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>--%>
+                                            <%--Already Produce--%>
+                                        <%--</a>--%>
+                                    <%--</li>--%>
                                 </ul>
                             </li>
 
