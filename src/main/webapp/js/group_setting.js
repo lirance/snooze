@@ -188,13 +188,28 @@ app.controller('groupMemberCtrl',function ($scope,$http){
 
     $http({
         method:'GET',
-        url:'/snooze///generalMembers.json'
+        url:'/snooze/generalMembers.json'
 
     }).then(function (resp)
     {
         $scope.allmembers=resp.data;
     });
 
+    $scope.show = function() {
+        $http({
+            method:'post',
+            url:'/snooze/manager/schedule/show',
+            params:{
 
-
+    },
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        }).then(function (resp) {
+            if (resp.data === "true") {
+                console.log(resp.data);
+                window.location.href = "http://localhost:8080/publish_menber_page_shedual.jsp";
+            }
+        });
+    }
 });

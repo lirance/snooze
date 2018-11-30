@@ -30,7 +30,7 @@
 </head>
 
 
-<body ng-app="scheduleApp" ng-controller="getGroupMemberCtrl">
+<body ng-app="scheduleApp" ng-controller="saveSchedule">
 
 <script src="angularjslab.js"></script>
 <div class="container-fluid">
@@ -72,20 +72,19 @@
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
+                                        <a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action">
                                             <span class="oi oi-circle-check" title="circle-check"
                                                   aria-hidden="true"></span>
                                             Current Choosing
                                         </a>
 
                                     </li>
-                                    <li>
-                                        <a href="publish_menber_page_shedual.jsp" class="list-group-item list-group-item-action"
-                                           style="background-color: #80bdff">
-                                            <span class="oi oi-flag" title="flag"
-                                                  aria-hidden="true"></span>
-                                            Published
-                                        </a>
+                                    <li ng-click="show()">
+                                        <div ng-click="show()" class="list-group-item list-group-item-action"
+                                             data-parent="#sidebar" >
+                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
+                                            Already Produce
+                                        </div>
                                     </li>
                                 </ul>
 
@@ -145,127 +144,191 @@
                         <td>
                             8:00-9:00
                         </td>
-                        <!--should be 7 username in here-MTWTFSS-->
+
                         <td>
-
-                        <tr>
-
-                        <tr ng-repeat="member89 in Member0809 ">
-                            <td>
-                                {{member89.usersId}}
-                                {{member89.usersName }}
-                            </td>
-
-                        </tr>
-
-                    </tr>
+                            ${sessionScope.scheduleMap.index8.time108.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time208.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time308.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time408.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time508.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time608.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index8.time708.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
+
+
                     <tr>
                         <td>
                             9:00-10:00
                         </td>
 
-                    <tr ng-repeat="member910 in Member0910 ">
                         <td>
-                            {{member910.usersId}}
-                            {{member910.usersName }}
+                            ${sessionScope.scheduleMap.index9.time109.userName}
                         </td>
-
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time209.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time309.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time409.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time509.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time609.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index9.time709.userName}
+                        </td>
                     </tr>
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
-
-                    </tr>
-
                     <tr>
                         <td>
                             10:00-11:00
                         </td>
-
-                    <tr ng-repeat="member1011 in Member1011 ">
                         <td>
-                            {{member1011.usersId}}
-                            {{member1011.usersName }}
+                            ${sessionScope.scheduleMap.index10.time110.userName}
                         </td>
-
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time210.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time310.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time410.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time510.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time610.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index10.time710.userName}
+                        </td>
                     </tr>
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
-                    </tr>
-
                     <tr>
                         <td>
                             11:00-12:00
                         </td>
-                    <tr ng-repeat="member1112 in Member1112 ">
+
                         <td>
-                            {{member1112.usersId}}
-                            {{member1112.usersName }}
+                            ${sessionScope.scheduleMap.index11.time111.userName}
                         </td>
-
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time211.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time311.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time411.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time511.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time611.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index11.time711.userName}
+                        </td>
                     </tr>
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
-                    </tr>
-
                     <tr>
                         <td>
                             12:00-13:00
                         </td>
-                    <tr ng-repeat="member1213 in Member1213 ">
                         <td>
-                            {{member1213.usersId}}
-                            {{member1213.usersName }}
+                            ${sessionScope.scheduleMap.index12.time112.userName}
                         </td>
-
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time212.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time312.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time412.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time512.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time612.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index12.time712.userName}
+                        </td>
                     </tr>
-
                     <tr>
                         <td>
                             13:00-14:00
                         </td>
-                    <tr ng-repeat="member1314 in Member1314 ">
                         <td>
-                            {{member1314.usersId}}
-                            {{member1314.usersName }}
+                            ${sessionScope.scheduleMap.index13.time113.userName}
                         </td>
-
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time213.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time313.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time413.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time513.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time613.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index13.time713.userName}
+                        </td>
                     </tr>
 
                     <tr>
                         <td>
                             14:00-15:00
                         </td>
-                    <tr ng-repeat="member1415 in Member1415 ">
                         <td>
-                            {{member1415.usersId}}
-                            {{member1415.usersName }}
+                            ${sessionScope.scheduleMap.index14.time114.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time214.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time314.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time414.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time514.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time614.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index14.time714.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
 
 
@@ -273,16 +336,28 @@
                         <td>
                             15:00-16:00
                         </td>
-                    <tr ng-repeat="member1516 in Member1516 ">
                         <td>
-                            {{member1516.usersId}}
-                            {{member1516.usersName }}
+                            ${sessionScope.scheduleMap.index15.time115.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time215.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time315.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time415.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time515.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time615.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index15.time715.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
 
 
@@ -290,48 +365,84 @@
                         <td>
                             16:00-17:00
                         </td>
-                    <tr ng-repeat="member1617 in Member1617 ">
                         <td>
-                            {{member1617.usersId}}
-                            {{member1617.usersName }}
+                            ${sessionScope.scheduleMap.index16.time116.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time216.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time316.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time416.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time516.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time616.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index16.time716.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
 
                     <tr>
                         <td>
                             17:00-18:00
                         </td>
-                    <tr ng-repeat="member1718 in Member1718 ">
                         <td>
-                            {{member1718.usersId}}
-                            {{member1718.usersName }}
+                            ${sessionScope.scheduleMap.index17.time117.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time217.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time317.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time417.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time517.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time617.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index17.time717.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
 
                     <tr>
                         <td>
                             18:00-19:00
                         </td>
-                    <tr ng-repeat="member1819 in Member1819 ">
                         <td>
-                            {{member1819.usersId}}
-                            {{member1819.usersName }}
+                            ${sessionScope.scheduleMap.index18.time118.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time218.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time318.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time418.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time518.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time618.userName}
+                        </td>
+                        <td>
+                            ${sessionScope.scheduleMap.index18.time718.userName}
                         </td>
 
-                        <!--<td>-->
-                        <!--<output type="Username" id="Username2"></output>-->
-                        <!--</td>-->
-                        <!---->
                     </tr>
 
 

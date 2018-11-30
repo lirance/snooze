@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +21,7 @@
 
 </head>
 
-<body ng-app="scheduleApp" ng-controller="getUnfinishedCtrl">
+<body ng-app="scheduleApp">
 
 <script src="angularjslab.js"></script>
 <div class="container-fluid">
@@ -72,13 +79,12 @@
                                         </a>
                                     </li>
 
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
-                                            </span>
+                                    <li ng-click="show()">
+                                        <div ng-click="show()" class="list-group-item list-group-item-action"
+                                             data-parent="#sidebar" >
+                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
                                             Already Produce
-                                        </a>
+                                        </div>
                                     </li>
                                 </ul>
                             </li>
@@ -162,7 +168,7 @@
                         <div class="col-lg">
 
                             <button class="btn btn-lg btn-warning btn-block" style="width: 80%" align="center"
-                                    type="submit">End
+                                    type="submit" ng-click="submitForm()">End
                             </button>
 
 
