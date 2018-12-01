@@ -72,11 +72,26 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
+            alert(resp.data);
 
             switch(resp.data) {
                 case '"showSchedule"':
-                    console.log(resp.data);
-                    window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
+                    $http({
+                        method:'post',
+                        url:'/snooze/member/schedule/show',
+                        params:{
+                        },
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).then(function (resp) {
+                        if (resp.data === "true") {
+                            console.log(resp.data);
+                            window.location.href ="http://localhost:8080/publish_menber_page_shedual.jsp";
+                        }
+                    });
+                    // console.log(resp.data);
+                    // window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
                         break;
                 case '"notChoose"':
                     //alert(resp.data);
