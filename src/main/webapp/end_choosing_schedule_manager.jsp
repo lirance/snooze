@@ -79,13 +79,13 @@
                                         </a>
                                     </li>
 
-                                    <li ng-click="show()">
-                                        <div ng-click="show()" class="list-group-item list-group-item-action"
-                                             data-parent="#sidebar" >
-                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
-                                            Already Produce
-                                        </div>
-                                    </li>
+                                    <%--<li ng-click="show()">--%>
+                                        <%--<div ng-click="show()" class="list-group-item list-group-item-action"--%>
+                                             <%--data-parent="#sidebar" >--%>
+                                            <%--<div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>--%>
+                                            <%--Already Produce--%>
+                                        <%--</div>--%>
+                                    <%--</li>--%>
                                 </ul>
                             </li>
 
