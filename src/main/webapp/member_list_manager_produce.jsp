@@ -92,11 +92,11 @@
                                     <!--</li>-->
 
                                     <li ng-controller="groupMemberCtrl">
-                                        <div  ng-click="showManager()" class="list-group-item list-group-item-action"
+                                        <a  ng-click="showManager()" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar">
                                             <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
                                             Already Produce
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
