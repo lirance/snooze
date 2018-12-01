@@ -76,7 +76,7 @@ public class UserScheduleController {
 
             map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
 
-            if (groupSchedule.getStart() || groupSchedule.getEnd()) {
+            if (groupSchedule.getEnd()) {
                 return "chose";
             } else {
                 return "unfinished";
