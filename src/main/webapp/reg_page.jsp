@@ -120,37 +120,33 @@
 
                 <!-- Username and check  -->
 
-
-                <br>
-
-                <label for="UserName">UserName</label>
-                <input type="text" class="form-control" id="UserName" placeholder="" value="" required autofocus
-                       ng-model="users.inputUsername" style="width: 207%">
-                <div class="invalid-feedback">
-                    Valid_user_name_is_required
-                </div>
-
                 <br>
 
 
                 <!-- Email and password   -->
 
-                <label for="inputEmail">Email Address (For logging in)</label>
+                <label for="inputEmail">Email Address (please remember your this, needed when log in)</label>
 
                 <br/>
 
 
-                <%--<input type="email" id="inputEmail" class="form-control" placeholder="xxxxxxxxx@xxx.xxx" required--%>
-                       <%--autofocus ng-model="users.inputEmail" style="width: 207%">--%>
-
-
-                <input id="inputEmail" name="email" type="email" placeholder="xxxxxxxxx@xxx.xxx" required autofocus
+                <input id="inputEmail" class="form-control"  name="email" type="email" placeholder="xxxxxxxxx@xxx.xxx" required autofocus
                        ng-model="users.inputEmail" style="width: 207%">
 
                 <br>
 
+                <label for="UserName">UserName</label>
+                <input type="text" class="form-control" id="UserName" placeholder="user name" value="" required autofocus
+                       ng-model="users.inputUsername" style="width: 207%">
+                <div class="invalid-feedback">
+                    Valid_user_name_is_required
+                </div>
+
+
+                <br>
+
                 <label for="inputPassword">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="" required
+                <input type="password" id="inputPassword" class="form-control" placeholder="password" required
                        ng-model="users.inputPassword" style="width: 207%">
 
             </div>

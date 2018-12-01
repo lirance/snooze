@@ -43,8 +43,8 @@
 
     <!-- email form -->
     <div class="form-label-group text-center main">
-        <label>Email&nbspAddress:</label>
-        <input id="inputEmail" name="email" type="email" required autofocus
+        <label>Email Address</label>
+        <input id="inputEmail" name="email" type="email" placeholder="Email Address" required autofocus
                ng-model="users.inputEmail" style="width: 40%">
     </div>
 
@@ -55,20 +55,19 @@
     <!-- <div class="text-center mb-2"style="display: flex; justify-content: center;" > -->
     <!-- password form -->
     <div class="form-label-group text-center main">
-        <label>&nbsp&nbsp&nbsp Password &nbsp&nbsp:</label>
-
-        <input id="inputPassword" name="password" type="password"  required autofocus
+        <label>&nbsp&nbsp&nbsp&nbspPassword&nbsp&nbsp&nbsp&nbsp</label>
+        <input id="inputPassword" name="password" type="password" placeholder="Password" required autofocus
                ng-model="users.inputPassword" style="width: 40%">
 
     </div>
 
     <br>
     <!--remember me choosing -->
-    <div class="checkbox mb-3 text-center">
+    <%--<div class="checkbox mb-3 text-center">--%>
 
-        <input type="checkbox" value="remember-me"> Remember me
+    <%--<input type="checkbox" value="remember-me"> Remember me--%>
 
-    </div>
+<%--</div>--%>
 
     <!--log in button -->
     <!--<div class="col-md-6 col-md-offset-3" style="display: flex;-->
