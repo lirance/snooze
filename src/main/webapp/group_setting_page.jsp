@@ -179,7 +179,7 @@
                         <td
                                 ng-click="passMgroupID(group.groupId)">{{group.groupName }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" ng-click="passgroupID(group.groupId)">See the Detail</button>
+                            <button type="button" class="btn btn-primary" ng-click="passMgroupID(group.groupId)">See the Detail</button>
                         </td>
 
                     </tr>

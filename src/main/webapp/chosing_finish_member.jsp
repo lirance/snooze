@@ -134,10 +134,10 @@
 
                             </div>
 
-                            <div class="col-md" ng-controller="selectTimeCtrl">
+                            <div class="col-md">
 
                                 <a href="current_schedule_member_page.jsp" class="btn btn-success btn-md"
-                                   style="width:80%" role="button" aria-disabled="true" ng-click="show()"> ReChoose</a>
+                                   style="width:80%" role="button" aria-disabled="true"> ReChoose</a>
 
 
                             </div>
