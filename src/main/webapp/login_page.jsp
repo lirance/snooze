@@ -43,7 +43,7 @@
 
     <!-- email form -->
     <div class="form-label-group text-center main">
-        <label>EmailAddress</label>
+        <label>Email&nbspAddress:</label>
         <input id="inputEmail" name="email" type="email" required autofocus
                ng-model="users.inputEmail" style="width: 40%">
     </div>
@@ -55,7 +55,7 @@
     <!-- <div class="text-center mb-2"style="display: flex; justify-content: center;" > -->
     <!-- password form -->
     <div class="form-label-group text-center main">
-        <label>&nbsp&nbsp&nbsp Password &nbsp</label>
+        <label>&nbsp&nbsp&nbsp Password &nbsp&nbsp:</label>
 
         <input id="inputPassword" name="password" type="password"  required autofocus
                ng-model="users.inputPassword" style="width: 40%">
