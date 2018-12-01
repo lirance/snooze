@@ -79,8 +79,8 @@
                                     <%--</li>--%>
                                     <li ng-click="showManager()">
                                         <div ng-click="showManager()" class="list-group-item list-group-item-action"
-                                             data-parent="#sidebar">
-                                            <a ng-click="showManager()" class="oi oi-paperclip" title="paperclip" style="background-color: #80bdff"
+                                             data-parent="#sidebar" style="background-color: #80bdff">
+                                            <a ng-click="showManager()" class="oi oi-paperclip" title="paperclip"
                                                  aria-hidden="true"></a>
                                              Already Produce
                                         </div>
