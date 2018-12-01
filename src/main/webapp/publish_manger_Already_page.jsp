@@ -1,17 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: yin
-  Date: 11/24/18
-  Time: 6:11 PM
+  Date: 11/30/18
+  Time: 3:42 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
-
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
 
 
 <!DOCTYPE html>
@@ -72,24 +70,24 @@
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
                                     <%--<li>--%>
-                                        <%--<a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action">--%>
-                                            <%--<span class="oi oi-circle-check" title="circle-check"--%>
-                                                  <%--aria-hidden="true"></span>--%>
-                                            <%--Current Choosing--%>
-                                        <%--</a>--%>
+                                    <%--<a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action">--%>
+                                    <%--<span class="oi oi-circle-check" title="circle-check"--%>
+                                    <%--aria-hidden="true"></span>--%>
+                                    <%--Current Choosing--%>
+                                    <%--</a>--%>
 
                                     <%--</li>--%>
-                                    <li ng-click="show()">
-                                        <div ng-click="show()" class="list-group-item list-group-item-action"
-                                             data-parent="#sidebar" >
-                                            <div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>
+                                    <li ng-click="showManager()">
+                                        <div ng-click="showManager()" class="list-group-item list-group-item-action"
+                                             data-parent="#sidebar">
+                                            <div ng-click="showManager()" class="oi oi-paperclip" title="paperclip"
+                                                 aria-hidden="true"></div>
                                             Already Produce
                                         </div>
                                     </li>
                                 </ul>
 
                             </li>
-
 
 
                             <li class="active">
@@ -100,7 +98,6 @@
                                     <span class="d-none d-inline">Log Out</span>
                                 </a>
                             <li>
-
 
 
                         </ul>
@@ -116,7 +113,7 @@
                 <a href="#" data-target="#sidebar" data-toggle="collapse"><i
                         class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                 <div class="page-header">
-                    <h2>Published Schedule (Member)</h2>
+                    <h2>Published Schedule (Manager)</h2>
                 </div>
                 <hr>
 
@@ -146,25 +143,25 @@
                         </td>
 
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time108.userName}
+                            ${sessionScope.scheduleMap.index8.time108.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time208.userName}
+                            ${sessionScope.scheduleMap.index8.time208.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time308.userName}
+                            ${sessionScope.scheduleMap.index8.time308.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time408.userName}
+                            ${sessionScope.scheduleMap.index8.time408.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time508.userName}
+                            ${sessionScope.scheduleMap.index8.time508.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time608.userName}
+                            ${sessionScope.scheduleMap.index8.time608.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index8.time708.userName}
+                            ${sessionScope.scheduleMap.index8.time708.userName}
                         </td>
 
                     </tr>
@@ -176,25 +173,25 @@
                         </td>
 
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time109.userName}
+                            ${sessionScope.scheduleMap.index9.time109.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time209.userName}
+                            ${sessionScope.scheduleMap.index9.time209.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time309.userName}
+                            ${sessionScope.scheduleMap.index9.time309.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time409.userName}
+                            ${sessionScope.scheduleMap.index9.time409.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time509.userName}
+                            ${sessionScope.scheduleMap.index9.time509.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time609.userName}
+                            ${sessionScope.scheduleMap.index9.time609.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index9.time709.userName}
+                            ${sessionScope.scheduleMap.index9.time709.userName}
                         </td>
                     </tr>
                     <tr>
@@ -202,25 +199,25 @@
                             10:00-11:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time110.userName}
+                            ${sessionScope.scheduleMap.index10.time110.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time210.userName}
+                            ${sessionScope.scheduleMap.index10.time210.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time310.userName}
+                            ${sessionScope.scheduleMap.index10.time310.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time410.userName}
+                            ${sessionScope.scheduleMap.index10.time410.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time510.userName}
+                            ${sessionScope.scheduleMap.index10.time510.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time610.userName}
+                            ${sessionScope.scheduleMap.index10.time610.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index10.time710.userName}
+                            ${sessionScope.scheduleMap.index10.time710.userName}
                         </td>
                     </tr>
                     <tr>
@@ -229,25 +226,25 @@
                         </td>
 
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time111.userName}
+                            ${sessionScope.scheduleMap.index11.time111.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time211.userName}
+                            ${sessionScope.scheduleMap.index11.time211.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time311.userName}
+                            ${sessionScope.scheduleMap.index11.time311.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time411.userName}
+                            ${sessionScope.scheduleMap.index11.time411.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time511.userName}
+                            ${sessionScope.scheduleMap.index11.time511.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time611.userName}
+                            ${sessionScope.scheduleMap.index11.time611.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index11.time711.userName}
+                            ${sessionScope.scheduleMap.index11.time711.userName}
                         </td>
                     </tr>
                     <tr>
@@ -255,25 +252,25 @@
                             12:00-13:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time112.userName}
+                            ${sessionScope.scheduleMap.index12.time112.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time212.userName}
+                            ${sessionScope.scheduleMap.index12.time212.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time312.userName}
+                            ${sessionScope.scheduleMap.index12.time312.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time412.userName}
+                            ${sessionScope.scheduleMap.index12.time412.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time512.userName}
+                            ${sessionScope.scheduleMap.index12.time512.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time612.userName}
+                            ${sessionScope.scheduleMap.index12.time612.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index12.time712.userName}
+                            ${sessionScope.scheduleMap.index12.time712.userName}
                         </td>
                     </tr>
                     <tr>
@@ -281,25 +278,25 @@
                             13:00-14:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time113.userName}
+                            ${sessionScope.scheduleMap.index13.time113.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time213.userName}
+                            ${sessionScope.scheduleMap.index13.time213.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time313.userName}
+                            ${sessionScope.scheduleMap.index13.time313.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time413.userName}
+                            ${sessionScope.scheduleMap.index13.time413.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time513.userName}
+                            ${sessionScope.scheduleMap.index13.time513.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time613.userName}
+                            ${sessionScope.scheduleMap.index13.time613.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index13.time713.userName}
+                            ${sessionScope.scheduleMap.index13.time713.userName}
                         </td>
                     </tr>
 
@@ -308,25 +305,25 @@
                             14:00-15:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time114.userName}
+                            ${sessionScope.scheduleMap.index14.time114.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time214.userName}
+                            ${sessionScope.scheduleMap.index14.time214.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time314.userName}
+                            ${sessionScope.scheduleMap.index14.time314.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time414.userName}
+                            ${sessionScope.scheduleMap.index14.time414.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time514.userName}
+                            ${sessionScope.scheduleMap.index14.time514.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time614.userName}
+                            ${sessionScope.scheduleMap.index14.time614.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index14.time714.userName}
+                            ${sessionScope.scheduleMap.index14.time714.userName}
                         </td>
 
                     </tr>
@@ -337,25 +334,25 @@
                             15:00-16:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time115.userName}
+                            ${sessionScope.scheduleMap.index15.time115.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time215.userName}
+                            ${sessionScope.scheduleMap.index15.time215.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time315.userName}
+                            ${sessionScope.scheduleMap.index15.time315.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time415.userName}
+                            ${sessionScope.scheduleMap.index15.time415.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time515.userName}
+                            ${sessionScope.scheduleMap.index15.time515.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time615.userName}
+                            ${sessionScope.scheduleMap.index15.time615.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index15.time715.userName}
+                            ${sessionScope.scheduleMap.index15.time715.userName}
                         </td>
 
                     </tr>
@@ -366,25 +363,25 @@
                             16:00-17:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time116.userName}
+                            ${sessionScope.scheduleMap.index16.time116.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time216.userName}
+                            ${sessionScope.scheduleMap.index16.time216.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time316.userName}
+                            ${sessionScope.scheduleMap.index16.time316.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time416.userName}
+                            ${sessionScope.scheduleMap.index16.time416.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time516.userName}
+                            ${sessionScope.scheduleMap.index16.time516.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time616.userName}
+                            ${sessionScope.scheduleMap.index16.time616.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index16.time716.userName}
+                            ${sessionScope.scheduleMap.index16.time716.userName}
                         </td>
 
                     </tr>
@@ -394,25 +391,25 @@
                             17:00-18:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time117.userName}
+                            ${sessionScope.scheduleMap.index17.time117.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time217.userName}
+                            ${sessionScope.scheduleMap.index17.time217.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time317.userName}
+                            ${sessionScope.scheduleMap.index17.time317.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time417.userName}
+                            ${sessionScope.scheduleMap.index17.time417.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time517.userName}
+                            ${sessionScope.scheduleMap.index17.time517.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time617.userName}
+                            ${sessionScope.scheduleMap.index17.time617.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index17.time717.userName}
+                            ${sessionScope.scheduleMap.index17.time717.userName}
                         </td>
 
                     </tr>
@@ -422,25 +419,25 @@
                             18:00-19:00
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time118.userName}
+                            ${sessionScope.scheduleMap.index18.time118.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time218.userName}
+                            ${sessionScope.scheduleMap.index18.time218.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time318.userName}
+                            ${sessionScope.scheduleMap.index18.time318.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time418.userName}
+                            ${sessionScope.scheduleMap.index18.time418.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time518.userName}
+                            ${sessionScope.scheduleMap.index18.time518.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time618.userName}
+                            ${sessionScope.scheduleMap.index18.time618.userName}
                         </td>
                         <td>
-                            ${sessionScope.scheduleMemberMap.index18.time718.userName}
+                            ${sessionScope.scheduleMap.index18.time718.userName}
                         </td>
 
                     </tr>
@@ -478,3 +475,5 @@
 
 </body>
 </html>
+
+

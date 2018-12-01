@@ -32,12 +32,12 @@ public class GroupUserServiceImplTest {
     public void setUp() {
         groupUser = new GroupUser();
         groupUser.setManager(true);
-        groupUser.setGroupId(10);
-        groupUser.setUserId(27);
+        groupUser.setGroupId(3);
+        groupUser.setUserId(24);
 
         groupUserKey = new GroupUserKey();
-        groupUserKey.setUserId(27);
-        groupUserKey.setGroupId(10);
+        groupUserKey.setUserId(24);
+        groupUserKey.setGroupId(3);
     }
 
     @After

@@ -68,7 +68,7 @@ public class UserScheduleController {
 
     @RequestMapping(value = "/manager/enter/group")
     @ResponseBody
-    public boolean managerEnterGroup(Integer passGroupID, ModelMap map) {
+    public String managerEnterGroup(Integer passGroupID, ModelMap map) {
         map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
         try {
             GroupSchedule groupSchedule = groupScheduleService.getGroupCurrentSchedule(passGroupID);
@@ -76,11 +76,15 @@ public class UserScheduleController {
 
             map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID, scheduleId);
 
+            if (groupSchedule.getStart() && groupSchedule.getEnd()) {
+                return "chose";
+            } else {
+                return "unfinished";
+            }
         } catch (Exception e) {
             logger.error("no schedule in group", e);
-            return false;
+            return "error";
         }
-        return true;
     }
 
     @RequestMapping(value = "/member/enter/group")

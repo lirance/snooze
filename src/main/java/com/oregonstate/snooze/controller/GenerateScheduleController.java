@@ -3,9 +3,11 @@ package com.oregonstate.snooze.controller;
 import com.oregonstate.snooze.model.GroupSchedule;
 import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.model.UserSchedule;
+import com.oregonstate.snooze.model.UserScheduleKey;
 import com.oregonstate.snooze.service.GroupScheduleService;
 import com.oregonstate.snooze.service.JoinService;
 import com.oregonstate.snooze.service.UserScheduleService;
+import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +26,8 @@ import java.util.*;
  **/
 
 @Controller
-@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP})
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, StaticStrings.SESSION_ATTRIBUTES_MEMBER_SCHEDULE_MAP})
+
 @RequestMapping("/snooze")
 public class GenerateScheduleController {
 
@@ -105,6 +108,38 @@ public class GenerateScheduleController {
         }
 
         modelMap.addAttribute(StaticStrings.SESSION_ATTRIBUTES_SCHEDULE_MAP, resultMap);
+
+        return true;
+    }
+
+    @RequestMapping(value = "/member/schedule/show")
+    @ResponseBody
+    public Boolean showMemberSchedule(HttpSession session, ModelMap modelMap) {
+
+        int scheduleId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID);
+        User currentUser = (User) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_USER);
+        int userId = currentUser.getUserId();
+
+        UserScheduleKey userScheduleKey = new UserScheduleKey();
+        userScheduleKey.setScheduleId(scheduleId);
+        userScheduleKey.setUserId(userId);
+        UserSchedule userSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
+
+        Map<String, Map<String, User>> resultMap = new HashMap<>();
+
+        for (int i = 8; i <= 18; i++) {
+            Map<String, User> map = new HashMap<>();
+            resultMap.put("index" + i, map);
+        }
+
+        for (Map.Entry scheduleDes : userSchedule.getScheduleDes().entrySet()) {
+            int time = (int) scheduleDes.getKey();
+            int key = time % 100;
+            resultMap.get("index" + key).put("time" + time, currentUser);
+
+        }
+
+        modelMap.addAttribute(StaticStrings.SESSION_ATTRIBUTES_MEMBER_SCHEDULE_MAP, resultMap);
 
         return true;
     }
