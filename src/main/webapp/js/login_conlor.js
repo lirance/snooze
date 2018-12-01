@@ -67,7 +67,7 @@ app.controller('regController',function ($scope,$http) {
         }).then(function(resp){
             if (resp.data === "true"){
                 console.log(resp.data);
-                //alert("Register Succeed");
+
                 window.location.href="http://localhost:8080/login_page.jsp";
 
 

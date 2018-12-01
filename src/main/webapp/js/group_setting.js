@@ -72,7 +72,7 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-            alert(resp.data);
+
 
             switch(resp.data) {
                 case '"showSchedule"':
