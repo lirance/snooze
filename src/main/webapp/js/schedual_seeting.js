@@ -100,7 +100,7 @@ app.controller('selectTimeCtrl',function ($scope,$http) {
 
 app.controller('saveSchedule',function ($scope,$http) {
 
-    $scope.show = function() {
+    $scope.showManager = function() {
         $http({
             method: 'GET',
             url: '/snooze/manager/schedule/show'

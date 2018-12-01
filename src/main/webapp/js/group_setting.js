@@ -2,7 +2,6 @@ var app = angular.module('groupSetApp',[]);
 
 app.controller('showGroupCtrl',function ($scope,$http){
 
-
     $http({
         method:'GET',
         url:'/snooze/groupManager.json'
@@ -38,28 +37,31 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-
-            if (resp.data === "true"){
-                console.log(resp.data);
-                window.location.href="http://localhost:8080/member_list_manger_page.jsp";
-            }else if(resp.data === "false") {
-                console.log('This group already exists');
-            }
-            // switch(resp.data) {
-            //     case '"UnfinishedSchedule"':
-            //         console.log(resp.data);
-            //         window.location.href="http://localhost:8080/end_choosing_schedule_manager.jsp";
-            //         break;
-            //     case '"FinishedSchedule"':
-            //         //alert(resp.data);
-            //         console.log('go to choose');
-            //         window.location.href="http://localhost:8080/current_schedule_member_page.jsp"; 待定
-            //         break;
-            //     case '"error"':
-            //
-            //         alert("Error");
-            //         break;
+            alert(resp.data);
+            // if (resp.data === "true"){
+            //     console.log(resp.data);
+            //     window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+            // }else if(resp.data === "false") {
+            //     console.log('This group already exists');
             // }
+            switch(resp.data) {
+
+                case '"unfinished"':
+
+                    console.log(resp.data);
+                    window.location.href="http://localhost:8080/member_list_manger_page.jsp";
+                    break;
+                case '"chose"':
+                    //alert(resp.data);
+                    console.log('show finished schedule');
+                    window.location.href="http://localhost:8080/member_list_manager_produce.jsp";
+                    break;
+                case '"error"':
+
+                    alert("Error");
+                    break;
+            }
+
         });
 
     };
@@ -197,7 +199,7 @@ app.controller('groupMemberCtrl',function ($scope,$http){
         $scope.allmembers=resp.data;
     });
 
-    $scope.show = function() {
+    $scope.showManager = function() {
         $http({
             method:'post',
             url:'/snooze/manager/schedule/show',
@@ -210,8 +212,9 @@ app.controller('groupMemberCtrl',function ($scope,$http){
         }).then(function (resp) {
             if (resp.data === "true") {
                 console.log(resp.data);
-                window.location.href = "http://localhost:8080/publish_menber_page_shedual.jsp";
+                window.location.href = "http://localhost:8080/publish_manager_Already_page.jsp";
             }
         });
     }
 });
+
