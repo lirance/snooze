@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: yin
-  Date: 11/17/18
-  Time: 2:49 PM
+  Date: 11/30/18
+  Time: 3:34 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
 
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +27,8 @@
 
 </head>
 
-<body ng-app="groupSetApp" ng-controller="groupMemberCtrl">
+<body ng-app="groupSetApp">
 <script src="angularjslab.js"></script>
-
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
         <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show">
@@ -65,13 +64,12 @@
                                     <span class="d-none d-inline">Group</span>
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                    <li ng-controller="groupMemberCtrl">
+                                        <div ng-click="show()" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar" style="background-color: #80bdff">
-                                            <span class="oi oi-people" title="people" aria-hidden="true"></span>
-                                            </span>
+                                            <div class="oi oi-people" title="people" aria-hidden="true"></div>
                                             Group Member
-                                        </a>
+                                        </div>
                                     </li>
                                 </ul>
                             </li>
@@ -84,21 +82,23 @@
                                     <span class="d-none d-inline">Schedule</span>
                                 </a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu1">
+                                    <!--<li>-->
+                                    <!--<a href="#" class="list-group-item list-group-item-action"-->
+                                    <!--data-parent="#sidebar">-->
+                                    <!--<span class="oi oi-browser" title="browser" aria-hidden="true"></span>-->
+                                    <!--</span>-->
+                                    <!--Current Using-->
+                                    <!--</a>-->
+                                    <!--</li>-->
+
                                     <li>
-                                        <a href="end_choosing_schedule_manager.jsp" class="list-group-item list-group-item-action"
+                                        <a href="#" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar">
-                                            <span class="oi oi-browser" title="browser" aria-hidden="true"></span>
-                                            Current Using
+                                            <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
+                                            </span>
+                                            Already Produce
                                         </a>
                                     </li>
-
-                                    <%--<li ng-controller="groupMemberCtrl" ng-click="show()">--%>
-                                        <%--<a ng-click="show()" class="list-group-item list-group-item-action"--%>
-                                           <%--data-parent="#sidebar" >--%>
-                                            <%--<div ng-click="show()" class="oi oi-paperclip" title="paperclip" aria-hidden="true"></div>--%>
-                                            <%--Already Produce--%>
-                                        <%--</a>--%>
-                                    <%--</li>--%>
                                 </ul>
                             </li>
 
@@ -120,11 +120,14 @@
 
         </div>
 
-        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main">
-            <a href="member_list_manger_page.jsp" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+        <main class="col-md-9 float-left col px-5 pl-md-2 pt-2 main" ng-controller="groupMemberCtrl">
+            <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
             <div class="page-header">
                 <h2>Group Member(Manger)</h2>
             </div>
+
+
+
 
             <table class="table table-striped">
                 <thead>
@@ -136,24 +139,16 @@
                 </thead>
                 <tbody>
                 <tr>
-                <%--<tr ng-repeat="group in Ggroup ">--%>
-                    <%--<td ng-click="passGgroupID(group.groupId)">--%>
-                        <%--{{group.groupId}}--%>
-                    <%--</td>--%>
+                    <tr ng-repeat="allMembers in allmembers">
+                        <td>
+                            {{allMembers.userName}}
+                        </td>
 
-                    <%--<td ng-click="passGgroupID(group.groupId)">--%>
-                        <%--{{group.groupName }}--%>
-                    <%--</td>--%>
-                <tr ng-repeat="gMembers in allmembers">
-                    <td>
-                        {{gMembers.userName}}
-                    </td>
+                        <td>
+                            {{allMembers.eMail}}
+                        </td>
 
-                    <td>
-                        {{gMembers.eMail}}
-                    </td>
-
-                </tr>
+                    </tr>
                 </tr>
 
 
@@ -166,9 +161,14 @@
             <br>
 
 
+
+
+
+
         </main>
     </div>
 </div>
+
 <script src="js/group_setting.js"></script>
 
 <!-- Optional JavaScript -->
