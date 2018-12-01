@@ -135,7 +135,7 @@
 
                 <!-- Email and password   -->
 
-                <label for="inputEmail">Email Address</label>
+                <label for="inputEmail">Email Address (For logging in)</label>
 
                 <br/>
 
