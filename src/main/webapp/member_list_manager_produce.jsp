@@ -64,12 +64,12 @@
                                     <span class="d-none d-inline">Group</span>
                                 </a>
                                 <ul class="collapse list-unstyled show" id="homeSubmenu">
-                                    <li ng-controller="groupMemberCtrl">
-                                        <div ng-click="show()" class="list-group-item list-group-item-action"
+                                    <li>
+                                        <a href="#" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar" style="background-color: #80bdff">
                                             <div class="oi oi-people" title="people" aria-hidden="true"></div>
                                             Group Member
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -91,13 +91,12 @@
                                     <!--</a>-->
                                     <!--</li>-->
 
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
+                                    <li ng-controller="groupMemberCtrl">
+                                        <div  ng-click="showManager()" class="list-group-item list-group-item-action"
                                            data-parent="#sidebar">
                                             <span class="oi oi-paperclip" title="paperclip" aria-hidden="true"></span>
-                                            </span>
                                             Already Produce
-                                        </a>
+                                        </div>
                                     </li>
                                 </ul>
                             </li>
