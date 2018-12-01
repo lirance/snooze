@@ -66,13 +66,13 @@
                                         </a>
 
                                     </li>
-                                    <li>
-                                        <a href="publish_menber_page_shedual.jsp" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-flag" title="flag"
-                                                  aria-hidden="true"></span>
-                                            Published
-                                        </a>
-                                    </li>
+                                    <%--<li>--%>
+                                        <%--<a href="publish_menber_page_shedual.jsp" class="list-group-item list-group-item-action">--%>
+                                            <%--<span class="oi oi-flag" title="flag"--%>
+                                                  <%--aria-hidden="true"></span>--%>
+                                            <%--Published--%>
+                                        <%--</a>--%>
+                                    <%--</li>--%>
                                 </ul>
 
                             </li>
@@ -105,17 +105,17 @@
                 <hr>
 
 
-                <label for="groupame" >Group Name</label>
-                <output type="text" id="groupame" class="form-control" required
-                        autofocus ng-model="user.inputGroupName" style="width:70%"> </output>
-                <br>
+                <%--<label for="groupame" >Group Name</label>--%>
+                <%--<output type="text" id="groupame" class="form-control" required--%>
+                        <%--autofocus ng-model="user.inputGroupName" style="width:70%"> </output>--%>
+                <%--<br>--%>
 
-                <label for="scheduleName">Current Schedule name</label>
-                <output type="text" id="scheduleName" class="form-control" required
-                        autofocus ng-model="user.inputScheduleName" style="width:70%"> </output>
-                <br>
+                <%--<label for="scheduleName">Current Schedule name</label>--%>
+                <%--<output type="text" id="scheduleName" class="form-control" required--%>
+                        <%--autofocus ng-model="user.inputScheduleName" style="width:70%"> </output>--%>
+                <%--<br>--%>
 
-                <br>
+                <%--<br>--%>
                 <br>
 
 
