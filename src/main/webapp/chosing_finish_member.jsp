@@ -77,13 +77,13 @@
                                         </a>
 
                                     </li>
-                                    <li ng-controller="showPersonCtrl">
-                                        <div ng-click="show()" class="list-group-item list-group-item-action">
-                                            <span  ng-click="show()" class="oi oi-flag" title="flag"
-                                                  aria-hidden="true"></span>
-                                            Published
-                                        </div>
-                                    </li>
+                                    <%--<li ng-controller="showPersonCtrl">--%>
+                                        <%--<div ng-click="show()" class="list-group-item list-group-item-action">--%>
+                                            <%--<span  ng-click="show()" class="oi oi-flag" title="flag"--%>
+                                                  <%--aria-hidden="true"></span>--%>
+                                            <%--Published--%>
+                                        <%--</div>--%>
+                                    <%--</li>--%>
                                 </ul>
 
                             </li>
