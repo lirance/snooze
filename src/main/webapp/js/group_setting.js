@@ -37,13 +37,6 @@ app.controller('showGroupCtrl',function ($scope,$http){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }).then(function(resp){
-            alert(resp.data);
-            // if (resp.data === "true"){
-            //     console.log(resp.data);
-            //     window.location.href="http://localhost:8080/member_list_manger_page.jsp";
-            // }else if(resp.data === "false") {
-            //     console.log('This group already exists');
-            // }
             switch(resp.data) {
 
                 case '"unfinished"':
@@ -212,7 +205,7 @@ app.controller('groupMemberCtrl',function ($scope,$http){
         }).then(function (resp) {
             if (resp.data === "true") {
                 console.log(resp.data);
-                window.location.href = "http://localhost:8080/publish_manager_Already_page.jsp";
+                window.location.href ="http://localhost:8080/publish_manger_Already_page.jsp";
             }
         });
     }
