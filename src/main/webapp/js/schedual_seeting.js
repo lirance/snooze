@@ -28,29 +28,6 @@ app.controller('createScheduleCtrl',function ($scope,$http) {
 });
 
 
-// app.controller('selectTimeCtrl',function ($scope,$http) {
-//         $scope.users = {};
-//         $scope.submitForm = function () {
-//             $http({
-//                 method:'post',
-//                 url:'/snooze/manager/select/time',
-//                 params:{
-//                     "selectedTime":$scope.users.selectTime
-//
-//                 },
-//                 headers: {
-//                     'Content-Type': 'application/x-www-form-urlencoded'
-//                 }
-//
-//             }).then(function(resp){
-//                 if (resp.data === "true"){
-//                     console.log(resp.data);
-//                     alert("Time Selected");
-//                     window.location.href="http://localhost:8080/group_setting_page.jsp";
-//                 }
-//             });
-//         }
-// });
 
 
 
@@ -170,7 +147,7 @@ app.controller('endCtrl',function ($scope,$http){
                 }).then(function (resp) {
                     console.log(resp.data);
                     console.log(resp.data);
-                    window.location.href="http://localhost:8080/publish_menber_page_shedual.jsp";
+                    window.location.href="http://localhost:8080/group_setting_page.jsp";
 
                 });
 
@@ -198,10 +175,7 @@ app.controller('showPersonCtrl',function ($scope,$http) {
                 window.location.href = "http://localhost:8080/publish_menber_page_shedual.jsp";
             }else if(resp.data === "false" ){
                 alert("Time of Selecting Schedule Unfinished")
-
             }
         });
     }
-
-
 });
