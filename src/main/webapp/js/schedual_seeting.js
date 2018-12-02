@@ -20,7 +20,7 @@ app.controller('createScheduleCtrl',function ($scope,$http) {
             if (resp.data === "true"){
                 console.log(resp.data);
                 alert("Create Success");
-                window.location.href="http://localhost:8080/group_setting_page.jsp";
+                window.location.href="http://localhost:8080/member_list_manger_page.jsp";
 
             }
         });
