@@ -50,31 +50,31 @@
                                    class="list-group-item dropdown-toggle">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
-                                    <span class="d-none d-inline">Group Setting</span>
+                                    <span class="d-none d-inline">Group</span>
                                 </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action"
-                                           data-parent="#sidebar">
-                                            <span class="oi oi-calendar" title="calender" aria-hidden="true"></span>
-                                            Already Choosed
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-circle-check" title="circle-check"
-                                                  aria-hidden="true"></span>
-                                            Current Choosing
-                                        </a>
+                                <%--<ul class="collapse list-unstyled" id="homeSubmenu">--%>
+                                    <%--<li>--%>
+                                        <%--<a href="#" class="list-group-item list-group-item-action"--%>
+                                           <%--data-parent="#sidebar">--%>
+                                            <%--<span class="oi oi-calendar" title="calender" aria-hidden="true"></span>--%>
+                                            <%--Already Choosed--%>
+                                        <%--</a>--%>
+                                    <%--</li>--%>
+                                    <%--<li>--%>
+                                        <%--<a href="#" class="list-group-item list-group-item-action">--%>
+                                            <%--<span class="oi oi-circle-check" title="circle-check"--%>
+                                                  <%--aria-hidden="true"></span>--%>
+                                            <%--Current Choosing--%>
+                                        <%--</a>--%>
 
-                                    </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                            Group Setting
-                                        </a>
-                                    </li>
-                                </ul>
+                                    <%--</li>--%>
+                                    <%--<li>--%>
+                                        <%--<a href="#" class="list-group-item list-group-item-action">--%>
+                                            <%--<span class="oi oi-cog" title="cog" aria-hidden="true"></span>--%>
+                                            <%--Group Setting--%>
+                                        <%--</a>--%>
+                                    <%--</li>--%>
+                                <%--</ul>--%>
                             </li>
 
                             <li class="active">
