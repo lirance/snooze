@@ -47,7 +47,7 @@
 
                             <li class="active">
                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                                   class="list-group-item dropdown-toggle">
+                                   class="list-group-item" style="background-color: #0056b3">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
                                     <span class="d-none d-inline">Group</span>
