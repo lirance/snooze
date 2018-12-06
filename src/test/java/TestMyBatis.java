@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,11 +30,13 @@ public class TestMyBatis {
     @org.junit.Test
     public void testUserTable() {
         User user = new User();
-        user.setUserName("t425");
-        user.setPassword("34342");
-        user.seteMail("arr234tr@fsljf.com");
+        user.setUserName("lirance");
+        user.setPassword(String.valueOf(("lirance").hashCode()));
+        user.seteMail("lirance.zhang@gmail.com");
+        user.setUserId(12);
+        userService.updateByPrimaryKey(user);
         // userService.insert(user);
-        User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
+       // User userresutl = userService.selectByEmail("arr234tr@fsljf.com");
     }
 
 
@@ -45,8 +48,17 @@ public class TestMyBatis {
         UserScheduleKey userScheduleKey = new UserScheduleKey();
         userScheduleKey.setUserId(1);
         userScheduleKey.setScheduleId(2);
-        UserSchedule groupSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
-        logger.info(JSON.toJSONString(groupSchedule));
+        UserSchedule userSchedule = userScheduleService.selectByPrimaryKey(userScheduleKey);
+        logger.info(JSON.toJSONString(userSchedule));
+        Map<Integer, Boolean> userDes = new HashMap<>();
+        userSchedule = new UserSchedule();
+        userSchedule.setUserId(12);
+        userSchedule.setScheduleId(2);
+        userDes.put(108, true);
+        userDes.put(110, true);
+        userSchedule.setScheduleDes(userDes);
+        userSchedule.setHours("3");
+        //  userScheduleService.insert(userSchedule);
     }
 
 
@@ -74,7 +86,7 @@ public class TestMyBatis {
         groupSchedule.setScheduleName("test_schedule_name");
         Map<Integer, Boolean> groupDes = new HashMap<>();
         groupDes.put(123, true);
-        groupDes.put(123, false);
+        groupDes.put(104, false);
         groupSchedule.setScheduleDes(groupDes);
         // groupScheduleService.insert(groupSchedule);
     }
@@ -95,6 +107,24 @@ public class TestMyBatis {
         groupUserService.selectByPrimaryKey(groupUserKey);
         // groupUserService.insert(groupUser);
     }
+
+//    @org.junit.Test
+//    public void insertScheduleForAllGroups() {
+//        GroupSchedule groupSchedule = new GroupSchedule();
+//       // groupSchedule.setGroupId(1);
+//        groupSchedule.setScheduleId(1);
+//        groupSchedule.setScheduleName("test_schedule_name");
+//        Map<Integer, Boolean> groupDes = new HashMap<>();
+//        groupDes.put(123, true);
+//        groupDes.put(104, false);
+//        groupSchedule.setScheduleDes(groupDes);
+//
+//        List<Group> groupList = groupService.selectAll();
+//        for (Group group:groupList){
+//            groupSchedule.setGroupId(group.getGroupId());
+//            groupScheduleService.insert(groupSchedule);
+//        }
+//    }
 
 
     @Resource

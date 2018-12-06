@@ -1,6 +1,7 @@
 package com.oregonstate.snooze.dao;
 
 import com.oregonstate.snooze.model.Group;
+import com.oregonstate.snooze.model.User;
 
 import java.util.List;
 
@@ -12,4 +13,8 @@ import java.util.List;
 
 public interface JoinMapper {
     List<Group> selectGroupsByUserId(int userId, boolean manage);
+
+    List<User> selectUsersByGroupId(int groupId, boolean manage);
+
+    List<User> selectUsersByScheduleId(int scheduleId);
 }

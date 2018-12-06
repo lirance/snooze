@@ -31,4 +31,8 @@ public class GroupScheduleServiceImplTest {
     @Test
     public void deleteByPrimaryKey() {
     }
+
+    @Test
+    public void getGroupCurrentSchedule() {
+    }
 }

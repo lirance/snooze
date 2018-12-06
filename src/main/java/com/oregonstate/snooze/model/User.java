@@ -1,8 +1,6 @@
 package com.oregonstate.snooze.model;
 
-import javax.jws.soap.SOAPBinding;
-
-public class User {
+public class User extends BaseModelObject {
     private Integer userId;
 
     private String userName;

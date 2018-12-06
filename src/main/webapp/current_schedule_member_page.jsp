@@ -20,9 +20,9 @@
 </head>
 
 
-<body ng-app="myApp" ng-controller="">
-
+<body ng-app="scheduleApp" ng-controller="selectTimeCtrl">
 <script src="angularjslab.js"></script>
+
 <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
         <div class="col-md-3 float-left col-1 pl-0 pr-0 collapse width show">
@@ -54,34 +54,35 @@
                                    class="list-group-item dropdown-toggle">
 
                                     <span class="oi oi-project" title="project" aria-hidden="true"></span>
-                                    <span class="d-none d-inline">Group</span>
+                                    <span class="d-none d-inline">Schedule</span>
                                 </a>
-                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <ul class="collapse list-unstyled show" id="homeSubmenu">
                                     <li>
-                                        <a href="#" class="list-group-item list-group-item-action" style="background-color: #80bdff">
+                                        <a href="current_schedule_member_page.jsp" class="list-group-item list-group-item-action"
+                                           style="background-color: #80bdff">
                                             <span class="oi oi-circle-check" title="circle-check"
                                                   aria-hidden="true"></span>
                                             Current Choosing
                                         </a>
 
                                     </li>
-                                    <li>
-                                        <a href="#" class="list-group-item list-group-item-action">
-                                            <span class="oi oi-flag" title="flag"
-                                                  aria-hidden="true"></span>
-                                            Published
-                                        </a>
-                                    </li>
+                                    <%--<li>--%>
+                                        <%--<a href="publish_menber_page_shedual.jsp" class="list-group-item list-group-item-action">--%>
+                                            <%--<span class="oi oi-flag" title="flag"--%>
+                                                  <%--aria-hidden="true"></span>--%>
+                                            <%--Published--%>
+                                        <%--</a>--%>
+                                    <%--</li>--%>
                                 </ul>
 
                             </li>
 
                             <li class="active">
 
-                                <a href="#" data-toggle="collapse"
+                                <a href="login_page.jsp"
                                    class="list-group-item">
-                                    <span class="oi oi-cog" title="cog" aria-hidden="true"></span>
-                                    <span class="d-none d-inline"></span>
+                                    <span class="oi oi-account-logout" title="log" aria-hidden="true"></span>
+                                    <span class="d-none d-inline">Log Out</span>
                                 </a>
                             <li>
 
@@ -94,17 +95,28 @@
 
         </div>
 
-        <from>
+        <from >
             <main class="col-md-8 float-left col px-3 pl-md-5 pt-3 main">
-                <a href="#" data-target="#sidebar" data-toggle="collapse"><i class="fa fa-navicon fa-2x py-2 p-1"></i></a>
+                <a href="#" data-target="#sidebar" data-toggle="collapse"><i
+                        class="fa fa-navicon fa-2x py-2 p-1"></i></a>
                 <div class="page-header">
                     <h2>Current Schedule (Member)</h2>
                 </div>
                 <hr>
 
 
-                <br>
+                <%--<label for="groupame" >Group Name</label>--%>
+                <%--<output type="text" id="groupame" class="form-control" required--%>
+                        <%--autofocus ng-model="user.inputGroupName" style="width:70%"> </output>--%>
+                <%--<br>--%>
 
+                <%--<label for="scheduleName">Current Schedule name</label>--%>
+                <%--<output type="text" id="scheduleName" class="form-control" required--%>
+                        <%--autofocus ng-model="user.inputScheduleName" style="width:70%"> </output>--%>
+                <%--<br>--%>
+
+                <%--<br>--%>
+                <br>
 
 
                 <table class="table table-bordered">
@@ -128,54 +140,52 @@
                         <td>
                             <div class="checkbox mb-3">
 
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="108",ng-false-value="false",ng-init="false">
-
-                                <%--<input type="checkbox" id="108">--%>
+                                <input type="checkbox" id="108" name="Time" value="108">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="208",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="208">--%>
+
+                                <input type="checkbox" id="208" name="Time" value="208">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="308",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="308">--%>
 
-                            </div>
-                        </td> <td>
-                        <div class="checkbox mb-3">
-                            <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="408",ng-false-value="false",ng-init="false">
-                            <%--<input type="checkbox" id="408">--%>
-
-                        </div>
-                    </td>
-                        <td>
-                            <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="508",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="508">--%>
+                                <input type="checkbox" id="308" name="Time" value="308">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="608",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="608">--%>
+
+                                <input type="checkbox" id="408" name="Time" value="408">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="708",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="708">--%>
+
+                                <input type="checkbox" id="508" name="Time" value="508">
 
                             </div>
                         </td>
+                        <td>
+                            <div class="checkbox mb-3">
 
+                                <input type="checkbox" id="608" name="Time" value="608">
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox mb-3">
+
+                                <input type="checkbox" id="708" name="Time" value="708">
+
+                            </div>
+                        </td>
 
 
                     </tr>
@@ -183,50 +193,50 @@
                         <td>09:00-10:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="109",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="109">--%>
+
+                                <input type="checkbox" id="109" name="Time" value="109">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="209",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="209">--%>
+
+                                <input type="checkbox" id="209" name="Time" value="209">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="309",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="309">--%>
+
+                                <input type="checkbox" id="309" name="Time" value="309">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="409",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="409">--%>
+
+                                <input type="checkbox" id="409" name="Time" value="409">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="509",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="509">--%>
+
+                                <input type="checkbox" id="509" name="Time" value="509">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="609",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="609">--%>
+
+                                <input type="checkbox" id="609" name="Time" value="609">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="709",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="709">--%>
+
+                                <input type="checkbox" id="709" name="Time" value="709">
 
                             </div>
                         </td>
@@ -239,50 +249,50 @@
 
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="110",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="110">--%>
+
+                                <input type="checkbox" id="110" name="Time" value="110">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="210",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="210">--%>
+
+                                <input type="checkbox" id="210" name="Time" value="210" >
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="310",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="310">--%>
+
+                                <input type="checkbox" id="310" name="Time" value="310">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="410",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="410">--%>
+
+                                <input type="checkbox" id="410" name="Time" value="410">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="510",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="510">--%>
+
+                                <input type="checkbox" id="510" name="Time" value="510">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="610",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="610">--%>
+
+                                <input type="checkbox" id="610" name="Time" value="610">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="710",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="710">--%>
+
+                                <input type="checkbox" id="710" name="Time" value="710">
 
                             </div>
                         </td>
@@ -294,50 +304,50 @@
                         <td>11:00-12:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="111",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="111">--%>
+
+                                <input type="checkbox" id="111" name="Time" value="111">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="211",ng-false-value="false",ng-init="false">
-                                <%--<input type="checkbox" id="211">--%>
+
+                                <input type="checkbox" id="211" name="Time" value="211">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="311",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="311">
+
+                                <input type="checkbox" id="311" name="Time" value="311">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="411",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="411">
+
+                                <input type="checkbox" id="411" name="Time" value="411">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="511",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="511">
+
+                                <input type="checkbox" id="511" name="Time" value="511">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="611",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="611">
+
+                                <input type="checkbox" id="611" name="Time" value="611">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="711",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="711">
+
+                                <input type="checkbox" id="711" name="Time" value="711">
 
                             </div>
                         </td>
@@ -349,50 +359,50 @@
                         <td>12:00-13:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="112",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="112">
+
+                                <input type="checkbox" id="112" name="Time" value="112">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="212",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="212">
+
+                                <input type="checkbox" id="212" name="Time" value="212">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="312",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="312">
+
+                                <input type="checkbox" id="312" name="Time" value="312">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="412",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="412">
+
+                                <input type="checkbox" id="412" name="Time" value="412">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="512",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="512">
+
+                                <input type="checkbox" id="512" name="Time" value="512">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="612",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="612">
+
+                                <input type="checkbox" id="612" name="Time" value="612">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="712",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="712">
+
+                                <input type="checkbox" id="712" name="Time" value="712">
 
                             </div>
                         </td>
@@ -402,50 +412,50 @@
                         <td>13:00-14:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="113",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="113">
+
+                                <input type="checkbox" id="113" name="Time" value="113">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="213",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="213">
+
+                                <input type="checkbox" id="213" name="Time" value="213">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="313",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="313">
+
+                                <input type="checkbox" id="313" name="Time" value="313">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="413",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="413">
+
+                                <input type="checkbox" id="413" name="Time" value="413">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="513",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="513">
+
+                                <input type="checkbox" id="513" name="Time" value="513">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="613",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="613">
+
+                                <input type="checkbox" id="613" name="Time" value="613">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="713",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="713">
+
+                                <input type="checkbox" id="713" name="Time" value="713">
 
                             </div>
                         </td>
@@ -455,54 +465,53 @@
                         <td>14:00-15:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="114",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="114">
+
+                                <input type="checkbox" id="114" name="Time" value="114">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="214",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="214">
+
+                                <input type="checkbox" id="214" name="Time" value="214">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="314",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="314">
+
+                                <input type="checkbox" id="314" name="Time" value="314">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="414",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="414">
+
+                                <input type="checkbox" id="414" name="Time" value="414">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="514",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="514">
+
+                                <input type="checkbox" id="514" name="Time" value="514">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="614",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="614">
+
+                                <input type="checkbox" id="614" name="Time" value="614">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="714",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="714">
+
+                                <input type="checkbox" id="714" name="Time" value="714">
 
                             </div>
                         </td>
-
 
 
                     </tr>
@@ -510,54 +519,53 @@
                         <td>15:00-16:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="115",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="115">
+
+                                <input type="checkbox" id="115" name="Time" value="115">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="215",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="215">
+
+                                <input type="checkbox" id="215" name="Time" value="215">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="315",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="315">
+
+                                <input type="checkbox" id="315" name="Time" value="315">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="415",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="415">
+
+                                <input type="checkbox" id="415" name="Time" value="415">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="515",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="515">
+
+                                <input type="checkbox" id="515" name="Time" value="515">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="615",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="615">
+
+                                <input type="checkbox" id="615" name="Time" value="615">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="715",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="715">
+
+                                <input type="checkbox" id="715" name="Time" value="715">
 
                             </div>
                         </td>
-
 
 
                     </tr>
@@ -565,50 +573,50 @@
                         <td>16:00-17:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="116",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="116">
+
+                                <input type="checkbox" id="116" name="Time" value="116">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="216",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="216">
+
+                                <input type="checkbox" id="216" name="Time" value="216">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="316",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="316"  >
+
+                                <input type="checkbox" id="316" name="Time" value="316">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="416",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="416">
+
+                                <input type="checkbox" id="416" name="Time" value="416">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="516",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="516">
+
+                                <input type="checkbox" id="516" name="Time" value="516">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="616",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="616">
+
+                                <input type="checkbox" id="616" name="Time" value="616">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="716",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="716">
+
+                                <input type="checkbox" id="716" name="Time" value="716">
 
                             </div>
                         </td>
@@ -620,50 +628,50 @@
                         <td>17:00-18:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="117",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="117">
+
+                                <input type="checkbox" id="117" name="Time" value="117">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="217",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="217">
+
+                                <input type="checkbox" id="217" name="Time" value="217">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="317",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="317">
+
+                                <input type="checkbox" id="317" name="Time" value="317">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="417",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="417">
+
+                                <input type="checkbox" id="417" name="Time" value="417">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="517",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="517">
+
+                                <input type="checkbox" id="517" name="Time" value="517">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="617",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="617">
+
+                                <input type="checkbox" id="617" name="Time" value="617">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="717",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="717">
+
+                                <input type="checkbox" id="717" name="Time" value="717">
 
                             </div>
                         </td>
@@ -673,50 +681,50 @@
                         <td>18:00-19:00</td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="118",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="118">
+
+                                <input type="checkbox" id="118" name="Time" value="118">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="218",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="218">
+
+                                <input type="checkbox" id="218" name="Time" value="218">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="318",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="318">
+
+                                <input type="checkbox" id="318" name="Time" value="318">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="418",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="418">
+
+                                <input type="checkbox" id="418" name="Time" value="418">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="518",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="518">
+
+                                <input type="checkbox" id="518" name="Time" value="518">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="618",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="618">
+
+                                <input type="checkbox" id="618" name="Time" value="618">
 
                             </div>
                         </td>
                         <td>
                             <div class="checkbox mb-3">
-                                <input ng-model="selectTime",id="selectTime",type="checkbox",ng-true-value="718",ng-false-value="false",ng-init="false">
-                                <input type="checkbox" id="718">
+
+                                <input type="checkbox" id="718" name="Time" value="718">
 
                             </div>
                         </td>
@@ -724,14 +732,7 @@
                     </tr>
 
 
-
-
                     </tr>
-
-
-
-
-
 
 
                     </tbody>
@@ -742,25 +743,28 @@
 
 
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg">
+
+                                <a href="#" class="btn btn-success btn-lg"
+                                   style="width:80%" role="button" aria-disabled="true"> Back</a>
+                            </div>
+                            <div class="col-lg">
+
+                            </div>
+
+                            <div class="col-lg">
+
+                                <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
+                                        type="submit" ng-click="show()">Submit
+                                </button>
+
+
+                            </div>
+
                         </div>
-                        <div class="col-lg">
-                        </div>
-                        <div class="col-lg">
-
-                            <button class="btn btn-lg btn-success btn-block" style="width: 80%" align="center"
-                                    type="submit">Submit
-                            </button>
-
-
-
-                        </div>
-
                     </div>
-                </div>
-
 
 
 
@@ -769,9 +773,7 @@
         </from>
     </div>
 </div>
-
 <script src="js/schedual_seeting.js"></script>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="jquery/jquery-3.2.1.js"></script>

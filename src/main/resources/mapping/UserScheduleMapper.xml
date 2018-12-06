@@ -11,7 +11,7 @@
     scheduleId, userId, scheduleDes, hours
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.oregonstate.snooze.model.UserScheduleKey" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from schedule_u
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
@@ -23,10 +23,13 @@
       and userId = #{userId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.oregonstate.snooze.model.UserSchedule">
-    insert into schedule_u (scheduleId, userId, scheduleDes, 
+    insert into schedule_u (scheduleId, userId, scheduleDes,
       hours)
     values (#{scheduleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{scheduleDes,jdbcType=VARCHAR},
       #{hours,jdbcType=VARCHAR})
+      ON DUPLICATE KEY UPDATE
+			 scheduleDes = VALUES(scheduleDes),
+			 hours = VALUES(hours)
   </insert>
   <insert id="insertSelective" parameterType="com.oregonstate.snooze.model.UserSchedule">
     insert into schedule_u
@@ -79,4 +82,23 @@
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
       and userId = #{userId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByScheduleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from schedule_u
+    where scheduleId = #{scheduleId,jdbcType=INTEGER}
+  </select>
+
+  <insert id="insertAll" parameterType="java.util.List">
+      insert into schedule_u (scheduleId, userId, scheduleDes, hours)
+      values
+      <foreach collection="list" item="record" index="index" separator="," >
+          (#{record.scheduleId,jdbcType=INTEGER},#{record.userId,jdbcType=INTEGER},#{record.scheduleDes,jdbcType=VARCHAR},#{record.hours,jdbcType=VARCHAR})
+      </foreach>
+      ON DUPLICATE KEY UPDATE
+      scheduleDes = VALUES(scheduleDes),
+      hours = VALUES(hours)
+  </insert>
+
 </mapper>

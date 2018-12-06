@@ -105,4 +105,14 @@
       minHours = #{minHours,jdbcType=INTEGER}
     where scheduleId = #{scheduleId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectCurrentScheduleByGroupId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from schedule_g
+    where groupId = #{scheduleId,jdbcType=INTEGER}
+    order by `scheduleId` desc limit 1
+  </select>
+
 </mapper>

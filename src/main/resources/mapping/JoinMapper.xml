@@ -5,6 +5,12 @@
         <id column="groupId" jdbcType="INTEGER" property="groupId"/>
         <result column="groupName" jdbcType="VARCHAR" property="groupName"/>
     </resultMap>
+    <resultMap id="UserResultMap" type="com.oregonstate.snooze.model.User">
+        <id column="userId" jdbcType="INTEGER" property="userId" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="eMail" />
+    </resultMap>
     <sql id="Group_Column_List">
       groupId, groupName
     </sql>
@@ -17,5 +23,21 @@
         where userId = #{0} and manager = #{1}
     </select>
 
+    <select id="selectUsersByGroupId" resultMap="UserResultMap">
+        select
+        `user`.userId,userName,password,email
+        from `user`
+        join `group_user`
+        on `user`.userId=`group_user`.userId
+        where groupId = #{0} and manager = #{1}
+    </select>
 
+    <select id="selectUsersByScheduleId" resultMap="UserResultMap">
+        select
+        `user`.userId,userName,password,email
+        from `user`
+        join `schedule_u`
+        on `user`.userId=`schedule_u`.userId
+        where scheduleId = #{scheduleId,jdbcType=INTEGER}
+    </select>
 </mapper>

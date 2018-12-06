@@ -1,6 +1,6 @@
 package com.oregonstate.snooze.model;
 
-public class TestUser {
+public class TestUser extends BaseModelObject   {
     private Integer id;
 
     private String userName;

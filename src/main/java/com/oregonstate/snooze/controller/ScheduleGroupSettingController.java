@@ -1,65 +1,45 @@
 package com.oregonstate.snooze.controller;
 
 import com.oregonstate.snooze.model.GroupSchedule;
-import com.oregonstate.snooze.model.User;
 import com.oregonstate.snooze.service.GroupScheduleService;
-import com.oregonstate.snooze.service.GroupService;
-import com.oregonstate.snooze.service.GroupUserService;
-import com.oregonstate.snooze.service.UserService;
 import com.oregonstate.snooze.utils.StaticStrings;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.Map;
 
 
 @Controller
+@SessionAttributes({StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, StaticStrings.SESSION_ATTRIBUTES_CURRENT_SCHEDULE_ID})
 @RequestMapping("/snooze")
 public class ScheduleGroupSettingController {
 
-    @Resource
-    private final UserService userService;
+    private static Logger logger = Logger.getLogger(GroupSettingController.class);
     private final GroupScheduleService groupScheduleService;
 
     @Autowired
-    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService, UserService userService) {
-        this.userService = userService;
+    public ScheduleGroupSettingController(GroupScheduleService groupScheduleService) {
         this.groupScheduleService = groupScheduleService;
+
     }
 
 
-    @RequestMapping(value = "/group/passGroupID")
+    @RequestMapping(value = "/create/schedule")
     @ResponseBody
-    public boolean scheduleShow(Integer passGroupID, ModelMap map){
-        map.addAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID, passGroupID);
-        return true;
-    }
+    public boolean scheduleCreateManager(HttpSession session, String inputScheduleName) {
 
-    @RequestMapping(value = "/manager/select/time")
-    @ResponseBody
-    public boolean scheduleCreateManager(HttpSession session, String inputScheduleName){
-
-        Integer groupId = (int)session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_MANAGER_GROUP_ID);
+        int groupId = (int) session.getAttribute(StaticStrings.SESSION_ATTRIBUTES_CURRENT_GROUP_ID);
 
         GroupSchedule newGroupSchedule = new GroupSchedule();
         newGroupSchedule.setScheduleName(inputScheduleName);
         newGroupSchedule.setGroupId(groupId);
-        groupScheduleService.insert(newGroupSchedule);
-        return true;
-    }
 
-    @RequestMapping(value = "/manager/select/time")
-    @ResponseBody
-    public boolean scheduleCreateGeneral(Integer inputGroupId, String inputScheduleName){
-
-        GroupSchedule newGroupSchedule = new GroupSchedule();
-        newGroupSchedule.setScheduleName(inputScheduleName);
-        newGroupSchedule.setGroupId(inputGroupId);
+        // automatically start the schedule when create
+        newGroupSchedule.setStart(true);
         groupScheduleService.insert(newGroupSchedule);
         return true;
     }

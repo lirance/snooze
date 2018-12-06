@@ -24,52 +24,11 @@
 <script src="angularjslab.js"></script>
 <script src="js/ui_router.js"></script>
 
-<%--<header>--%>
-    <%--<!--  -->--%>
-    <%--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">--%>
-        <%--<a class="navbar-brand" href=" ">SNOOZE</a>--%>
-        <%--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"--%>
-                <%--aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">--%>
-            <%--<span class="navbar-toggler-icon"></span>--%>
-        <%--</button>--%>
-        <%--<div class="collapse navbar-collapse" id="navbarCollapse">--%>
-            <%--<ul class="navbar-nav mr-auto">--%>
-                <%--<li class="nav-item active">--%>
-                    <%--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>--%>
-                <%--</li>--%>
-                <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link" href="#">Link</a>--%>
-                <%--</li>--%>
-                <%--&lt;%&ndash;<li class="nav-item">&ndash;%&gt;--%>
-                <%--&lt;%&ndash;<a class="nav-link disabled" href="#">Disabled</a >&ndash;%&gt;--%>
-                <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
-            <%--</ul>--%>
-            <%--<!-- <form class="form-inline mt-2 mt-md-0">--%>
-              <%--<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--%>
-              <%--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
-            <%--</form> -->--%>
-
-            <%--<span>--%>
-          <%--<li class="nav-item dropdown" navbar-light>--%>
-            <%--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"--%>
-               <%--aria-haspopup="true" aria-expanded="false">--%>
-              <%--Options--%>
-            <%--</a>--%>
-          <%--<div class="dropdown-menu" aria-labelledby="navbarDropdown" class="text-center">--%>
-              <%--<a class="dropdown-item" href="login_page.jsp">LogIn</a>--%>
-              <%--<a class="dropdown-item" href="reg_page.jsp">Register</a>--%>
-              <%--<div class="dropdown-divider"></div>--%>
-              <%--<a class="dropdown-item" href="login_page.jsp">Logout</a>--%>
-          <%--</div>--%>
-          <%--</li>--%>
-        <%--</span>--%>
-        <%--</div>--%>
-    <%--</nav>--%>
-<%--</header>--%>
 
 <br/>
 <br/>
 <br/>
+
 <br/>
 <div ui-view></div>
 <!--   login form -->
@@ -84,6 +43,7 @@
 
     <!-- email form -->
     <div class="form-label-group text-center main">
+        <label>Email Address</label>
         <input id="inputEmail" name="email" type="email" placeholder="Email Address" required autofocus
                ng-model="users.inputEmail" style="width: 40%">
     </div>
@@ -95,7 +55,7 @@
     <!-- <div class="text-center mb-2"style="display: flex; justify-content: center;" > -->
     <!-- password form -->
     <div class="form-label-group text-center main">
-
+        <label>&nbsp&nbsp&nbsp&nbspPassword&nbsp&nbsp&nbsp&nbsp</label>
         <input id="inputPassword" name="password" type="password" placeholder="Password" required autofocus
                ng-model="users.inputPassword" style="width: 40%">
 
@@ -103,11 +63,11 @@
 
     <br>
     <!--remember me choosing -->
-    <div class="checkbox mb-3 text-center">
+    <%--<div class="checkbox mb-3 text-center">--%>
 
-        <input type="checkbox" value="remember-me"> Remember me
+    <%--<input type="checkbox" value="remember-me"> Remember me--%>
 
-    </div>
+<%--</div>--%>
 
     <!--log in button -->
     <!--<div class="col-md-6 col-md-offset-3" style="display: flex;-->
@@ -139,7 +99,7 @@
     <br>
     <br/>
     <div class="mt-5 mb-3 text-muted text-center">
-        <p>&copy; 2017-2018</p>
+        <p>&copy; 2016-2017</p>
     </div>
 
 </form>

@@ -14,4 +14,6 @@ public interface GroupScheduleMapper {
     int updateByPrimaryKeySelective(GroupSchedule record);
 
     int updateByPrimaryKey(GroupSchedule record);
+
+    GroupSchedule selectCurrentScheduleByGroupId(Integer groupId);
 }

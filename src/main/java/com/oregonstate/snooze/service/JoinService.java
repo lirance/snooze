@@ -1,6 +1,7 @@
 package com.oregonstate.snooze.service;
 
 import com.oregonstate.snooze.model.Group;
+import com.oregonstate.snooze.model.User;
 
 import java.util.List;
 
@@ -17,5 +18,14 @@ public interface JoinService {
      * @return return a list of the users group(manage group or normal group)
      */
     List<Group> selectGroupsByUserId(int userId, boolean manage);
+
+    /**
+     * @param groupId groupId
+     * @param manage Boole-- true for the user is the manager of this group
+     * @return return a list of the group users(manage group or normal group)
+     */
+    List<User> selectUsersByGroupId(int groupId, boolean manage);
+
+    List<User> getUsersAlreadyChooseShift(int scheduleId);
 
 }

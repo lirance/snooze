@@ -6,6 +6,8 @@ import com.oregonstate.snooze.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: chendi Zhang
  * @date: 10/6/18
@@ -42,4 +44,8 @@ public class GroupServiceImpl implements GroupService {
         return groupMapper.deleteByPrimaryKey(groupId);
     }
 
+    @Override
+    public List<Group> selectAll() {
+        return groupMapper.selectAllGroups();
+    }
 }

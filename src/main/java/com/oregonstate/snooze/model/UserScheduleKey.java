@@ -1,6 +1,6 @@
 package com.oregonstate.snooze.model;
 
-public class UserScheduleKey {
+public class UserScheduleKey extends BaseModelObject{
     private Integer scheduleId;
 
     private Integer userId;
